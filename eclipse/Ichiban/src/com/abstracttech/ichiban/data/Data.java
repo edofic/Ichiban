@@ -5,6 +5,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.abstracttech.ichiban.R;
 
@@ -18,6 +20,9 @@ import android.util.Log;
 public class Data {
 	private static ArrayList<String> data=null;
 	private static int index=0;
+	
+	private static Timer timer;
+	private static boolean isAutoupdating=false;
 
 	private static double x,y,z;
 	private static int rpm, turnRatio;
@@ -64,13 +69,42 @@ public class Data {
 			String[] values=line.split(",");	
 			x=Double.parseDouble(values[0]);
 			y=Double.parseDouble(values[1]);
-			z=Double.parseDouble(values[2]);
+			z=Double.parseDouble(values[2]); 
 			rpm=Integer.parseInt(values[3]);
 			turnRatio=Integer.parseInt(values[4]);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Log.e("ICHIBAN", "something wrong with data");
 		}
+	}
+	
+	/**
+	 * automaticaly update data in specified period
+	 * @param interval in miliseconds
+	 */
+	public static void startAutoupdate(int period)
+	{
+		if(isAutoupdating)
+			return;
+		
+		timer = new Timer();
+    	
+    	timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				update(); 
+			}
+		}, 0, period);
+    	isAutoupdating=true;
+	}
+	
+	/** stops automatic self-updates
+	 * 
+	 */
+	public static void stopAutoupdate()
+	{
+		timer.cancel();
+		isAutoupdating=false;
 	}
 
 	public static double getX() {
@@ -91,5 +125,9 @@ public class Data {
 
 	public static int getTurnRatio() {
 		return turnRatio;
+	}
+	
+	public static boolean isAutoupdating(){
+		return isAutoupdating;
 	}
 }
