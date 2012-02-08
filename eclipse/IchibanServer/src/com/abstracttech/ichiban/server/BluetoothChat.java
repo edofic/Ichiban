@@ -294,6 +294,10 @@ public class BluetoothChat extends Activity {
 				mConversationArrayAdapter.add(mConnectedDeviceName+":  " + readMessage);
 				if(readMessage.equals("?"))
 					sendMessage("data");
+				if(readMessage.equals("start"))
+					sendMessage("started");
+				if(readMessage.equals("stop"))
+					sendMessage("stopped");
 				break;
 			case MESSAGE_DEVICE_NAME:
 				// save the connected device's name
