@@ -9,4 +9,9 @@
         android:layout_height="wrap_content"
         android:text="@string/hello" />
 
+    <com.abstracttech.ichiban.views.XTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0" /> #zero is here as a placeholder, so view does not colapse
+
 </LinearLayout>
