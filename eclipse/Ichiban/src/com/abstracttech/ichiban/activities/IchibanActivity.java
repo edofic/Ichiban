@@ -1,4 +1,7 @@
-package com.abstracttech.ichiban;
+package com.abstracttech.ichiban.activities;
+
+import com.abstracttech.ichiban.R;
+import com.abstracttech.ichiban.R.layout;
 
 import android.app.Activity;
 import android.os.Bundle;
