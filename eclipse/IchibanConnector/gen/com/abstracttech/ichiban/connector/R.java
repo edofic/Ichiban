@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.abstracttech.ichiban;
+package com.abstracttech.ichiban.connector;
 
 public final class R {
     public static final class attr {
