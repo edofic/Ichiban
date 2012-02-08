@@ -134,6 +134,8 @@ public class BluetoothChat extends Activity {
 		} else {
 			if (mChatService == null) setupChat();
 		}
+		
+		Data.startAutoupdate(1000);
 	}
 
 	@Override
@@ -193,6 +195,7 @@ public class BluetoothChat extends Activity {
 	public void onStop() {
 		super.onStop();
 		if(D) Log.e(TAG, "-- ON STOP --");
+		Data.stopAutoupdate();
 	}
 
 	@Override
@@ -303,7 +306,7 @@ public class BluetoothChat extends Activity {
 				String readMessage = new String(readBuf, 0, msg.arg1);
 				mConversationArrayAdapter.add(mConnectedDeviceName+":  " + readMessage);
 				if(readMessage.equals("?"))
-					sendMessage(Data.getNextLine());
+					sendMessage(Data.getCurrentLine());
 				if(readMessage.equals("start"))
 					sendMessage("started");
 				if(readMessage.equals("stop"))
