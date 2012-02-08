@@ -20,7 +20,8 @@ public class XTextView extends TextView {
 		if(isInEditMode()) //dummy data for editor
 			this.setText("12.357");
 		else
-			this.setText(Double.toString(Data.getX()));
+			this.setText(Double.toString(Data.getX())); //data from datasource
+		
 		super.onDraw(canvas);
 	}
 

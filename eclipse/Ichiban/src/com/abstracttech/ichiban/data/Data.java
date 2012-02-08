@@ -9,15 +9,8 @@ import java.util.ArrayList;
 import com.abstracttech.ichiban.R;
 
 import android.content.res.Resources;
+import android.util.Log;
 
-/**
- * @author andraz
- *
- */
-/**
- * @author andraz
- *
- */
 /**
  * @author andraz
  *
@@ -25,19 +18,20 @@ import android.content.res.Resources;
 public class Data {
 	private static ArrayList<String> data=null;
 	private static int index=0;
-	
+
 	private static double x,y,z;
 	private static int rpm, turnRatio;
 
-	
+
 	public static void loadCSV(Resources res) throws IOException {
-	     InputStream inputStream = res.openRawResource(R.raw.data);
-	     BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-	    
-	    String line;
-	    while ((line = reader.readLine()) != null) {
-	      	data.add(line);
-	    }
+		InputStream inputStream = res.openRawResource(R.raw.data);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+		data=new ArrayList<String>();
+		
+		String line;
+		while ((line = reader.readLine()) != null) {
+			data.add(line);
+		}
 	}
 
 	private static String getNextLine()
@@ -52,14 +46,31 @@ public class Data {
 			index=0;
 		return data.get(retIndex);
 	}
-	
+
 	/**
-	 * this is for testing ui only
-	 * @param i new x value
+	 * load next line of data
 	 */
-	public static void update(double i)
+	public static void update()
 	{
-		x=i;	
+		try {
+			String line=null;
+
+			//if there is local data, load it, else use bluetooth
+			if(data!=null)
+				line=getNextLine();
+			else
+				; //todo: data from bluetooth
+
+			String[] values=line.split(",");	
+			x=Double.parseDouble(values[0]);
+			y=Double.parseDouble(values[1]);
+			z=Double.parseDouble(values[2]);
+			rpm=Integer.parseInt(values[3]);
+			turnRatio=Integer.parseInt(values[4]);
+		} catch (Exception e) {
+			e.printStackTrace();
+			Log.e("ICHIBAN", "something wrong with data");
+		}
 	}
 
 	public static double getX() {
