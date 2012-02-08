@@ -20,6 +20,8 @@
 
 package com.abstracttech.ichiban.server;
 
+import java.io.IOException;
+
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -107,6 +109,14 @@ public class BluetoothChat extends Activity {
 			Toast.makeText(this, "Bluetooth is not available", Toast.LENGTH_LONG).show();
 			finish();
 			return;
+		}
+		
+		//load CSV data
+		try {
+			Data.loadCSV(getResources());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
 
@@ -293,7 +303,7 @@ public class BluetoothChat extends Activity {
 				String readMessage = new String(readBuf, 0, msg.arg1);
 				mConversationArrayAdapter.add(mConnectedDeviceName+":  " + readMessage);
 				if(readMessage.equals("?"))
-					sendMessage("data");
+					sendMessage(Data.getNextLine());
 				if(readMessage.equals("start"))
 					sendMessage("started");
 				if(readMessage.equals("stop"))
