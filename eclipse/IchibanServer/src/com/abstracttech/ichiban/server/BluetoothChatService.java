@@ -15,6 +15,7 @@
  *  
  * NOTICE
  * THIS FILE WAS MODIFIED
+ * --just package name
  */
 
 package com.abstracttech.ichiban.server;
