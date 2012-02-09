@@ -26,6 +26,8 @@ public class Data {
 
 	private static double x,y,z;
 	private static int rpm, turnRatio;
+	
+	private static String btLine=null;
 
 
 	public static void loadCSV(Resources res) throws IOException {
@@ -64,7 +66,7 @@ public class Data {
 			if(data!=null)
 				line=getNextLine();
 			else
-				; //todo: data from bluetooth
+				line=btLine;
 
 			String[] values=line.split(",");	
 			x=Double.parseDouble(values[0]);
@@ -76,6 +78,12 @@ public class Data {
 			e.printStackTrace();
 			Log.e("ICHIBAN", "something wrong with data");
 		}
+	}
+	
+	public static void btUpdate(String line)
+	{
+		btLine=line;
+		update();
 	}
 	
 	/**
