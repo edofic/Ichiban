@@ -7,9 +7,9 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class XTextView extends TextView {
+public class RPMTextView extends TextView {
 
-	public XTextView(Context context, AttributeSet attrs) {
+	public RPMTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 	}
@@ -18,9 +18,9 @@ public class XTextView extends TextView {
 	protected void onDraw(Canvas canvas)
 	{
 		if(isInEditMode()) //dummy data for editor
-			this.setText("X: 0.000000");
+			this.setText("rpm: 53.567");
 		else
-			this.setText("X: " + Double.toString(Data.getX())); //data from datasource
+			this.setText("rpm: " + Double.toString(Data.getRpm())); //data from datasource
 		
 		super.onDraw(canvas);
 	}

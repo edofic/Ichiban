@@ -7,9 +7,9 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class XTextView extends TextView {
+public class WTVTextView extends TextView {
 
-	public XTextView(Context context, AttributeSet attrs) {
+	public WTVTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 	}
@@ -18,9 +18,9 @@ public class XTextView extends TextView {
 	protected void onDraw(Canvas canvas)
 	{
 		if(isInEditMode()) //dummy data for editor
-			this.setText("X: 0.000000");
+			this.setText("turn ratio: 7.135");
 		else
-			this.setText("X: " + Double.toString(Data.getX())); //data from datasource
+			this.setText("turn ratio: " + Double.toString(Data.getTurnRatio())); //data from datasource
 		
 		super.onDraw(canvas);
 	}

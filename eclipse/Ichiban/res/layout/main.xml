@@ -3,8 +3,26 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-    
+
     <com.abstracttech.ichiban.views.XTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+
+   <com.abstracttech.ichiban.views.YTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+   
+    <com.abstracttech.ichiban.views.ZTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+     <com.abstracttech.ichiban.views.RPMTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+      <com.abstracttech.ichiban.views.WTVTextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="0" />
@@ -16,17 +34,16 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start" 
-            android:onClick="startCar"/>
+            android:onClick="startCar"
+            android:text="Start" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Stop" 
-            android:onClick="stopCar"/>
-
+            android:onClick="stopCar"
+            android:text="Stop" />
     </LinearLayout>
-    
+
     <com.abstracttech.ichiban.views.DataSourceTextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -36,7 +53,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="tester" 
-        android:onClick="test"/>
+        android:onClick="test"
+        android:text="tester" />
 
 </LinearLayout>
