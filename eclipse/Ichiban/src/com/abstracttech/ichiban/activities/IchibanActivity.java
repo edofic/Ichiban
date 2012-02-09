@@ -35,11 +35,11 @@ public class IchibanActivity extends Activity {
 
 		setListeners();
 
-		try {
+		/*try {
 			Data.loadCSV(getResources());
 		} catch (Exception e) {
 			e.printStackTrace();
-		}
+		}*/
 
 		// Get local Bluetooth adapter
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
