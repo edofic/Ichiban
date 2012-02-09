@@ -45,6 +45,11 @@ public class Data {
 	{
 		data=null;
 	}
+	
+	public static boolean hasLocalData()
+	{
+		return data!=null;
+	}
 
 	private static String getNextLine()
 	{

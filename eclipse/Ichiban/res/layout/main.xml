@@ -26,6 +26,12 @@
             android:onClick="stopCar"/>
 
     </LinearLayout>
+    
+    <com.abstracttech.ichiban.views.DataSourceTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:textSize="30dp" />
 
     <Button
         android:layout_width="wrap_content"

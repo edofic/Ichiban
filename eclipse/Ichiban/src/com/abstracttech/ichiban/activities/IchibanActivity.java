@@ -1,6 +1,8 @@
 package com.abstracttech.ichiban.activities;
 
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.BluetoothChatService;
@@ -29,6 +31,9 @@ import android.widget.Toast;
 
 public class IchibanActivity extends Activity {
 
+	private static final int _UPDATE_INTERVAL = 300;
+	private static Timer timer=null; //for sending scheduled bt querries. class Data handles responses
+
 	/** Called when the activity is first created. */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +41,6 @@ public class IchibanActivity extends Activity {
 		setContentView(R.layout.main);
 
 		setListeners();
-
-		/*try {
-			Data.loadCSV(getResources());
-		} catch (Exception e) {
-			e.printStackTrace();
-		}*/
 
 		// Get local Bluetooth adapter
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -62,11 +61,37 @@ public class IchibanActivity extends Activity {
 		sendMessage("?");
 	}
 
+	/**
+	 * starts autoupdating
+	 * wheather is it over BT or local, depending on loaded data
+	 * in real application it would also send start command to the car
+	 * @param v view that called it; for use with buttons, not used
+	 */
 	public void startCar(View v) {
-		Data.startAutoupdate(300);
+		if(Data.hasLocalData())
+			Data.startAutoupdate(_UPDATE_INTERVAL);
+		else
+		{
+			timer = new Timer();
+			timer.scheduleAtFixedRate(new TimerTask() {
+				@Override
+				public void run() {
+					sendMessage("?"); 
+				}
+			}, 0, _UPDATE_INTERVAL);
+		}
 	}
 
+	/**
+	 * stops autoupdating
+	 * wheather is it over BT or local
+	 * in real application it would also send stop command to the car
+	 * @param v view that called it; for use with buttons, not used
+	 */
 	public void stopCar(View v) {
+		if(timer!=null)
+			timer.cancel();
+		timer=null;
 		Data.stopAutoupdate();
 	}
 
@@ -139,7 +164,7 @@ public class IchibanActivity extends Activity {
 	@Override
 	protected void onStop() {
 		super.onStop();
-		Data.stopAutoupdate();
+		stopCar(null);
 	}
 
 	@Override
