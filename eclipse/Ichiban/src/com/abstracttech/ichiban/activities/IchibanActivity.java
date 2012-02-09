@@ -58,7 +58,7 @@ public class IchibanActivity extends Activity {
 	}
 
 	public void test(View v) {
-		sendMessage("?");
+		Toast.makeText(this, "use IchibanActivity's test() to quickly test something ;)", Toast.LENGTH_LONG).show();
 	}
 
 	/**
