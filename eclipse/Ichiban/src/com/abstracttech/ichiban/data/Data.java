@@ -40,6 +40,11 @@ public class Data {
 			data.add(line);
 		}
 	}
+	
+	public static void destroyData()
+	{
+		data=null;
+	}
 
 	private static String getNextLine()
 	{

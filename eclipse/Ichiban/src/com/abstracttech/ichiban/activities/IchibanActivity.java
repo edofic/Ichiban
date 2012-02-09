@@ -1,5 +1,7 @@
 package com.abstracttech.ichiban.activities;
 
+import java.io.IOException;
+
 import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.BluetoothChatService;
 import com.abstracttech.ichiban.data.Data;
@@ -244,16 +246,6 @@ public class IchibanActivity extends Activity {
 		return true;
 	}
 
-	private void ensureDiscoverable() {
-		if(D) Log.d(TAG, "ensure discoverable");
-		if (mBluetoothAdapter.getScanMode() !=
-				BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) {
-			Intent discoverableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_DISCOVERABLE);
-			discoverableIntent.putExtra(BluetoothAdapter.EXTRA_DISCOVERABLE_DURATION, 300);
-			startActivity(discoverableIntent);
-		}
-	}
-
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -261,11 +253,15 @@ public class IchibanActivity extends Activity {
 			// Launch the DeviceListActivity to see devices and do scan
 			Intent serverIntent = new Intent(this, DeviceListActivity.class);
 			startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE);
+			Data.destroyData();
 			return true;
-		case R.id.discoverable:
-			// Ensure this device is discoverable by others
-			ensureDiscoverable();
-			return true;
+		case R.id.loadCSV:
+			//load data from local csv file
+			try {
+				Data.loadCSV(getResources());
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 		return false;
 	}

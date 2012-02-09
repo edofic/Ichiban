@@ -15,7 +15,7 @@ public final class R {
     }
     public static final class id {
         public static final int button_scan=0x7f070006;
-        public static final int discoverable=0x7f070008;
+        public static final int loadCSV=0x7f070008;
         public static final int new_devices=0x7f070005;
         public static final int paired_devices=0x7f070003;
         public static final int scan=0x7f070007;
@@ -44,6 +44,7 @@ public final class R {
          */
         public static final int connect=0x7f05000e;
         public static final int discoverable=0x7f05000f;
+        public static final int loadCSV=0x7f050010;
         public static final int none_found=0x7f05000a;
         public static final int none_paired=0x7f050009;
         public static final int not_connected=0x7f050002;
