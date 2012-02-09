@@ -135,7 +135,7 @@ public class BluetoothChat extends Activity {
 			if (mChatService == null) setupChat();
 		}
 		
-		Data.startAutoupdate(1000);
+		Data.startAutoupdate(300);
 	}
 
 	@Override

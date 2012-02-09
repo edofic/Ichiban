@@ -43,7 +43,7 @@ public class IchibanActivity extends Activity {
     @Override
     protected void onStart() {
     	super.onStart();
-    	Data.startAutoupdate(1000);
+    	Data.startAutoupdate(300);
     }
     
     @Override
