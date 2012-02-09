@@ -20,13 +20,13 @@ import android.util.Log;
 public class Data {
 	private static ArrayList<String> data=null;
 	private static int index=0;
-	
+
 	private static Timer timer;
 	private static boolean isAutoupdating=false;
 
 	private static double x,y,z;
 	private static int rpm, turnRatio;
-	
+
 	private static String btLine=null;
 
 
@@ -34,7 +34,7 @@ public class Data {
 		InputStream inputStream = res.openRawResource(R.raw.data);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 		data=new ArrayList<String>();
-		
+
 		String line;
 		while ((line = reader.readLine()) != null) {
 			data.add(line);
@@ -79,13 +79,13 @@ public class Data {
 			Log.e("ICHIBAN", "something wrong with data");
 		}
 	}
-	
+
 	public static void btUpdate(String line)
 	{
 		btLine=line;
 		update();
 	}
-	
+
 	/**
 	 * automaticaly update data in specified period
 	 * @param interval in miliseconds
@@ -94,24 +94,25 @@ public class Data {
 	{
 		if(isAutoupdating)
 			return;
-		
+
 		timer = new Timer();
-    	
-    	timer.scheduleAtFixedRate(new TimerTask() {
+
+		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
 				update(); 
 			}
 		}, 0, period);
-    	isAutoupdating=true;
+		isAutoupdating=true;
 	}
-	
+
 	/** stops automatic self-updates
 	 * 
 	 */
 	public static void stopAutoupdate()
 	{
-		timer.cancel();
+		if(timer!=null)
+			timer.cancel();
 		isAutoupdating=false;
 	}
 
@@ -134,7 +135,7 @@ public class Data {
 	public static int getTurnRatio() {
 		return turnRatio;
 	}
-	
+
 	public static boolean isAutoupdating(){
 		return isAutoupdating;
 	}
