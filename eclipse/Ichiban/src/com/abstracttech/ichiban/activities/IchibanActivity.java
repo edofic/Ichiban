@@ -33,7 +33,8 @@ public class IchibanActivity extends Activity {
 
 	private static final int _UPDATE_INTERVAL = 300;
 	private static Timer timer=null; //for sending scheduled bt querries. class Data handles responses
-
+	private static boolean bt_enabled=false;
+	
 	/** Called when the activity is first created. */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +71,9 @@ public class IchibanActivity extends Activity {
 	public void startCar(View v) {
 		if(Data.hasLocalData())
 			Data.startAutoupdate(_UPDATE_INTERVAL);
+		else if (mChatService.getState() != BluetoothChatService.STATE_CONNECTED) {
+			Toast.makeText(this, R.string.not_connected, Toast.LENGTH_SHORT).show();
+		}
 		else
 		{
 			timer = new Timer();
@@ -127,16 +131,20 @@ public class IchibanActivity extends Activity {
 	protected void onStart() {
 		super.onStart();
 
-		// If BT is not on, request that it be enabled.
-		// setupChat() will then be called during onActivityResult
-		if (!mBluetoothAdapter.isEnabled()) {
-			Intent enableIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
-			startActivityForResult(enableIntent, REQUEST_ENABLE_BT);
-			// Otherwise, setup the chat session
-		} else {
-			if (mChatService == null) setupChat();
+		//if have used bt before
+		if (bt_enabled) {
+			// If BT is not on, request that it be enabled.
+			// setupChat() will then be called during onActivityResult
+			if (!mBluetoothAdapter.isEnabled()) {
+				Intent enableIntent = new Intent(
+						BluetoothAdapter.ACTION_REQUEST_ENABLE);
+				startActivityForResult(enableIntent, REQUEST_ENABLE_BT);
+				// Otherwise, setup the chat session
+			} else {
+				if (mChatService == null)
+					setupChat();
+			}
 		}
-
 	}
 
 	private void setupChat() {
@@ -275,6 +283,8 @@ public class IchibanActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 		case R.id.scan:
+			bt_enabled=true;
+			onStart();
 			// Launch the DeviceListActivity to see devices and do scan
 			Intent serverIntent = new Intent(this, DeviceListActivity.class);
 			startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE);
@@ -284,6 +294,7 @@ public class IchibanActivity extends Activity {
 			//load data from local csv file
 			try {
 				Data.loadCSV(getResources());
+				bt_enabled=false;
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
