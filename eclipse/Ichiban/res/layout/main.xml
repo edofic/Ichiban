@@ -43,14 +43,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="stopCar"
-            android:text="0"
-            android:textSize="30dp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="test"
-            android:text="tester" />
+            android:text="Stop" >
+        </Button>
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="test"
+        android:text="tester" />
 
 </LinearLayout>
