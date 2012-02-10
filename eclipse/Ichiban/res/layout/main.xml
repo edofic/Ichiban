@@ -1,4 +1,3 @@
-a
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
@@ -42,17 +41,16 @@ a
 
         <Button
             android:layout_width="wrap_content"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="stopCar"
-            android:tcom.abstracttech.ichiban.views.textviews.DataSourceTextViews.textviews.DataSourceTextViews.DataSourceTextView=""
-            android:text="0"
-            android:textSize="30dp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="test"
-            android:text="tester" />
+            android:text="Stop" >
+        </Button>
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="test"
+        android:text="tester" />
+
+</LinearLayout>
