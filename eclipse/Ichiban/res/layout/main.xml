@@ -1,10 +1,31 @@
+a
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-    
-    <com.abstracttech.ichiban.views.XTextView
+
+    <com.abstracttech.ichiban.views.textviews.XTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+
+    <com.abstracttech.ichiban.views.textviews.YTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+
+    <com.abstracttech.ichiban.views.textviews.ZTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+
+    <com.abstracttech.ichiban.views.textviews.RPMTextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+
+    <com.abstracttech.ichiban.views.textviews.WTVTextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="0" />
@@ -16,21 +37,22 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Start" 
-            android:onClick="startCar"/>
+            android:onClick="startCar"
+            android:text="Start" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="stopCar"
+            android:tcom.abstracttech.ichiban.views.textviews.DataSourceTextViews.textviews.DataSourceTextViews.DataSourceTextView=""
+            android:text="0"
+            android:textSize="30dp" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Stop" 
-            android:onClick="stopCar"/>
-
+            android:onClick="test"
+            android:text="tester" />
     </LinearLayout>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="tester" 
-        android:onClick="test"/>
-
-</LinearLayout>

@@ -24,8 +24,7 @@ public class Data {
 	private static Timer timer;
 	private static boolean isAutoupdating=false;
 
-	private static double x,y,z;
-	private static int rpm, turnRatio;
+	private static double x,y,z, rpm, turnRatio;
 
 	private static String btLine=null;
 
@@ -39,6 +38,16 @@ public class Data {
 		while ((line = reader.readLine()) != null) {
 			data.add(line);
 		}
+	}
+	
+	public static void destroyData()
+	{
+		data=null;
+	}
+	
+	public static boolean hasLocalData()
+	{
+		return data!=null;
 	}
 
 	private static String getNextLine()
@@ -72,8 +81,8 @@ public class Data {
 			x=Double.parseDouble(values[0]);
 			y=Double.parseDouble(values[1]);
 			z=Double.parseDouble(values[2]); 
-			rpm=Integer.parseInt(values[3]);
-			turnRatio=Integer.parseInt(values[4]);
+			rpm=Double.parseDouble(values[3]);
+			turnRatio=Double.parseDouble(values[4]);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Log.e("ICHIBAN", "something wrong with data");
@@ -128,11 +137,11 @@ public class Data {
 		return z;
 	}
 
-	public static int getRpm() {
+	public static double getRpm() {
 		return rpm;
 	}
 
-	public static int getTurnRatio() {
+	public static double getTurnRatio() {
 		return turnRatio;
 	}
 
