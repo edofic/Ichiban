@@ -2,30 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" 
-    android:background="@drawable/app_bg">
+    android:background="@drawable/app_bg"
+    android:orientation="vertical" >
 
-    <com.abstracttech.ichiban.views.textviews.XTextView
+    <com.abstracttech.ichiban.views.XTextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="0" />
 
-    <com.abstracttech.ichiban.views.textviews.YTextView
+    <com.abstracttech.ichiban.views.YTextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="0" />
 
-    <com.abstracttech.ichiban.views.textviews.ZTextView
+    <com.abstracttech.ichiban.views.ZTextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="0" />
 
-    <com.abstracttech.ichiban.views.textviews.RPMTextView
+    <com.abstracttech.ichiban.views.RPMTextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="0" />
 
-    <com.abstracttech.ichiban.views.textviews.WTVTextView
+    <com.abstracttech.ichiban.views.WTVTextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="0" />
@@ -53,5 +53,6 @@
         android:layout_height="wrap_content"
         android:onClick="test"
         android:text="tester" />
+
 
 </LinearLayout>

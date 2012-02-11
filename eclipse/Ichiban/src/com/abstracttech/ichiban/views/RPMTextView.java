@@ -1,4 +1,4 @@
-package com.abstracttech.ichiban.views.textviews;
+package com.abstracttech.ichiban.views;
 
 import com.abstracttech.ichiban.data.Data;
 
@@ -7,9 +7,9 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class WTVTextView extends TextView {
+public class RPMTextView extends TextView {
 
-	public WTVTextView(Context context, AttributeSet attrs) {
+	public RPMTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 	}
@@ -18,9 +18,9 @@ public class WTVTextView extends TextView {
 	protected void onDraw(Canvas canvas)
 	{
 		if(isInEditMode()) //dummy data for editor
-			this.setText("turn ratio: 7.135");
+			this.setText("rpm: 53.567");
 		else
-			this.setText("turn ratio: " + Double.toString(Data.getTurnRatio())); //data from datasource
+			this.setText("rpm: " + Double.toString(Data.getRpm())); //data from datasource
 		
 		super.onDraw(canvas);
 	}

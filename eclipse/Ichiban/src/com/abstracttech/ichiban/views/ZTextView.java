@@ -1,4 +1,4 @@
-package com.abstracttech.ichiban.views.textviews;
+package com.abstracttech.ichiban.views;
 
 import com.abstracttech.ichiban.data.Data;
 
@@ -7,9 +7,9 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class RPMTextView extends TextView {
+public class ZTextView extends TextView {
 
-	public RPMTextView(Context context, AttributeSet attrs) {
+	public ZTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 	}
@@ -18,9 +18,9 @@ public class RPMTextView extends TextView {
 	protected void onDraw(Canvas canvas)
 	{
 		if(isInEditMode()) //dummy data for editor
-			this.setText("rpm: 53.567");
+			this.setText("Z: 0.35337");
 		else
-			this.setText("rpm: " + Double.toString(Data.getRpm())); //data from datasource
+			this.setText("Z: " + Double.toString(Data.getZ())); //data from datasource
 		
 		super.onDraw(canvas);
 	}

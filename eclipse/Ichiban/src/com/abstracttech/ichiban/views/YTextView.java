@@ -1,4 +1,4 @@
-package com.abstracttech.ichiban.views.textviews;
+package com.abstracttech.ichiban.views;
 
 import com.abstracttech.ichiban.data.Data;
 
@@ -7,9 +7,9 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class XTextView extends TextView {
+public class YTextView extends TextView {
 
-	public XTextView(Context context, AttributeSet attrs) {
+	public YTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 	}
@@ -18,9 +18,9 @@ public class XTextView extends TextView {
 	protected void onDraw(Canvas canvas)
 	{
 		if(isInEditMode()) //dummy data for editor
-			this.setText("X: 0.000000");
+			this.setText("Y: -0.146818");
 		else
-			this.setText("X: " + Double.toString(Data.getX())); //data from datasource
+			this.setText("Y: " + Double.toString(Data.getY())); //data from datasource
 		
 		super.onDraw(canvas);
 	}
