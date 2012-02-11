@@ -8,9 +8,10 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageView;
 import android.graphics.BitmapFactory;
 
-public class Gmeter extends View {
+public class Gmeter extends ImageView {
 	private Bitmap dot;
 	private float dotHeight, dotWidth;
 
@@ -24,7 +25,7 @@ public class Gmeter extends View {
 	
 	@Override
 	protected void onDraw(Canvas canvas){
-		
+		super.onDraw(canvas);
 		
 		float dataX =(float) Data.getX();
 	
@@ -34,8 +35,6 @@ public class Gmeter extends View {
 		x+= dataX * getWidth() /2f;
 		
 		canvas.drawBitmap(dot, x, y, null);
-		
-		super.onDraw(canvas);
 	}
 
 }

@@ -55,8 +55,8 @@
         android:text="tester" />
 
     <com.abstracttech.ichiban.views.Gmeter
-        android:layout_width="496dp"
-        android:layout_height="496dp"
-        android:background="@drawable/g_bg" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/g_bg" />
 
 </LinearLayout>
