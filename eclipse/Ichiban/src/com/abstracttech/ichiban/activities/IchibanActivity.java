@@ -31,7 +31,7 @@ import android.widget.Toast;
 
 public class IchibanActivity extends Activity {
 
-	private static final int _UPDATE_INTERVAL = 300;
+	public static final int _UPDATE_INTERVAL = 300;
 	private static Timer timer=null; //for sending scheduled bt querries. class Data handles responses
 	private static boolean bt_enabled=false;
 	
