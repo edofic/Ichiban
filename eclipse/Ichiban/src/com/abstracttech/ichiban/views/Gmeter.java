@@ -27,14 +27,11 @@ public class Gmeter extends ImageView {
 	protected void onDraw(Canvas canvas){
 		super.onDraw(canvas);
 		
-		float dataX =(float) Data.getX();
-	
-		float x = (getWidth()-dotWidth)/2f;
-		float y = (getHeight()-dotHeight)/2f;
+		canvas.drawBitmap(dot, 
+				(float)(getWidth()*(1+Data.getX())-dotWidth)/2f, 
+				(float)(getHeight()*(1+Data.getY())-dotHeight)/2f, null);
 		
-		x+= dataX * getWidth() /2f;
-		
-		canvas.drawBitmap(dot, x, y, null);
+		this.invalidate();
 	}
 
 }
