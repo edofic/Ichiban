@@ -5,30 +5,38 @@
     android:background="@drawable/app_bg"
     android:orientation="vertical" >
 
-    <com.abstracttech.ichiban.views.XTextView
+    <LinearLayout
+        android:id="@+id/testOnly"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="0" />
+        android:orientation="vertical"
+        android:visibility="gone" >
 
-    <com.abstracttech.ichiban.views.YTextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="0" />
+        <com.abstracttech.ichiban.views.XTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0" />
 
-    <com.abstracttech.ichiban.views.ZTextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="0" />
+        <com.abstracttech.ichiban.views.YTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0" />
 
-    <com.abstracttech.ichiban.views.RPMTextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="0" />
+        <com.abstracttech.ichiban.views.ZTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0" />
 
-    <com.abstracttech.ichiban.views.WTVTextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="0" />
+        <com.abstracttech.ichiban.views.RPMTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0" />
+
+        <com.abstracttech.ichiban.views.WTVTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -48,11 +56,21 @@
         </Button>
     </LinearLayout>
 
-    <Button
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="test"
-        android:text="tester" />
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="test"
+            android:text="tester" />
+
+        <com.abstracttech.ichiban.views.FPStextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="inifinite :P" />
+    </LinearLayout>
 
     <com.abstracttech.ichiban.views.Gmeter
         android:layout_width="wrap_content"
