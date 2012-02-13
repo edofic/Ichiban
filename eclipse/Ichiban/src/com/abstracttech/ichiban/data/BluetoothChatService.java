@@ -15,7 +15,7 @@
  *  
  * NOTICE
  * THIS FILE WAS MODIFIED
- * --just package name
+ * --just package name and redirect from main activity to bt handling class
  */
 
 package com.abstracttech.ichiban.data;
@@ -88,7 +88,7 @@ public class BluetoothChatService {
         mState = state;
 
         // Give the new state to the Handler so the UI Activity can update
-        mHandler.obtainMessage(IchibanActivity.MESSAGE_STATE_CHANGE, state, -1).sendToTarget();
+        mHandler.obtainMessage(BluetoothEx.MESSAGE_STATE_CHANGE, state, -1).sendToTarget();
     }
 
     /**
@@ -160,9 +160,9 @@ public class BluetoothChatService {
         mConnectedThread.start();
 
         // Send the name of the connected device back to the UI Activity
-        Message msg = mHandler.obtainMessage(IchibanActivity.MESSAGE_DEVICE_NAME);
+        Message msg = mHandler.obtainMessage(BluetoothEx.MESSAGE_DEVICE_NAME);
         Bundle bundle = new Bundle();
-        bundle.putString(IchibanActivity.DEVICE_NAME, device.getName());
+        bundle.putString(BluetoothEx.DEVICE_NAME, device.getName());
         msg.setData(bundle);
         mHandler.sendMessage(msg);
 
@@ -204,9 +204,9 @@ public class BluetoothChatService {
         setState(STATE_LISTEN);
 
         // Send a failure message back to the Activity
-        Message msg = mHandler.obtainMessage(IchibanActivity.MESSAGE_TOAST);
+        Message msg = mHandler.obtainMessage(BluetoothEx.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
-        bundle.putString(IchibanActivity.TOAST, "Unable to connect device");
+        bundle.putString(BluetoothEx.TOAST, "Unable to connect device");
         msg.setData(bundle);
         mHandler.sendMessage(msg);
     }
@@ -218,9 +218,9 @@ public class BluetoothChatService {
         setState(STATE_LISTEN);
 
         // Send a failure message back to the Activity
-        Message msg = mHandler.obtainMessage(IchibanActivity.MESSAGE_TOAST);
+        Message msg = mHandler.obtainMessage(BluetoothEx.MESSAGE_TOAST);
         Bundle bundle = new Bundle();
-        bundle.putString(IchibanActivity.TOAST, "Device connection was lost");
+        bundle.putString(BluetoothEx.TOAST, "Device connection was lost");
         msg.setData(bundle);
         mHandler.sendMessage(msg);
     }
@@ -403,7 +403,7 @@ public class BluetoothChatService {
                     bytes = mmInStream.read(buffer);
 
                     // Send the obtained bytes to the UI Activity
-                    mHandler.obtainMessage(IchibanActivity.MESSAGE_READ, bytes, -1, buffer)
+                    mHandler.obtainMessage(BluetoothEx.MESSAGE_READ, bytes, -1, buffer)
                             .sendToTarget();
                 } catch (IOException e) {
                     Log.e(TAG, "disconnected", e);
@@ -422,7 +422,7 @@ public class BluetoothChatService {
                 mmOutStream.write(buffer);
 
                 // Share the sent message back to the UI Activity
-                mHandler.obtainMessage(IchibanActivity.MESSAGE_WRITE, -1, -1, buffer)
+                mHandler.obtainMessage(BluetoothEx.MESSAGE_WRITE, -1, -1, buffer)
                         .sendToTarget();
             } catch (IOException e) {
                 Log.e(TAG, "Exception during write", e);
