@@ -72,9 +72,19 @@
             android:text="inifinite :P" />
     </LinearLayout>
 
-    <com.abstracttech.ichiban.views.Gmeter
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/g_bg" />
+        android:layout_height="wrap_content" >
+
+        <com.abstracttech.ichiban.views.Gmeter
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/g_bg" />
+        
+       <com.abstracttech.ichiban.views.PowerButton
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/power_red" />
+    </LinearLayout>
 
 </LinearLayout>
