@@ -18,25 +18,29 @@ import android.view.View;;
 
 public class Graph extends View {
 	
-	private Method graphDataMethod;
-	private Stack data;
-	private long time = 0;
+	private Method graphDataMethod;  	// dataSream method
+	private Stack data;					// Stack of data to be drawn
+	private long time = 0;				// local timer
 
 	/**
 	 * 
 	 * @param data = Method in Data. This determinate which data is used 
 	 */
-	public Graph(Context context, AttributeSet attrs, Method data) {
+	public Graph(Context context, AttributeSet attrs, Method dataSource) {
 		super(context, attrs);
-		this.graphDataMethod = data; // set the method in Data. This sets data to be shown
+		this.graphDataMethod = dataSource; // set the method in Data. This sets data to be shown
 		data = new Stack();
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * 
+	 * @param dataSource = Method in Data. This determinate which data is used 
+	 */
 	public void ChangeDataSorce(Method dataSource)
 	{
-		graphDataMethod = dataSource;
-		data.removeAllElements();		
+		graphDataMethod = dataSource;		// determination new dataSorce
+		data.removeAllElements();			// restart data
 	}
 
 	@Override
@@ -46,29 +50,28 @@ public class Graph extends View {
 		{}		
 		else
 		{
-			time += SystemClock.currentThreadTimeMillis();
+			time += SystemClock.currentThreadTimeMillis();	// updating local timer
 			
-			if (time > IchibanActivity._UPDATE_INTERVAL)
+			if (time > IchibanActivity._UPDATE_INTERVAL)	//data updated every update interval
 			{
 				time = 0;
-				data.push(graphDataMethod);
-				if (data.size() > 20000 / (float)IchibanActivity._UPDATE_INTERVAL)
+				data.push(graphDataMethod);												//updating data from predefined source
+				if (data.size() > 20000 / (float)IchibanActivity._UPDATE_INTERVAL)		//to store only 20 seconds of data
 					data.pop();
 			}
 							
-			float[] points = new float[data.size() * 4];
-			for (int i = 0; i < data.size() - 1; i++)
+			float[] points = new float[data.size() * 4];	//array of points of graph
+			for (int i = 0; i < data.size() - 1; i++)		//Set points to draw lines
 			{
-				points[i * 4] = this.getLeft() + this.getWidth() * i / (float)data.size();
-				points[i * 4 + 1] = (float) (this.getTop() + this.getHeight() * (1 - Double.parseDouble(data.elementAt(i).toString())));
-				points[i * 4 + 2] = this.getLeft() + this.getWidth() * (i + 1) / (float)data.size();
-				points[i * 4 + 3] = (float) (this.getTop() + this.getHeight() * (1 - Double.parseDouble(data.elementAt(i+1).toString())));
+				points[i * 4] = this.getLeft() + this.getWidth() * i / (float)data.size();													//x0
+				points[i * 4 + 1] = (float) (this.getTop() + this.getHeight() * (1 - Double.parseDouble(data.elementAt(i).toString())));	//y0
+				points[i * 4 + 2] = this.getLeft() + this.getWidth() * (i + 1) / (float)data.size();										//x1
+				points[i * 4 + 3] = (float) (this.getTop() + this.getHeight() * (1 - Double.parseDouble(data.elementAt(i+1).toString())));	//y1
 			}				
 			
 			Paint p = new Paint();
-			p.setColor(Color.RED);
-			canvas.drawCircle(100,100,20, p);
-
+			p.setColor(Color.RED);							//setting paint (Color, stroke...) and drawing the lines
+			p.setStrokeWidth(4);
 			canvas.drawLines(points, p);
 		}
 		
