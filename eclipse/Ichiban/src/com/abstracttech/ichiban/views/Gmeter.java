@@ -22,6 +22,9 @@ public class Gmeter extends ImageView {
 	public Gmeter(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
+		if(isInEditMode())
+			return;
+
 		dot = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.g_dot);
 		dotWidth = dot.getWidth();
 		dotHeight = dot.getHeight();
@@ -29,12 +32,15 @@ public class Gmeter extends ImageView {
 		lastX=newX();
 		lastY=newY();
 
-		lastUpdate=System.currentTimeMillis();
 	}
 
 	@Override
 	protected void onDraw(Canvas canvas){
+		
 		super.onDraw(canvas);
+		
+		if(isInEditMode())
+			return;
 
 		float cx = newX();
 		float cy = newY();
@@ -43,22 +49,22 @@ public class Gmeter extends ImageView {
 		canvas.drawBitmap(dot, 
 				lastX + (cx - lastX)*(float)(nt-lastUpdate)/inter, 
 				lastY + (cy - lastY)*(float)(nt-lastUpdate)/inter, null);
-		
+
 		if((nt-lastUpdate)>=inter)
 		{
 			lastX=cx;
 			lastY=cy;
 			lastUpdate=nt;
 		}
-	
+
 		this.invalidate();
 	}
-	
+
 	private float newX()
 	{
 		return (float)(getWidth()*(1+Data.getX())-dotWidth)/2f; //current x
 	}
-	
+
 	private float newY()
 	{
 		return (float)(getHeight()*(1+Data.getY())-dotHeight)/2f; //current x
