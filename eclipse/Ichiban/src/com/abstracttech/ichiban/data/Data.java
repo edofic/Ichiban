@@ -144,6 +144,26 @@ public class Data {
 	public static double getTurnRatio() {
 		return turnRatio;
 	}
+	
+	public static double getXPercentage() {
+		return x;
+	}
+
+	public static double getYPercentage() {
+		return y;
+	}
+
+	public static double getZPercentage() {
+		return z;
+	}
+
+	public static double getRpmPercentage() {
+		return rpm / 100.f;
+	}
+
+	public static double getTurnRatioPercentage() {
+		return turnRatio / 10.f;
+	}
 
 	public static boolean isAutoupdating(){
 		return isAutoupdating;
