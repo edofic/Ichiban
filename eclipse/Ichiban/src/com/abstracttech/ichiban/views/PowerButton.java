@@ -10,6 +10,7 @@ import android.view.View.OnClickListener;
 public class PowerButton extends ImageView implements OnClickListener {
 	
 	private int bg=R.drawable.power_red;
+	private OnClickListener externalOnClickListener;
 
 	public PowerButton(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -35,5 +36,10 @@ public class PowerButton extends ImageView implements OnClickListener {
 		}
 		
 		this.setImageResource(bg);
+		externalOnClickListener.onClick(v);
+	}
+
+	public void setExternalOnClickListener(OnClickListener externalOnClickListener) {
+		this.externalOnClickListener = externalOnClickListener;
 	}
 }

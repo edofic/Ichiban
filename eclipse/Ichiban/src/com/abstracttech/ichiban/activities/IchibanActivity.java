@@ -8,6 +8,7 @@ import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.BluetoothChatService;
 import com.abstracttech.ichiban.data.BluetoothEx;
 import com.abstracttech.ichiban.data.Data;
+import com.abstracttech.ichiban.views.PowerButton;
 
 
 import android.app.Activity;
@@ -34,6 +35,7 @@ public class IchibanActivity extends Activity {
 	private BluetoothEx bt=new BluetoothEx();
 
 	public static final int _UPDATE_INTERVAL = 300;
+	private boolean running=false;
 	
 	/** Called when the activity is first created. */
 	@Override
@@ -44,10 +46,25 @@ public class IchibanActivity extends Activity {
 		setListeners();
 
 		bt.onCreate(this);
+		
+		running=false;
 	}
 
 	private void setListeners(){
-		//any event listener goes here
+		((PowerButton)findViewById(R.id.power_button)).setExternalOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				if(running==false)
+				{
+					startCar(v);
+					running=true;
+				}
+				else
+				{
+					stopCar(v);
+					running=false;
+				}
+			}});
 	}
 
 	public void test(View v) {
