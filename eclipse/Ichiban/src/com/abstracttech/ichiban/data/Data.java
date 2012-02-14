@@ -20,17 +20,32 @@ import android.util.Log;
 public class Data {
 	private static ArrayList<String> data=null;
 	private static int index=0;
+	private static int rate;
 
 	private static Timer timer;
 	private static boolean isAutoupdating=false;
 
 	private static double x,y,z, rpm, turnRatio;
+	private static double locX, locY, locZ, locRpm, locTurn;
 
 	private static String btLine=null;
 
 
 	public static void loadCSV(Resources res) throws IOException {
 		InputStream inputStream = res.openRawResource(R.raw.data);
+		rate=300;
+		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+		data=new ArrayList<String>();
+
+		String line;
+		while ((line = reader.readLine()) != null) {
+			data.add(line);
+		}
+	}
+	
+	public static void loadDenseCSV(Resources res) throws IOException {
+		InputStream inputStream = res.openRawResource(R.raw.data35);
+		rate=35;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 		data=new ArrayList<String>();
 
@@ -66,7 +81,7 @@ public class Data {
 	/**
 	 * load next line of data
 	 */
-	public static void update()
+	private static void updateInternal()
 	{
 		try {
 			String line=null;
@@ -78,20 +93,30 @@ public class Data {
 				line=btLine;
 
 			String[] values=line.split(",");	
-			x=Double.parseDouble(values[0]);
-			y=Double.parseDouble(values[1]);
-			z=Double.parseDouble(values[2]); 
-			rpm=Double.parseDouble(values[3]);
-			turnRatio=Double.parseDouble(values[4]);
+			locX=Double.parseDouble(values[0]);
+			locY=Double.parseDouble(values[1]);
+			locZ=Double.parseDouble(values[2]); 
+			locRpm=Double.parseDouble(values[3]);
+			locTurn=Double.parseDouble(values[4]);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Log.e("ICHIBAN", "something wrong with data");
 		}
 	}
+	
+	public static void update()
+	{
+		x=locX;
+		y=locY;
+		z=locZ;
+		rpm=locRpm;
+		turnRatio=locTurn;
+	}
 
 	public static void btUpdate(String line)
 	{
 		btLine=line;
+		updateInternal();
 		update();
 	}
 
@@ -105,6 +130,13 @@ public class Data {
 			return;
 
 		timer = new Timer();
+		
+		timer.scheduleAtFixedRate(new TimerTask() {
+			@Override
+			public void run() {
+				updateInternal(); 
+			}
+		}, 0, rate);
 
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override

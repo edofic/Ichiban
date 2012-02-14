@@ -29,5 +29,9 @@
         android:id="@+id/loadCSV"
         android:icon="@android:drawable/ic_input_add"
         android:title="@string/loadCSV"></item>
+    <item
+        android:id="@+id/loadDenseCSV"
+        android:icon="@android:drawable/ic_input_add"
+        android:title="@string/loadDenseCSV"></item>
 
 </menu>

@@ -17,9 +17,10 @@ import android.widget.Toast;
 
 import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.activities.DeviceListActivity;
+import com.abstracttech.ichiban.activities.IchibanActivity;
 
 public class BluetoothEx {
-	public static final int _UPDATE_INTERVAL = 300;
+	public static final int _UPDATE_INTERVAL = IchibanActivity._UPDATE_INTERVAL;
 	private static Timer timer=null; //for sending scheduled bt querries. class Data handles responses
 	private static boolean bt_enabled=false;
 	private Activity parrent;
@@ -260,6 +261,14 @@ public class BluetoothEx {
 			//load data from local csv file
 			try {
 				Data.loadCSV(parrent.getResources());
+				bt_enabled=false;
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		case R.id.loadDenseCSV:
+			//load data from local csv file
+			try {
+				Data.loadDenseCSV(parrent.getResources());
 				bt_enabled=false;
 			} catch (IOException e) {
 				e.printStackTrace();
