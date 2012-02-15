@@ -1,35 +1,19 @@
 package com.abstracttech.ichiban.activities;
 
-import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import com.abstracttech.ichiban.R;
-import com.abstracttech.ichiban.data.BluetoothChatService;
-import com.abstracttech.ichiban.data.BluetoothEx;
-import com.abstracttech.ichiban.data.Data;
-import com.abstracttech.ichiban.views.PowerButton;
-
-
 import android.app.Activity;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.abstracttech.ichiban.R;
+import com.abstracttech.ichiban.data.BluetoothEx;
+import com.abstracttech.ichiban.data.Data;
+import com.abstracttech.ichiban.views.PowerButton;
 
 public class IchibanActivity extends Activity {
 	private BluetoothEx bt=new BluetoothEx();
