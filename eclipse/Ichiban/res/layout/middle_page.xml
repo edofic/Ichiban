@@ -1,13 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/testOnly"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Middle Text"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:orientation="vertical"
+        android:visibility="gone" >
+
+        <com.abstracttech.ichiban.views.XTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0" />
+
+        <com.abstracttech.ichiban.views.YTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0" />
+
+        <com.abstracttech.ichiban.views.ZTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0" />
+
+        <com.abstracttech.ichiban.views.RPMTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0" />
+
+        <com.abstracttech.ichiban.views.WTVTextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="0" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="test"
+            android:text="tester" />
+
+        <com.abstracttech.ichiban.views.FPStextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="inifinite :P" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <com.abstracttech.ichiban.views.Gmeter
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/g_bg" />
+
+
+        <com.abstracttech.ichiban.views.PowerButton
+            android:id="@+id/power_button"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@drawable/power_red" />
+
+    </LinearLayout>
 
 </LinearLayout>
