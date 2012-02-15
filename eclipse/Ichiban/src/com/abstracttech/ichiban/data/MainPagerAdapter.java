@@ -1,6 +1,7 @@
 package com.abstracttech.ichiban.data;
 
 import com.abstracttech.ichiban.R;
+import com.abstracttech.ichiban.views.PowerButton;
 
 import android.content.Context;
 import android.os.Parcelable;
@@ -15,47 +16,47 @@ public class MainPagerAdapter extends PagerAdapter {
 	public int getCount() {
 		return 3;
 	}
-	
+
 	public Object instantiateItem(View collection, int position) {
-		 
-        LayoutInflater inflater = (LayoutInflater) collection.getContext()
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        int resId = 0;
-        switch (position) {
-        case 0:
-            resId = R.layout.left_page;
-            break;
-        case 1:
-            resId = R.layout.middle_page;
-            break;
-        case 2:
-            resId = R.layout.right_page;
-            break;
+		LayoutInflater inflater = (LayoutInflater) collection.getContext()
+				.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-        }
+		int resId = 0;
 
-        View view = inflater.inflate(resId, null);
+		switch (position) {
+		case 0:
+			resId = R.layout.left_page;
+			break;
+		case 1:
+			resId = R.layout.middle_page;
+			break;
+		case 2:
+			resId = R.layout.right_page;
+			break;
+		}
 
-        ((ViewPager) collection).addView(view, 0);
+		View view = inflater.inflate(resId, null);
 
-        return view;
-    }
+		((ViewPager) collection).addView(view, 0);
 
-	 @Override
-     public void destroyItem(View arg0, int arg1, Object arg2) {
-         ((ViewPager) arg0).removeView((View) arg2);
+		return view;
+	}
 
-     }
+	@Override
+	public void destroyItem(View arg0, int arg1, Object arg2) {
+		((ViewPager) arg0).removeView((View) arg2);
 
-     @Override
-     public boolean isViewFromObject(View arg0, Object arg1) {
-         return arg0 == ((View) arg1);
+	}
 
-     }
+	@Override
+	public boolean isViewFromObject(View arg0, Object arg1) {
+		return arg0 == ((View) arg1);
 
-     @Override
-     public Parcelable saveState() {
-         return null;
-     }
+	}
+
+	@Override
+	public Parcelable saveState() {
+		return null;
+	}
 }

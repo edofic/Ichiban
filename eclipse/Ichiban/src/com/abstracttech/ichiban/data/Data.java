@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -12,6 +13,7 @@ import com.abstracttech.ichiban.R;
 
 import android.content.res.Resources;
 import android.util.Log;
+import android.view.View;
 
 /**
  * @author andraz
@@ -24,6 +26,7 @@ public class Data {
 
 	private static Timer timer;
 	private static boolean isAutoupdating=false;
+	private static List<View> clients = new ArrayList<View>();
 
 	private static double x,y,z, rpm, turnRatio;
 	private static double locX, locY, locZ, locRpm, locTurn;
@@ -111,6 +114,10 @@ public class Data {
 		z=locZ;
 		rpm=locRpm;
 		turnRatio=locTurn;
+		
+		//notify clients
+		for(View v : clients)
+			v.postInvalidate();
 	}
 
 	public static void btUpdate(String line)
@@ -155,6 +162,10 @@ public class Data {
 		if(timer!=null)
 			timer.cancel();
 		isAutoupdating=false;
+	}
+	
+	public static void subscribe(View v){
+		clients.add(v);
 	}
 
 	public static double getX() {

@@ -1,54 +1,74 @@
 package com.abstracttech.ichiban.activities;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Toast;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.BluetoothEx;
 import com.abstracttech.ichiban.data.Data;
-import com.abstracttech.ichiban.views.PowerButton;
+import com.abstracttech.ichiban.data.MainPagerAdapter;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class IchibanActivity extends Activity {
 	private BluetoothEx bt=new BluetoothEx();
+	private static List<View> clients = new ArrayList<View>();
 
 	public static final int _UPDATE_INTERVAL = 300;
-	private boolean running=false;
-	
-	/** Called when the activity is first created. */
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main);
+	private static boolean running=false;
 
-		setListeners();
+	public static boolean isRunning(){
+		return running;
+	}
+
+	public static void subscribe(View v){
+		clients.add(v);
+	}
+
+	private void notifyClients()
+	{
+		for(View v : clients)
+			v.postInvalidate();
+	}
+
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.pager);
+
+		//load pages
+		MainPagerAdapter adapter = new MainPagerAdapter();
+		ViewPager myPager = (ViewPager) findViewById(R.id.mypager);
+		myPager.setAdapter(adapter);
+		myPager.setCurrentItem(1);
 
 		bt.onCreate(this);
-		
+
 		running=false;
 	}
 
-	private void setListeners(){
-		((PowerButton)findViewById(R.id.power_button)).setExternalOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				if(running==false)
-				{
-					startCar(v);
-					running=true;
-				}
-				else
-				{
-					stopCar(v);
-					running=false;
-				}
-			}});
+	public void powerButtonClick(View v){
+
+		if(running==false)
+		{
+			startCar(v);
+			running=true;
+		}
+		else
+		{
+			stopCar(v);
+			running=false;
+		}
+		notifyClients();
 	}
 
 	public void test(View v) {

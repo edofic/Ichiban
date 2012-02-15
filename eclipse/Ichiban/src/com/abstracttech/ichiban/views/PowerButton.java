@@ -1,45 +1,30 @@
 package com.abstracttech.ichiban.views;
 
 import com.abstracttech.ichiban.R;
+import com.abstracttech.ichiban.activities.IchibanActivity;
+
 import android.content.Context;
+import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.ImageView;
-import android.view.View;
-import android.view.View.OnClickListener;
 
-public class PowerButton extends ImageView implements OnClickListener {
-	
-	private int bg=R.drawable.power_red;
-	private OnClickListener externalOnClickListener;
+public class PowerButton extends ImageView {
+
+	private int bg_r=R.drawable.power_red;
+	private int bg_g=R.drawable.power_green;
+	private boolean running = false;
 
 	public PowerButton(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		this.setImageResource(bg);
-		this.setClickable(true);
-		this.setOnClickListener(this);
-		// TODO Auto-generated constructor stub
+		this.setImageResource(running?bg_g:bg_r);
+		IchibanActivity.subscribe(this);
 	}
 
 	@Override
-	public void onClick(View v) {
-		if(bg==R.drawable.power_red)
-		{
-			//todo
-			
-			bg=R.drawable.power_green;
-		}
-		else
-		{
-			//todo
-			
-			bg=R.drawable.power_red;
-		}
-		
-		this.setImageResource(bg);
-		externalOnClickListener.onClick(v);
-	}
-
-	public void setExternalOnClickListener(OnClickListener externalOnClickListener) {
-		this.externalOnClickListener = externalOnClickListener;
+	protected void onDraw(Canvas canvas)
+	{
+			running=IchibanActivity.isRunning();
+			this.setImageResource(!running?bg_r:bg_g);
+			super.onDraw(canvas);
 	}
 }

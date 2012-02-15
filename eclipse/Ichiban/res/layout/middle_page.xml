@@ -67,7 +67,9 @@
             android:id="@+id/power_button"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            android:background="@drawable/power_red" />
+            android:background="@drawable/power_red" 
+            android:clickable="true"
+            android:onClick="powerButtonClick"/>
 
     </LinearLayout>
 
