@@ -12,7 +12,7 @@ public class RpmBacground extends ImageView {
 
 	public RpmBacground(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		this.setImageResource(R.drawable.app_bg);//default values
+		this.setImageResource(R.drawable.bg_middle);//default values
 		this.setAlpha(0);// set to invisible, because start RPM is 0
 		// TODO Auto-generated constructor stub
 	}
