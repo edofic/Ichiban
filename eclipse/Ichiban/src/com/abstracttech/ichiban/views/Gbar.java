@@ -27,7 +27,7 @@ public class Gbar extends ImageView {
 		this.setImageResource(R.drawable.gbar_ozadje);
 		gSquare = BitmapFactory.decodeResource(getResources(), R.drawable.gbar_kvadratek);
 		p = new Paint();
-		lastData=(float)Data.getYPercentage();
+		lastData=Data.getYPercentage();
 		//Data.subscribe(this);
 	}
 
@@ -41,7 +41,7 @@ public class Gbar extends ImageView {
 		else
 		{
 			//5 bar + and 5 -
-			currentData =  (float)Data.getYPercentage();
+			currentData =  Data.getYPercentage();
 			nt=System.currentTimeMillis(); //current time
 			
 			data=lastData + (currentData - lastData)*(float)(nt-lastUpdate)/inter;

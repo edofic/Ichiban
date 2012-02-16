@@ -20,7 +20,7 @@ public class ZTextView extends TextView {
 		if(isInEditMode()) //dummy data for editor
 			this.setText("Z: 0.35337");
 		else
-			this.setText("Z: " + Double.toString(Data.getZ())); //data from datasource
+			this.setText("Z: " + Float.toString(Data.getZ())); //data from datasource
 		
 		super.onDraw(canvas);
 	}

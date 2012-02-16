@@ -20,7 +20,7 @@ public class YTextView extends TextView {
 		if(isInEditMode()) //dummy data for editor
 			this.setText("Y: -0.146818");
 		else
-			this.setText("Y: " + Double.toString(Data.getY())); //data from datasource
+			this.setText("Y: " + Float.toString(Data.getY())); //data from datasource
 		
 		super.onDraw(canvas);
 	}

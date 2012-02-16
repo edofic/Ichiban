@@ -28,8 +28,8 @@ public class Data {
 	private static boolean isAutoupdating=false;
 	private static List<View> clients = new ArrayList<View>();
 
-	private static double x,y,z, rpm, turnRatio;
-	private static double locX, locY, locZ, locRpm, locTurn;
+	private static float x,y,z, rpm, turnRatio;
+	private static float locX, locY, locZ, locRpm, locTurn;
 
 	private static String btLine=null;
 
@@ -96,11 +96,11 @@ public class Data {
 				line=btLine;
 
 			String[] values=line.split(",");	
-			locX=Double.parseDouble(values[0]);
-			locY=Double.parseDouble(values[1]);
-			locZ=Double.parseDouble(values[2]); 
-			locRpm=Double.parseDouble(values[3]);
-			locTurn=Double.parseDouble(values[4]);
+			locX=Float.parseFloat(values[0]);
+			locY=Float.parseFloat(values[1]);
+			locZ=Float.parseFloat(values[2]); 
+			locRpm=Float.parseFloat(values[3]);
+			locTurn=Float.parseFloat(values[4]);
 		} catch (Exception e) {
 			e.printStackTrace();
 			Log.e("ICHIBAN", "something wrong with data");
@@ -168,43 +168,43 @@ public class Data {
 		clients.add(v);
 	}
 
-	public static double getX() {
+	public static float getX() {
 		return x;
 	}
 
-	public static double getY() {
+	public static float getY() {
 		return y;
 	}
 
-	public static double getZ() {
+	public static float getZ() {
 		return z;
 	}
 
-	public static double getRpm() {
+	public static float getRpm() {
 		return rpm;
 	}
 
-	public static double getTurnRatio() {
+	public static float getTurnRatio() {
 		return turnRatio;
 	}
 	
-	public static double getXPercentage() {
+	public static float getXPercentage() {
 		return x;
 	}
 
-	public static double getYPercentage() {
+	public static float getYPercentage() {
 		return y;
 	}
 
-	public static double getZPercentage() {
+	public static float getZPercentage() {
 		return z;
 	}
 
-	public static double getRpmPercentage() {
+	public static float getRpmPercentage() {
 		return rpm / 100.f;
 	}
 
-	public static double getTurnRatioPercentage() {
+	public static float getTurnRatioPercentage() {
 		return turnRatio / 10.f;
 	}
 

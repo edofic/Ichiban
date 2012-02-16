@@ -20,7 +20,7 @@ public class RPMTextView extends TextView {
 		if(isInEditMode()) //dummy data for editor
 			this.setText("rpm: 53.567");
 		else
-			this.setText("rpm: " + Double.toString(Data.getRpm())); //data from datasource
+			this.setText("rpm: " + Float.toString(Data.getRpm())); //data from datasource
 		
 		super.onDraw(canvas);
 	}

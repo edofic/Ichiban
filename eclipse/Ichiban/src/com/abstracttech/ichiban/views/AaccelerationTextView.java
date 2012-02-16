@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class AaccelerationTextView extends TextView {
 
-	private double preRpm = 0;
+	private float preRpm = 0;
 	private long preTime;
 	
 	public AaccelerationTextView(Context context, AttributeSet attrs) {
@@ -25,7 +25,7 @@ public class AaccelerationTextView extends TextView {
 			this.setText("Aceleration: 3.567");
 		else
 		{
-			this.setText("Aceleration: " + Double.toString((Data.getRpm() - preRpm) / (double)(SystemClock.currentThreadTimeMillis() - preTime) )); //acceleration data
+			this.setText("Aceleration: " + Float.toString((Data.getRpm() - preRpm) / (float)(SystemClock.currentThreadTimeMillis() - preTime) )); //acceleration data
 			this.preRpm = Data.getRpm();
 			this.preTime = SystemClock.currentThreadTimeMillis();
 		}

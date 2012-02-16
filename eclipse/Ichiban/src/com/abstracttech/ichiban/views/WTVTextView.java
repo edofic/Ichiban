@@ -20,7 +20,7 @@ public class WTVTextView extends TextView {
 		if(isInEditMode()) //dummy data for editor
 			this.setText("turn ratio: 7.135");
 		else
-			this.setText("turn ratio: " + Double.toString(Data.getTurnRatio())); //data from datasource
+			this.setText("turn ratio: " + Float.toString(Data.getTurnRatio())); //data from datasource
 		
 		super.onDraw(canvas);
 	}

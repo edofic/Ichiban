@@ -20,7 +20,7 @@ public class XTextView extends TextView {
 		if(isInEditMode()) //dummy data for editor
 			this.setText("X: 0.000000");
 		else
-			this.setText("X: " + Double.toString(Data.getX())); //data from datasource
+			this.setText("X: " + Float.toString(Data.getX())); //data from datasource
 		
 		super.onDraw(canvas);
 	}
