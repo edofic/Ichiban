@@ -30,6 +30,9 @@ public class Data {
 
 	private static float x,y,z, rpm, turnRatio;
 	private static float locX, locY, locZ, locRpm, locTurn;
+	
+	private static RpmData rpmData=new RpmData();
+	public static StatisticData statistic=rpmData;
 
 	private static String btLine=null;
 
@@ -114,6 +117,8 @@ public class Data {
 		z=locZ;
 		rpm=locRpm;
 		turnRatio=locTurn;
+		
+		statistic.update();
 		
 		//notify clients
 		for(View v : clients)
