@@ -44,7 +44,7 @@ public class Gmeter extends ImageView {
 
 		float cx = newX();
 		float cy = newY();
-		long nt=System.currentTimeMillis();; //current time
+		long nt=System.currentTimeMillis(); //current time
 
 		canvas.drawBitmap(dot, 
 				lastX + (cx - lastX)*(float)(nt-lastUpdate)/inter, 
