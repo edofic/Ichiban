@@ -21,7 +21,8 @@ public class Gbar extends ImageView {
 		
 		this.setImageResource(R.drawable.gbar_ozadje);
 		gSquare = BitmapFactory.decodeResource(getResources(), R.drawable.gbar_kvadratek);
-		// TODO Auto-generated constructor stub
+		
+		Data.subscribe(this);
 	}
 
 	@Override
