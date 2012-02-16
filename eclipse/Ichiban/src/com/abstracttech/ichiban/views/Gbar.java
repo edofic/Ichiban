@@ -10,13 +10,16 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 import com.abstracttech.ichiban.R;
+import com.abstracttech.ichiban.activities.IchibanActivity;
 import com.abstracttech.ichiban.data.Data;
 
 public class Gbar extends ImageView {
 
 	private Bitmap gSquare;
-	private double data;
+	private float data,lastData,currentData;;
+	private long lastUpdate,nt;
 	private Paint p;
+	private final float inter = IchibanActivity._UPDATE_INTERVAL;
 	
 	public Gbar(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -24,8 +27,8 @@ public class Gbar extends ImageView {
 		this.setImageResource(R.drawable.gbar_ozadje);
 		gSquare = BitmapFactory.decodeResource(getResources(), R.drawable.gbar_kvadratek);
 		p = new Paint();
-		
-		Data.subscribe(this);
+		lastData=(float)Data.getYPercentage();
+		//Data.subscribe(this);
 	}
 
 	@Override
@@ -38,7 +41,11 @@ public class Gbar extends ImageView {
 		else
 		{
 			//5 bar + and 5 -
-			data =  Data.getYPercentage();
+			currentData =  (float)Data.getYPercentage();
+			nt=System.currentTimeMillis(); //current time
+			
+			data=lastData + (currentData - lastData)*(float)(nt-lastUpdate)/inter;
+			
 			p.setAlpha(255);
 			 
 			for (int i = 0; i < Math.abs(data * 6); i++)
@@ -52,6 +59,12 @@ public class Gbar extends ImageView {
 			}
 		}	
 		
-		//invalidate();
+		if((nt-lastUpdate)>=inter)
+		{
+			lastData=currentData;
+			lastUpdate=nt;
+		}
+		
+		invalidate(); //let's do that again
 	}
 }
