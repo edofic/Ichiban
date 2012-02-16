@@ -22,7 +22,7 @@ public class IchibanActivity extends Activity {
 	private BluetoothEx bt=new BluetoothEx();
 	private static List<View> clients = new ArrayList<View>();
 
-	public static final int _UPDATE_INTERVAL = 300;
+	public static final int _UPDATE_INTERVAL = 100;
 	private static boolean running=false;
 
 	public static boolean isRunning(){
