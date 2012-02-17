@@ -58,17 +58,24 @@ public class IchibanActivity extends Activity {
 
 	public void powerButtonClick(View v){
 
-		if(running==false)
+		try
 		{
-			startCar(v);
-			running=true;
+			if(running==false)
+			{
+				startCar(v);
+				running=true;
+			}
+			else
+			{
+				stopCar(v);
+				running=false;
+			}
+			notifyClients();
 		}
-		else
+		catch(Exception e)
 		{
-			stopCar(v);
-			running=false;
+			
 		}
-		notifyClients();
 	}
 
 	public void test(View v) {
