@@ -1,51 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    android:background="@drawable/bg_middle" >
 
-    <LinearLayout
+    <com.abstracttech.ichiban.views.Gmeter
+        android:id="@+id/gmeter1"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_x="637dp"
+        android:layout_y="10dp"
+        android:src="@drawable/g_bg" />
+
+    <com.abstracttech.ichiban.views.Gbar
+        android:id="@+id/gbar1"
+        android:layout_width="100dp"
+        android:layout_height="400dp"
+        android:layout_x="1057dp"
+        android:layout_y="10dp"
+        android:src="@drawable/gbar_ozadje" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="277dp"
+        android:layout_x="4dp"
+        android:layout_y="417dp"
+        android:src="@drawable/bar" />
+
+    <ImageView
+        android:id="@+id/ozadjegraf"
+        android:layout_width="700dp"
+        android:layout_height="257dp"
+        android:layout_x="415dp"
+        android:layout_y="428dp"
+        android:src="@drawable/grafback" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="222dp"
+        android:layout_height="84dp"
+        android:layout_x="264dp"
+        android:layout_y="430dp"
+        android:background="@drawable/acce" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="259dp"
+        android:layout_height="80dp"
+        android:layout_x="229dp"
+        android:layout_y="603dp"
+        android:background="@drawable/dist" />
+
+    <Button
+        android:id="@+id/speedgumb"
+        android:layout_width="154dp"
+        android:layout_height="104dp"
+        android:layout_x="331dp"
+        android:layout_y="510dp"
+        android:background="@drawable/spee" />
+
+    <com.abstracttech.ichiban.views.DirectionWheel
+        android:id="@+id/directionWheel1"
+        android:layout_width="291dp"
+        android:layout_height="263dp"
+        android:layout_x="947dp"
+        android:layout_y="424dp" />
+
+    <TextView
+        android:id="@+id/textView1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_x="345dp"
+        android:layout_y="458dp"
+        android:text="Acceleration"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="test"
-            android:text="tester" />
+    <com.abstracttech.ichiban.views.PowerButton
+        android:id="@+id/powerButton2"
+        android:layout_width="297dp"
+        android:layout_height="272dp"
+        android:layout_x="46dp"
+        android:layout_y="421dp" 
+        android:clickable="true"
+        android:onClick="powerButtonClick" />
 
-        <com.abstracttech.ichiban.views.FPStextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="inifinite :P" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_x="140dp"
+        android:layout_y="10dp"
+        android:src="@drawable/rpm_bg" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        android:layout_x="382dp"
+        android:layout_y="549dp"
+        android:text="Speed"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <com.abstracttech.ichiban.views.Gmeter
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/g_bg" />
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="360dp"
+        android:layout_y="635dp"
+        android:text="Distance"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-        <com.abstracttech.ichiban.views.Gbar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/gbar_ozadje" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="498dp"
-        android:layout_height="wrap_content" >
-
-        <com.abstracttech.ichiban.views.PowerButton
-            android:id="@+id/power_button"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:background="@drawable/power_red"
-            android:clickable="true"
-            android:onClick="powerButtonClick" />
-    </LinearLayout>
-
-</LinearLayout>
+</AbsoluteLayout>

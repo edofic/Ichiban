@@ -22,7 +22,7 @@ public class DirectionWheel extends ImageView {
 		
 		this.matrix = new Matrix();
 		this.setImageResource(R.drawable.volan);	
-		this.setScaleType(ScaleType.MATRIX);		//Uses matrix to change image 
+		//this.setScaleType(ScaleType.MATRIX);		//Uses matrix to change image 
 		// TODO Auto-generated constructor stub
 	}
 
