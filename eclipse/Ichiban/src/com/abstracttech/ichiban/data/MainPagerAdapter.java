@@ -29,7 +29,7 @@ public class MainPagerAdapter extends PagerAdapter {
 			resId = R.layout.left_page;
 			break;
 		case 1:
-			resId = R.layout.middle_page;
+			resId = R.layout.center_page;
 			break;
 		case 2:
 			resId = R.layout.right_page;
