@@ -12,6 +12,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -74,7 +75,8 @@ public class IchibanActivity extends Activity {
 		}
 		catch(Exception e)
 		{
-			
+			Toast.makeText(this, R.string.not_connected, Toast.LENGTH_LONG).show();
+			Log.e(getPackageName(), "power button clicked and something gone wrong", e);
 		}
 	}
 
