@@ -210,7 +210,7 @@ public class Data {
 	}
 
 	public static float getTurnRatioPercentage() {
-		return turnRatio / 10.f;
+		return (turnRatio - 5) / 10.f;
 	}
 
 	public static boolean isAutoupdating(){
