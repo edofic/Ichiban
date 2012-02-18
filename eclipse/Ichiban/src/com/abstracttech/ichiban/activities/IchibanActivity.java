@@ -7,6 +7,7 @@ import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.BluetoothEx;
 import com.abstracttech.ichiban.data.Data;
 import com.abstracttech.ichiban.data.MainPagerAdapter;
+import com.abstracttech.ichiban.views.UpdatableView;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -21,7 +22,7 @@ import android.widget.Toast;
 
 public class IchibanActivity extends Activity {
 	private BluetoothEx bt=new BluetoothEx();
-	private static List<View> clients = new ArrayList<View>();
+	private static List<UpdatableView> clients = new ArrayList<UpdatableView>();
 
 	public static final int _UPDATE_INTERVAL = 100;
 	private static boolean running=false;
@@ -30,14 +31,14 @@ public class IchibanActivity extends Activity {
 		return running;
 	}
 
-	public static void subscribe(View v){
+	public static void subscribe(UpdatableView v){
 		clients.add(v);
 	}
 
 	private void notifyClients()
 	{
-		for(View v : clients)
-			v.postInvalidate();
+		for(UpdatableView v : clients)
+			v.update();
 	}
 
 

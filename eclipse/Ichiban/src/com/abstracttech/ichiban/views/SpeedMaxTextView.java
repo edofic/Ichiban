@@ -7,7 +7,7 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class SpeedMaxTextView extends TextView {
+public class SpeedMaxTextView extends TextView implements UpdatableView{
 	private float value;
 
 	public SpeedMaxTextView(Context context, AttributeSet attrs) {
@@ -33,4 +33,8 @@ public class SpeedMaxTextView extends TextView {
 		super.onDraw(canvas);
 	}
 
+	@Override
+	public void update() {
+		this.postInvalidate();		
+	}
 }

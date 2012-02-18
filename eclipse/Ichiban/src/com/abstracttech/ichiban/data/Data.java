@@ -10,6 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import com.abstracttech.ichiban.R;
+import com.abstracttech.ichiban.views.UpdatableView;
 
 import android.content.res.Resources;
 import android.util.Log;
@@ -26,7 +27,7 @@ public class Data {
 
 	private static Timer timer;
 	private static boolean isAutoupdating=false;
-	private static List<View> clients = new ArrayList<View>();
+	private static List<UpdatableView> clients = new ArrayList<UpdatableView>();
 
 	private static float x,y,z, rpm, turnRatio;
 	private static float locX, locY, locZ, locRpm, locTurn;
@@ -121,8 +122,8 @@ public class Data {
 		statistic.update();
 		
 		//notify clients
-		for(View v : clients)
-			v.postInvalidate();
+		for(UpdatableView v : clients)
+			v.update();
 	}
 
 	public static void btUpdate(String line)
@@ -169,7 +170,7 @@ public class Data {
 		isAutoupdating=false;
 	}
 	
-	public static void subscribe(View v){
+	public static void subscribe(UpdatableView v){
 		clients.add(v);
 	}
 

@@ -7,7 +7,7 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class SpeedAvgTextView extends TextView {
+public class SpeedAvgTextView extends TextView implements UpdatableView{
 	private float value;
 
 	public SpeedAvgTextView(Context context, AttributeSet attrs) {
@@ -33,4 +33,8 @@ public class SpeedAvgTextView extends TextView {
 		super.onDraw(canvas);
 	}
 
+	@Override
+	public void update() {
+		this.postInvalidate();		
+	}
 }
