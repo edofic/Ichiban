@@ -7,10 +7,10 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class MinTextView extends TextView {
+public class SpeedMinTextView extends TextView {
 	private float value;
 
-	public MinTextView(Context context, AttributeSet attrs) {
+	public SpeedMinTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		Data.subscribe(this);
 	}
@@ -22,7 +22,7 @@ public class MinTextView extends TextView {
 			this.setText("53.567");
 		else
 		{
-			float d = Data.statistic.getMin(); //data from datasource
+			float d = Data.rpmData.getMin(); //data from datasource
 			if(d!=value)
 			{
 				value=d;

@@ -5,39 +5,6 @@
     android:orientation="vertical" >
 
     <LinearLayout
-        android:id="@+id/testOnly"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:visibility="gone" >
-
-        <com.abstracttech.ichiban.views.XTextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="0" />
-
-        <com.abstracttech.ichiban.views.YTextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="0" />
-
-        <com.abstracttech.ichiban.views.ZTextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="0" />
-
-        <com.abstracttech.ichiban.views.RPMTextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="0" />
-
-        <com.abstracttech.ichiban.views.WTVTextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="0" />
-    </LinearLayout>
-
-    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" >
 
@@ -79,64 +46,6 @@
             android:background="@drawable/power_red"
             android:clickable="true"
             android:onClick="powerButtonClick" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.07"
-            android:orientation="vertical" >
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Average"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <com.abstracttech.ichiban.views.AvgTextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center|right"
-                    android:text="0.00" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Maximum"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <com.abstracttech.ichiban.views.MaxTextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center|right"
-                    android:text="0.00" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Minimum"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
-
-                <com.abstracttech.ichiban.views.MinTextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center|right"
-                    android:text="0.00" />
-            </LinearLayout>
-        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

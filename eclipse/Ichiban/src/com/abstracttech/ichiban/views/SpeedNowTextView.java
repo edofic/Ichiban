@@ -7,10 +7,11 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class AvgTextView extends TextView {
+public class SpeedNowTextView extends TextView {
+
 	private float value;
 
-	public AvgTextView(Context context, AttributeSet attrs) {
+	public SpeedNowTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		Data.subscribe(this);
 	}
@@ -22,7 +23,7 @@ public class AvgTextView extends TextView {
 			this.setText("53.567");
 		else
 		{
-			float d = Data.statistic.getAvg(); //data from datasource
+			float d = Data.getRpm(); //data from datasource
 			if(d!=value)
 			{
 				value=d;
@@ -32,5 +33,4 @@ public class AvgTextView extends TextView {
 		
 		super.onDraw(canvas);
 	}
-
 }

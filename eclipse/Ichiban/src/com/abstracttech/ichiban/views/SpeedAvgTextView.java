@@ -7,20 +7,28 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class RPMTextView extends TextView {
+public class SpeedAvgTextView extends TextView {
+	private float value;
 
-	public RPMTextView(Context context, AttributeSet attrs) {
+	public SpeedAvgTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		// TODO Auto-generated constructor stub
+		Data.subscribe(this);
 	}
 
 	@Override
 	protected void onDraw(Canvas canvas)
 	{
 		if(isInEditMode()) //dummy data for editor
-			this.setText("rpm: 53.567");
+			this.setText("53.567");
 		else
-			this.setText("rpm: " + Float.toString(Data.getRpm())); //data from datasource
+		{
+			float d = Data.statistic.getAvg(); //data from datasource
+			if(d!=value)
+			{
+				value=d;
+				this.setText(String.format("%.2f", d));
+			}
+		}
 		
 		super.onDraw(canvas);
 	}

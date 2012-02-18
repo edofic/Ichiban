@@ -7,10 +7,10 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class MaxTextView extends TextView {
+public class SpeedMaxTextView extends TextView {
 	private float value;
 
-	public MaxTextView(Context context, AttributeSet attrs) {
+	public SpeedMaxTextView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		Data.subscribe(this);
 	}
@@ -22,7 +22,7 @@ public class MaxTextView extends TextView {
 			this.setText("53.567");
 		else
 		{
-			float d = Data.statistic.getMax(); //data from datasource
+			float d = Data.rpmData.getMax(); //data from datasource
 			if(d!=value)
 			{
 				value=d;
