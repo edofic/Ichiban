@@ -1,52 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_right"
     android:baselineAligned="false"
     android:orientation="horizontal" >
 
-
-    <ImageView
+    <com.abstracttech.ichiban.views.FPStextView
+        android:id="@+id/FPStextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="fps meter" />
+    
+    <com.abstracttech.ichiban.views.DirectionWheel
         android:id="@+id/volan"
         android:layout_width="260dp"
         android:layout_height="260dp"
-        android:layout_x="976dp"
-        android:layout_y="400dp"
-        android:src="@drawable/volan" />
+        android:layout_alignTop="@+id/powerButton1"
+        android:layout_marginLeft="86dp"
+        android:layout_toRightOf="@+id/grafPot" />
 
     <ImageView
         android:id="@+id/grafPospesek"
         android:layout_width="500dp"
         android:layout_height="300dp"
-        android:layout_x="60dp"
-        android:layout_y="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="25dp"
         android:src="@drawable/graf1" />
 
     <ImageView
         android:id="@+id/grafHitrost"
         android:layout_width="500dp"
         android:layout_height="300dp"
-        android:layout_x="700dp"
-        android:layout_y="25dp"
+        android:layout_alignTop="@+id/grafPospesek"
+        android:layout_marginLeft="140dp"
+        android:layout_toRightOf="@+id/grafPospesek"
         android:src="@drawable/graf2" />
 
     <ImageView
         android:id="@+id/grafPot"
         android:layout_width="500dp"
         android:layout_height="300dp"
-        android:layout_x="390dp"
-        android:layout_y="375dp"
+        android:layout_below="@+id/grafPospesek"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/powerButton1"
         android:src="@drawable/graf3" />
 
     <com.abstracttech.ichiban.views.PowerButton
         android:id="@+id/powerButton1"
         android:layout_width="260dp"
         android:layout_height="260dp"
-        android:layout_x="60dp"
-        android:layout_y="400dp"
-        android:src="@drawable/acce" 
-		android:clickable="true"
-        android:onClick="powerButtonClick" />
+        android:layout_alignLeft="@+id/grafPospesek"
+        android:layout_below="@+id/grafPospesek"
+        android:layout_marginTop="25dp"
+        android:clickable="true"
+        android:onClick="powerButtonClick"
+        android:src="@drawable/acce" />
 
-</AbsoluteLayout>
+</RelativeLayout>

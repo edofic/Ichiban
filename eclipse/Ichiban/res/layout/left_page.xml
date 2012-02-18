@@ -5,6 +5,13 @@
     android:background="@drawable/bg_left"
     android:orientation="vertical" >
 
+    <com.abstracttech.ichiban.views.FPStextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="0dp"
+        android:layout_y="0dp"
+        android:text="fps meter" />
+    
     <ImageView
         android:id="@+id/ImageView01"
         android:layout_width="530dp"
