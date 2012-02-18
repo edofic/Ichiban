@@ -35,7 +35,7 @@
         android:layout_x="415dp"
         android:layout_y="428dp"
         android:src="@drawable/grafback" />
-
+
     <Button
         android:id="@+id/button1"
         android:layout_width="222dp"
@@ -43,7 +43,7 @@
         android:layout_x="264dp"
         android:layout_y="430dp"
         android:background="@drawable/acce" />
-
+
     <Button
         android:id="@+id/button3"
         android:layout_width="259dp"
@@ -51,7 +51,7 @@
         android:layout_x="229dp"
         android:layout_y="603dp"
         android:background="@drawable/dist" />
-
+
     <Button
         android:id="@+id/speedgumb"
         android:layout_width="154dp"
@@ -109,6 +109,24 @@
         android:layout_x="360dp"
         android:layout_y="635dp"
         android:text="Distance"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="684dp"
+        android:layout_y="558dp"
+        android:text="graf"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="300dp"
+        android:layout_y="265dp"
+        android:text="0"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </AbsoluteLayout>

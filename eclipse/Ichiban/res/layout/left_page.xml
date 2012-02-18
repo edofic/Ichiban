@@ -1,88 +1,235 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_left"
     android:orientation="vertical" >
 
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="530dp"
+        android:layout_height="338dp"
+        android:layout_x="52dp"
+        android:layout_y="24dp"
+        android:src="@drawable/textbig" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="530dp"
+        android:layout_height="338dp"
+        android:layout_x="702dp"
+        android:layout_y="24dp"
+        android:src="@drawable/textbig" />
+
+    <ImageView
+        android:id="@+id/ImageView03"
+        android:layout_width="449dp"
+        android:layout_height="142dp"
+        android:layout_x="52dp"
+        android:layout_y="380dp"
+        android:src="@drawable/textsma" />
+
+    <ImageView
+        android:id="@+id/ImageView02"
+        android:layout_width="449dp"
+        android:layout_height="142dp"
+        android:layout_x="52dp"
+        android:layout_y="535dp"
+        android:src="@drawable/textsma" />
+
+    <com.abstracttech.ichiban.views.SpeedNowTextView
+        android:layout_width="143dp"
+        android:layout_height="50dp"
+        android:layout_x="765dp"
+        android:layout_y="126dp"
+        android:gravity="center|right"
+        android:text="0.00" />
+
+    <com.abstracttech.ichiban.views.SpeedAvgTextView
+        android:layout_width="164dp"
+        android:layout_height="wrap_content"
+        android:layout_x="1021dp"
+        android:layout_y="146dp"
+        android:gravity="center|right"
+        android:text="0.00" />
+
+    <com.abstracttech.ichiban.views.SpeedMinTextView
+        android:layout_width="134dp"
+        android:layout_height="wrap_content"
+        android:layout_x="1044dp"
+        android:layout_y="291dp"
+        android:gravity="center|right"
+        android:text="0.00" />
+
+    <com.abstracttech.ichiban.views.SpeedMaxTextView
+        android:layout_width="93dp"
+        android:layout_height="wrap_content"
+        android:layout_x="804dp"
+        android:layout_y="293dp"
+        android:gravity="center|right"
+        android:text="0.00" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="724dp"
+        android:layout_y="31dp"
+        android:text="Speed"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="78dp"
+        android:layout_y="35dp"
+        android:text="Acceleration"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Velocity"
+        android:layout_x="738dp"
+        android:layout_y="93dp"
+        android:text="Now"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="83dp"
+        android:layout_y="95dp"
+        android:text="Now"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="998dp"
+        android:layout_y="88dp"
+        android:text="Average"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="356dp"
+        android:layout_y="94dp"
+        android:text="Average"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="356dp"
+        android:layout_y="93dp"
+        android:text="Average"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="78dp"
+        android:layout_y="243dp"
+        android:text="Maximum"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="1003dp"
+        android:layout_y="244dp"
+        android:text="Minimum"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="346dp"
+        android:layout_y="237dp"
+        android:text="Minimum"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="72dp"
+        android:layout_y="383dp"
+        android:text="Time"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <LinearLayout
-        android:layout_width="242dp"
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_x="81dp"
+        android:layout_y="450dp"
+        android:text="ura začetka merjenja"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="324dp"
+        android:layout_y="451dp"
+        android:text="čas merjenja"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Now"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="73dp"
+        android:layout_y="538dp"
+        android:text="Distance"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <com.abstracttech.ichiban.views.SpeedNowTextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center|right"
-                android:text="0.00" />
-        </LinearLayout>
-        
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="82dp"
+        android:layout_y="605dp"
+        android:text="celotna pot"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Average"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="55dp"
+        android:layout_x="296dp"
+        android:layout_y="593dp"
+        android:text="pot v zadnji minuti"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <com.abstracttech.ichiban.views.SpeedAvgTextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center|right"
-                android:text="0.00" />
-        </LinearLayout>
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="550dp"
+        android:layout_height="298dp"
+        android:layout_x="520dp"
+        android:layout_y="377dp"
+        android:src="@drawable/grafback" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
+    <com.abstracttech.ichiban.views.PowerButton
+        android:id="@+id/powerButton1"
+        android:layout_width="283dp"
+        android:layout_height="274dp"
+        android:layout_x="979dp"
+        android:layout_y="388dp"
+        android:clickable="true"
+        android:onClick="powerButtonClick"
+        android:src="@drawable/acce" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Maximum"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="662dp"
+        android:layout_y="492dp"
+        android:text="graf ne vem česa"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-            <com.abstracttech.ichiban.views.SpeedMaxTextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center|right"
-                android:text="0.00" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Minimum"
-                android:textAppearance="?android:attr/textAppearanceMedium" />
-
-            <com.abstracttech.ichiban.views.SpeedMinTextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center|right"
-                android:text="0.00" />
-        </LinearLayout>
-    </LinearLayout>
-
-</LinearLayout>
+</AbsoluteLayout>
