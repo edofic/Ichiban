@@ -1,4 +1,4 @@
-package com.abstracttech.ichiban.views;
+package com.abstracttech.ichiban.views.time;
 
 import com.abstracttech.ichiban.data.Data;
 
@@ -8,10 +8,10 @@ import android.text.format.DateFormat;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class StartedTextView extends TextView {
+public class Started extends TextView {
 	private long value;
 
-	public StartedTextView(Context context, AttributeSet attrs) {
+	public Started(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		Data.subscribe(this);
 	}
