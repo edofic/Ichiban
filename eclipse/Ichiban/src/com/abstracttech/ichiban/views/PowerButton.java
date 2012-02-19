@@ -8,7 +8,7 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-public class PowerButton extends ImageView implements UpdatableView{
+public class PowerButton extends ImageView {
 
 	private int bg_r=R.drawable.power_red;
 	private int bg_g=R.drawable.power_green;
@@ -26,10 +26,5 @@ public class PowerButton extends ImageView implements UpdatableView{
 			running=IchibanActivity.isRunning();
 			this.setImageResource(!running?bg_r:bg_g);
 			super.onDraw(canvas);
-	}
-
-	@Override
-	public void update() {
-		this.postInvalidate();
 	}
 }

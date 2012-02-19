@@ -7,7 +7,7 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class SpeedMinTextView extends TextView implements UpdatableView{
+public class SpeedMinTextView extends TextView {
 	private float value;
 
 	public SpeedMinTextView(Context context, AttributeSet attrs) {
@@ -33,8 +33,4 @@ public class SpeedMinTextView extends TextView implements UpdatableView{
 		super.onDraw(canvas);
 	}
 
-	@Override
-	public void update() {
-		this.postInvalidate();		
-	}
 }
