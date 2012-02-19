@@ -25,6 +25,7 @@ public class Data {
 	private static int rate;
 
 	private static Timer timer;
+	private static long started;
 	private static boolean isAutoupdating=false;
 	private static List<View> clients = new ArrayList<View>();
 
@@ -159,6 +160,8 @@ public class Data {
 			}
 		}, 0, period);
 		isAutoupdating=true;
+		
+		started=System.currentTimeMillis();
 	}
 
 	/** stops automatic self-updates
@@ -215,6 +218,14 @@ public class Data {
 		return (turnRatio - 5) / 10.f;
 	}
 
+	public static long getStarted() {
+		return started;
+	}
+	
+	public static long getRunningTime() {
+		return System.currentTimeMillis()-started;
+	}
+	
 	public static boolean isAutoupdating(){
 		return isAutoupdating;
 	}
