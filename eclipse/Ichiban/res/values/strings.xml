@@ -44,5 +44,13 @@
     <string name="discoverable">Make discoverable</string>
     <string name="loadCSV">Load from local file(300ms)</string>
     <string name="loadDenseCSV">Load from local file(35ms)</string>
+    <string name="acceleration">Acceleration</string>
+    <string name="time">Time</string>
+    <string name="speed">Speed</string>
+    <string name="distance">Distance</string>
+    <string name="now">Now</string>
+    <string name="avarage">Avarage</string>
+    <string name="maximum">Maximum</string>
+    <string name="minimum">Minimum</string>
 
 </resources>

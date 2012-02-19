@@ -1,217 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg_left"
-    android:orientation="vertical" >
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bg_left" >
 
-    <com.abstracttech.ichiban.views.FPStextView
+    <TextView
+        android:id="@+id/acceleration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="0dp"
-        android:layout_y="0dp"
-        android:text="fps meter" />
-    
-    <ImageView
-        android:id="@+id/ImageView01"
-        android:layout_width="530dp"
-        android:layout_height="338dp"
-        android:layout_x="52dp"
-        android:layout_y="24dp"
-        android:src="@drawable/textbig" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="530dp"
-        android:layout_height="338dp"
-        android:layout_x="702dp"
-        android:layout_y="24dp"
-        android:src="@drawable/textbig" />
-
-    <ImageView
-        android:id="@+id/ImageView03"
-        android:layout_width="449dp"
-        android:layout_height="142dp"
-        android:layout_x="52dp"
-        android:layout_y="380dp"
-        android:src="@drawable/textsma" />
-
-    <ImageView
-        android:id="@+id/ImageView02"
-        android:layout_width="449dp"
-        android:layout_height="142dp"
-        android:layout_x="52dp"
-        android:layout_y="535dp"
-        android:src="@drawable/textsma" />
-
-    <com.abstracttech.ichiban.views.speed.Now
-        android:layout_width="143dp"
-        android:layout_height="50dp"
-        android:layout_x="765dp"
-        android:layout_y="126dp"
-        android:gravity="center|right"
-        android:text="0.00" />
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="724dp"
-        android:layout_y="31dp"
-        android:text="Speed"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="62dp"
+        android:layout_marginTop="41dp"
+        android:text="@string/acceleration"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/speed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="78dp"
-        android:layout_y="35dp"
-        android:text="Acceleration"
+        android:layout_alignLeft="@+id/acceleration"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="294dp"
+        android:text="@string/speed"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
+        android:id="@+id/time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="738dp"
-        android:layout_y="93dp"
-        android:text="Now"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="83dp"
-        android:layout_y="95dp"
-        android:text="Now"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="998dp"
-        android:layout_y="88dp"
-        android:text="Average"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="356dp"
-        android:layout_y="94dp"
-        android:text="Average"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="356dp"
-        android:layout_y="93dp"
-        android:text="Average"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="78dp"
-        android:layout_y="243dp"
-        android:text="Maximum"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="1003dp"
-        android:layout_y="244dp"
-        android:text="Minimum"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="346dp"
-        android:layout_y="237dp"
-        android:text="Minimum"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_x="72dp"
-        android:layout_y="383dp"
-        android:text="Time"
+        android:layout_alignBaseline="@+id/acceleration"
+        android:layout_alignBottom="@+id/acceleration"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="518dp"
+        android:text="@string/time"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/distance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="81dp"
-        android:layout_y="450dp"
-        android:text="ura začetka merjenja"
+        android:layout_above="@+id/speed"
+        android:layout_alignLeft="@+id/time"
+        android:layout_marginBottom="126dp"
+        android:text="@string/distance"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/now1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/speed"
+        android:layout_below="@+id/acceleration"
+        android:layout_marginTop="34dp"
+        android:text="@string/now"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/avarage1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="324dp"
-        android:layout_y="451dp"
-        android:text="čas merjenja"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignBaseline="@+id/now1"
+        android:layout_alignBottom="@+id/now1"
+        android:layout_marginLeft="210dp"
+        android:layout_toRightOf="@+id/acceleration"
+        android:text="@string/avarage"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/maximum1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="73dp"
-        android:layout_y="538dp"
-        android:text="Distance"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignBottom="@+id/distance"
+        android:layout_alignLeft="@+id/now1"
+        android:text="@string/maximum"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/minimum1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="82dp"
-        android:layout_y="605dp"
-        android:text="celotna pot"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignBaseline="@+id/maximum1"
+        android:layout_alignBottom="@+id/maximum1"
+        android:layout_alignLeft="@+id/avarage1"
+        android:text="@string/minimum"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="55dp"
-        android:layout_x="296dp"
-        android:layout_y="593dp"
-        android:text="pot v zadnji minuti"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="550dp"
-        android:layout_height="298dp"
-        android:layout_x="520dp"
-        android:layout_y="377dp"
-        android:src="@drawable/grafback" />
-
-    <com.abstracttech.ichiban.views.PowerButton
-        android:id="@+id/powerButton1"
-        android:layout_width="283dp"
-        android:layout_height="274dp"
-        android:layout_x="979dp"
-        android:layout_y="388dp"
-        android:clickable="true"
-        android:onClick="powerButtonClick"
-        android:src="@drawable/acce" />
-
-    <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/TextView04"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_x="662dp"
-        android:layout_y="492dp"
-        android:text="graf ne vem česa"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_alignRight="@+id/speed"
+        android:layout_alignTop="@+id/speed"
+        android:layout_marginTop="54dp"
+        android:text="@string/now"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
-</AbsoluteLayout>
+    <TextView
+        android:id="@+id/TextView01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView04"
+        android:layout_alignBottom="@+id/TextView04"
+        android:layout_alignLeft="@+id/minimum1"
+        android:text="@string/avarage"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/TextView03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/TextView04"
+        android:layout_below="@+id/TextView04"
+        android:layout_marginTop="111dp"
+        android:text="@string/maximum"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/TextView02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TextView03"
+        android:layout_alignBottom="@+id/TextView03"
+        android:layout_alignLeft="@+id/TextView01"
+        android:text="@string/minimum"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>
