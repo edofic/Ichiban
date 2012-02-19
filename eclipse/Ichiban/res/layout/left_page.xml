@@ -44,31 +44,26 @@
         android:layout_y="535dp"
         android:src="@drawable/textsma" />
 
-    <com.abstracttech.ichiban.views.SpeedNowTextView
+    <com.abstracttech.ichiban.views.speed.SpeedNowTextViewxtView
         android:layout_width="143dp"
         android:layout_height="50dp"
         android:layout_x="765dp"
         android:layout_y="126dp"
         android:gravity="center|right"
         android:text="0.00" />
-
-    <com.abstracttech.ichiban.views.SpeedAvgTextView
+com.abstracttech.ichiban.views.speed.SpeedAvgTextViewdAvgTextView
         android:layout_width="164dp"
         android:layout_height="wrap_content"
         android:layout_x="1021dp"
         android:layout_y="146dp"
         android:gravity="center|right"
-        android:text="0.00" />
-
-    <com.abstracttech.ichiban.views.SpeedMinTextView
+        android:text="0.00"com.abstracttech.ichiban.views.speed.SpeedMinTextViewdMinTextViewxtView
         android:layout_width="134dp"
         android:layout_height="wrap_content"
         android:layout_x="1044dp"
         android:layout_y="291dp"
         android:gravity="center|right"
-        android:text="0.00" />
-
-    <com.abstracttech.ichiban.views.SpeedMaxTextView
+        android:text=com.abstracttech.ichiban.views.speed.SpeedMaxTextViews.SpeedMaxTextView
         android:layout_width="93dp"
         android:layout_height="wrap_content"
         android:layout_x="804dp"

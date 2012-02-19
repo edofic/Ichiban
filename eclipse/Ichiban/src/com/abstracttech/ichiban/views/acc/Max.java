@@ -1,4 +1,4 @@
-package com.abstracttech.ichiban.views;
+package com.abstracttech.ichiban.views.acc;
 
 import com.abstracttech.ichiban.data.Data;
 
@@ -7,10 +7,10 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class AccMaxTextView extends TextView {
+public class Max extends TextView {
 	private float value;
 
-	public AccMaxTextView(Context context, AttributeSet attrs) {
+	public Max(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		Data.subscribe(this);
 	}

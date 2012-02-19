@@ -1,16 +1,17 @@
-package com.abstracttech.ichiban.views;
+package com.abstracttech.ichiban.views.acc;
 
 import com.abstracttech.ichiban.data.Data;
 
+import android.os.SystemClock;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class AccMinTextView extends TextView {
+public class Now extends TextView {
 	private float value;
-
-	public AccMinTextView(Context context, AttributeSet attrs) {
+	
+	public Now(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		Data.subscribe(this);
 	}
@@ -22,7 +23,7 @@ public class AccMinTextView extends TextView {
 			this.setText("53.567");
 		else
 		{
-			float d = Data.accData.getMin(); //data from datasource
+			float d = Data.accData.getAcc(); //data from datasource
 			if(d!=value)
 			{
 				value=d;

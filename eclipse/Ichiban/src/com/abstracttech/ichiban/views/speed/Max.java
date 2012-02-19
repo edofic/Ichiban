@@ -1,4 +1,4 @@
-package com.abstracttech.ichiban.views;
+package com.abstracttech.ichiban.views.speed;
 
 import com.abstracttech.ichiban.data.Data;
 
@@ -7,11 +7,10 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class SpeedNowTextView extends TextView {
-
+public class Max extends TextView {
 	private float value;
 
-	public SpeedNowTextView(Context context, AttributeSet attrs) {
+	public Max(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		Data.subscribe(this);
 	}
@@ -23,7 +22,7 @@ public class SpeedNowTextView extends TextView {
 			this.setText("53.567");
 		else
 		{
-			float d = Data.getRpm(); //data from datasource
+			float d = Data.rpmData.getMax(); //data from datasource
 			if(d!=value)
 			{
 				value=d;
@@ -33,4 +32,5 @@ public class SpeedNowTextView extends TextView {
 		
 		super.onDraw(canvas);
 	}
+
 }

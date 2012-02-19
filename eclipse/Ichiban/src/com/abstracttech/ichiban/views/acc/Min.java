@@ -1,4 +1,4 @@
-package com.abstracttech.ichiban.views;
+package com.abstracttech.ichiban.views.acc;
 
 import com.abstracttech.ichiban.data.Data;
 
@@ -7,10 +7,10 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-public class SpeedAvgTextView extends TextView {
+public class Min extends TextView {
 	private float value;
 
-	public SpeedAvgTextView(Context context, AttributeSet attrs) {
+	public Min(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		Data.subscribe(this);
 	}
@@ -22,7 +22,7 @@ public class SpeedAvgTextView extends TextView {
 			this.setText("53.567");
 		else
 		{
-			float d = Data.statistic.getAvg(); //data from datasource
+			float d = Data.accData.getMin(); //data from datasource
 			if(d!=value)
 			{
 				value=d;
