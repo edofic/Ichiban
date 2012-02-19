@@ -44,34 +44,14 @@
         android:layout_y="535dp"
         android:src="@drawable/textsma" />
 
-    <com.abstracttech.ichiban.views.speed.SpeedNowTextViewxtView
+    <com.abstracttech.ichiban.views.speed.Now
         android:layout_width="143dp"
         android:layout_height="50dp"
         android:layout_x="765dp"
         android:layout_y="126dp"
         android:gravity="center|right"
         android:text="0.00" />
-com.abstracttech.ichiban.views.speed.SpeedAvgTextViewdAvgTextView
-        android:layout_width="164dp"
-        android:layout_height="wrap_content"
-        android:layout_x="1021dp"
-        android:layout_y="146dp"
-        android:gravity="center|right"
-        android:text="0.00"com.abstracttech.ichiban.views.speed.SpeedMinTextViewdMinTextViewxtView
-        android:layout_width="134dp"
-        android:layout_height="wrap_content"
-        android:layout_x="1044dp"
-        android:layout_y="291dp"
-        android:gravity="center|right"
-        android:text=com.abstracttech.ichiban.views.speed.SpeedMaxTextViews.SpeedMaxTextView
-        android:layout_width="93dp"
-        android:layout_height="wrap_content"
-        android:layout_x="804dp"
-        android:layout_y="293dp"
-        android:gravity="center|right"
-        android:text="0.00" />
-
-    <TextView
+    <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
