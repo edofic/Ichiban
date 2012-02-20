@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 public class Now extends TextView {
 
-	private float value;
+	private double value;
 
 	public Now(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -23,11 +23,11 @@ public class Now extends TextView {
 			this.setText("53.567");
 		else
 		{
-			float d = Data.pathData.getPath(); //data from datasource
+			long d = Data.pathData.getPath(); //data from datasource
 			if(d!=value)
 			{
 				value=d;
-				this.setText(String.format("%.2f", d));
+				this.setText(String.format("%s", d));
 			}
 		}
 		

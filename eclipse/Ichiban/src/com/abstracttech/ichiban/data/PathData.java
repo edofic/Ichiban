@@ -1,44 +1,18 @@
 package com.abstracttech.ichiban.data;
 
-public class PathData extends StatisticData {
-	private float path;
+public class PathData {
+	private long path;
 	private float lastSpeed;
-	private float lastUpdateTime;
+	private long lastUpdateTime;
 
-	@Override
 	public void update() {
 		//calculate acceleration
-		path+=((Data.speedData.getSpeed()+lastSpeed)/2f)*(System.currentTimeMillis()-lastUpdateTime);
-
-		float d = getPath();
-
-		if(d>cMax)
-			cMax=d;
-		if(d<cMin)
-			cMin=d;
-
-		//averaging
-		n++;
-		total+=d;
+		long nt=System.currentTimeMillis();
+		path+=(Data.speedData.getSpeed()+lastSpeed)*(nt-lastUpdateTime)/2000f;
+		lastUpdateTime=nt;
 	}
 
-	public float getPath() {
+	public long getPath() {
 		return path;
-	}
-
-	@Override
-	public float getMin(){
-		if(cMin==Integer.MAX_VALUE)
-			return 0;
-		else
-			return cMin;
-	}
-
-	@Override
-	public float getMax(){
-		if(cMax==Integer.MIN_VALUE)
-			return 0;
-		else
-			return cMax;
 	}
 }
