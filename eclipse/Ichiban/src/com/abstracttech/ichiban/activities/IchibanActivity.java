@@ -9,8 +9,10 @@ import com.abstracttech.ichiban.data.Data;
 import com.abstracttech.ichiban.data.MainPagerAdapter;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
@@ -23,6 +25,8 @@ public class IchibanActivity extends Activity {
 	private BluetoothEx bt=new BluetoothEx();
 	private static List<View> clients = new ArrayList<View>();
 
+	private PowerManager.WakeLock wl;
+	
 	public static final int _UPDATE_INTERVAL = 100;
 	private static boolean running=false;
 
@@ -45,7 +49,11 @@ public class IchibanActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pager);
+		
+		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
+	    wl = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "My Tag");
 
+		
 		//load pages
 		MainPagerAdapter adapter = new MainPagerAdapter();
 		ViewPager myPager = (ViewPager) findViewById(R.id.mypager);
@@ -112,7 +120,7 @@ public class IchibanActivity extends Activity {
 	@Override
 	protected void onStart() {
 		super.onStart();
-
+		 wl.acquire();
 		bt.onStart();
 	}
 
@@ -126,6 +134,7 @@ public class IchibanActivity extends Activity {
 	protected void onStop() {
 		super.onStop();
 		stopCar(null);
+		wl.release();
 	}
 
 	@Override
