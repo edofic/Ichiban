@@ -20,7 +20,7 @@ public class Now extends TextView {
 	protected void onDraw(Canvas canvas)
 	{
 		if(isInEditMode()) //dummy data for editor
-			this.setText("53.567");
+			this.setText("53.56");
 		else
 		{
 			long d = Data.pathData.getPath(); //data from datasource
