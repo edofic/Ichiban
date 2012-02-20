@@ -39,11 +39,11 @@
 
     <com.abstracttech.ichiban.views.Gmeter
         android:id="@+id/gmeter1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
         android:layout_alignRight="@+id/directionWheel1"
         android:layout_below="@+id/FPStextView1"
-        android:layout_marginRight="149dp"
+        android:layout_marginRight="100dp"
         android:src="@drawable/g_bg" />
 
     <com.abstracttech.ichiban.views.Gbar
@@ -54,13 +54,13 @@
         android:layout_alignTop="@+id/gmeter1"
         android:src="@drawable/gbar_ozadje" />
 
-    <com.abstracttech.ichiban.views.RpmBacground
-        android:id="@+id/rpmBacground1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
+    <ImageView
+        android:id="@+id/rpmMeter"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_alignLeft="@+id/powerButton1"
+        android:layout_marginLeft="100dp"
         android:layout_alignTop="@+id/gmeter1"
-        android:layout_marginLeft="22dp"
         android:src="@drawable/rpm_bg" />
 
 </RelativeLayout>
