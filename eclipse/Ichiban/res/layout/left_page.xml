@@ -99,4 +99,14 @@
         android:layout_height="wrap_content"
         android:text="FPStextView" />
 
+    <com.abstracttech.ichiban.views.PowerButton
+        android:id="@+id/powerButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="70dp"
+        android:layout_marginRight="70dp"
+/>
+
 </RelativeLayout>
