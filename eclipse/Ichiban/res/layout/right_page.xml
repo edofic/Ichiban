@@ -46,19 +46,17 @@
     <com.abstracttech.ichiban.views.PowerButton
         android:id="@+id/powerButton1"
         android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignTop="@+id/grafPot"
+        android:layout_alignLeft="@+id/grafPospesek"
+        android:clickable="true"
+        android:onClick="powerButtonClick" />
+
+    <com.abstracttech.ichiban.views.DirectionWheel
+        android:id="@+id/directionWheel1"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_height="300dp"
-        android:layout_alignTop="@+id/grafPot"
-        android:layout_alignTop="@+id/grafPot"
-        android:layout_marginLeft="70dp"
-        android:layout_toRightOf="@+id/FPStextView1"
-        android:layout_toRightOf="@+id/grafPot"
-        android:clickable="true"
-        directionWheel1=""
-        android:onClick="powerButtonClick/>
-
-    <com.abstracttech.ichiban.views.DirectionWheel
-        android:id=" />
+        android:layout_alignRight="@+id/grafHitrost"
+        android:layout_alignTop="@+id/grafPot" />
 
 </RelativeLayout>
