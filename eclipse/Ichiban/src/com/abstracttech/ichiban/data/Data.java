@@ -34,6 +34,7 @@ public class Data {
 	
 	public static SpeedData speedData=new SpeedData();
 	public static AccData accData=new AccData();
+	public static PathData pathData=new PathData();
 	public static StatisticData statistic=speedData;
 
 	private static String btLine=null;
@@ -122,6 +123,7 @@ public class Data {
 		
 		speedData.update();
 		accData.update();
+		pathData.update();
 		
 		//notify clients
 		for(View v : clients)
