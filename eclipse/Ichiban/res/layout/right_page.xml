@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:text="fps meter" />
 
-    <ImageView
+    <com.abstracttech.ichiban.views.graphs.AccelerationGraph
         android:id="@+id/grafPospesek"
         android:layout_width="500dp"
         android:layout_height="300dp"
@@ -25,7 +25,7 @@
         android:layout_marginTop="25dp"
         android:src="@drawable/graf1" />
 
-    <ImageView
+    <com.abstracttech.ichiban.views.graphs.SpeedGraph
         android:id="@+id/grafHitrost"
         android:layout_width="500dp"
         android:layout_height="300dp"
@@ -34,7 +34,7 @@
         android:layout_toRightOf="@+id/grafPospesek"
         android:src="@drawable/graf2" />
 
-    <ImageView
+    <com.abstracttech.ichiban.views.graphs.LengthGraph
         android:id="@+id/grafPot"
         android:layout_width="500dp"
         android:layout_height="300dp"
