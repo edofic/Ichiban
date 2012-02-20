@@ -13,12 +13,12 @@ import android.widget.ImageView;
 import com.abstracttech.ichiban.activities.IchibanActivity;
 import com.abstracttech.ichiban.data.Data;
 
-public class LengthGraph extends ImageView {
+public class PathGraph extends ImageView {
 	
 	private Queue data;					// Stack of data to be drawn
 	private float topLength;
 	
-	public LengthGraph(Context context, AttributeSet attrs) {
+	public PathGraph(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		
 		data = new LinkedList();
