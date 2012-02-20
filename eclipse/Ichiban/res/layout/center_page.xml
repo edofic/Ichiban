@@ -58,6 +58,18 @@
         android:layout_marginTop="29dp"
         android:layout_toRightOf="@+id/gmeter1"
         android:src="@drawable/gbar_ozadje" />
+
+    <com.abstracttech.ichiban.views.speed.NowMain
+        android:id="@+id/now1"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:layout_alignBottom="@+id/gbar1"
+        android:layout_marginBottom="45dp"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/powerButton1"
+        android:textSize="36sp"
+        android:gravity="right"
+        android:text="Now" />
 
 />
 
