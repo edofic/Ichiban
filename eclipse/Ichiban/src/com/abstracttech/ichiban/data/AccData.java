@@ -2,19 +2,19 @@ package com.abstracttech.ichiban.data;
 
 public class AccData extends StatisticData {
 	private float acc;
-	private float lastRpm;
+	private float lastSpeed;
 	private float lastUpdateTime;
 
 	@Override
 	public void update() {
 		//calculate acceleration
-		acc=(Data.speedData.getSpeed()-lastRpm)/(System.currentTimeMillis()-lastUpdateTime);
+		acc=(Data.speedData.getSpeed()-lastSpeed)/(System.currentTimeMillis()-lastUpdateTime);
 
 		float d = getAcc();
 
 		if(d>cMax)
 			cMax=d;
-		if(d<cMin && d>0)
+		if(d<cMin)
 			cMin=d;
 
 		//averaging
