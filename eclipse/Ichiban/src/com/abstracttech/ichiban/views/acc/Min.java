@@ -19,7 +19,7 @@ public class Min extends TextView {
 	protected void onDraw(Canvas canvas)
 	{
 		if(isInEditMode()) //dummy data for editor
-			this.setText("53.567");
+			this.setText("53.56");
 		else
 		{
 			float d = Data.accData.getMin(); //data from datasource
