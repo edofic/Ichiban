@@ -11,7 +11,7 @@ public class SpeedData extends StatisticData {
 	
 	@Override
 	public void update() {
-		d = Data.getRpm()*4f;
+		d = Data.getRpm()*Data._SPEED_TO_RPM_RATIO;
 
 		if(d>cMax)
 		{

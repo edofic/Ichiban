@@ -20,7 +20,9 @@ import android.view.View;
  *
  */
 public class Data {
-	private static final float _MAX_RPM = 40f;
+	public static final float _MAX_RPM = 40f;
+	public static final float _SPEED_TO_RPM_RATIO=4f;
+	public static final float _MAX_SPEED = _MAX_RPM * _SPEED_TO_RPM_RATIO;
 	private static ArrayList<String> data=null;
 	private static int index=0;
 	private static int rate;
