@@ -23,11 +23,11 @@ public class Now extends TextView {
 			this.setText("53.56");
 		else
 		{
-			long d = Data.pathData.getPath(); //data from datasource
+			double d = Data.pathData.getPath(); //data from datasource
 			if(d!=value)
 			{
 				value=d;
-				this.setText(String.format("%s", d));
+				this.setText(String.format("%.3f", d));
 			}
 		}
 		

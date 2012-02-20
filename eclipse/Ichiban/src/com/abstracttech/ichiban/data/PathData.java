@@ -8,11 +8,11 @@ public class PathData {
 	public void update() {
 		//calculate acceleration
 		long nt=System.currentTimeMillis();
-		path+=(Data.speedData.getSpeed()+lastSpeed)*(nt-lastUpdateTime)/120000f; //2 for average, and there are 60000 miliseconds in a minute
+		path+=(Data.speedData.getSpeed()+lastSpeed)*(nt-lastUpdateTime)/(2*60*10); //2 for averaging, 60 for minutes to seconds, 10 for centimeters to milimeters
 		lastUpdateTime=nt;
 	}
 
-	public long getPath() {
-		return path;
+	public float getPath(){
+		return path/1000f;
 	}
 }

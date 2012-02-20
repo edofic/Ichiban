@@ -1,6 +1,7 @@
 package com.abstracttech.ichiban.data;
 
 public class AccData extends StatisticData {
+	public static final float _MAX_ACC=100;
 	private float acc;
 	private float lastSpeed;
 	private long lastUpdateTime;
