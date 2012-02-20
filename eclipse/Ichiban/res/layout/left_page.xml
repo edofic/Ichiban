@@ -4,126 +4,99 @@
     android:layout_height="fill_parent"
     android:background="@drawable/bg_left" >
 
-    <TextView
-        android:id="@+id/acceleration"
+    <com.abstracttech.ichiban.views.acc.Now
+        android:id="@+id/now1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="62dp"
-        android:layout_marginTop="41dp"
-        android:text="@string/acceleration"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="140dp"
+        android:text="99.99" />
 
-    <TextView
-        android:id="@+id/speed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/acceleration"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="294dp"
-        android:text="@string/speed"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/acceleration"
-        android:layout_alignBottom="@+id/acceleration"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="518dp"
-        android:text="@string/time"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/distance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/speed"
-        android:layout_alignLeft="@+id/time"
-        android:layout_marginBottom="126dp"
-        android:text="@string/distance"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/now1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/speed"
-        android:layout_below="@+id/acceleration"
-        android:layout_marginTop="34dp"
-        android:text="@string/now"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/avarage1"
+    <com.abstracttech.ichiban.views.acc.Avg
+        android:id="@+id/avg1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/now1"
-        android:layout_alignBottom="@+id/now1"
-        android:layout_marginLeft="210dp"
-        android:layout_toRightOf="@+id/acceleration"
-        android:text="@string/avarage"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_marginLeft="250dp"
+        android:layout_toRightOf="@+id/now1"
+        android:text="99.99" />
 
-    <TextView
-        android:id="@+id/maximum1"
+    <com.abstracttech.ichiban.views.acc.Min
+        android:id="@+id/min1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/distance"
         android:layout_alignLeft="@+id/now1"
-        android:text="@string/maximum"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_below="@+id/now1"
+        android:layout_marginTop="110dp"
+        android:text="99.99" />
 
-    <TextView
-        android:id="@+id/minimum1"
+    <com.abstracttech.ichiban.views.acc.Max
+        android:id="@+id/max1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/maximum1"
-        android:layout_alignBottom="@+id/maximum1"
-        android:layout_alignLeft="@+id/avarage1"
-        android:text="@string/minimum"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_alignBaseline="@+id/min1"
+        android:layout_alignBottom="@+id/min1"
+        android:layout_alignRight="@+id/avg1"
+        android:text="99.99" />
 
-    <TextView
-        android:id="@+id/TextView04"
+    <com.abstracttech.ichiban.views.speed.Now
+        android:id="@+id/now2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/speed"
-        android:layout_alignTop="@+id/speed"
-        android:layout_marginTop="54dp"
-        android:text="@string/now"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_alignLeft="@+id/min1"
+        android:layout_below="@+id/min1"
+        android:layout_marginTop="190dp"
+        android:text="Now" />
 
-    <TextView
-        android:id="@+id/TextView01"
+    <com.abstracttech.ichiban.views.speed.Avg
+        android:id="@+id/avg2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView04"
-        android:layout_alignBottom="@+id/TextView04"
-        android:layout_alignLeft="@+id/minimum1"
-        android:text="@string/avarage"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+       	android:layout_alignBaseline="@+id/now2"
+        android:layout_alignLeft="@+id/avg1"
+        android:text="99.99" />
 
-    <TextView
-        android:id="@+id/TextView03"
+    <com.abstracttech.ichiban.views.speed.Min
+        android:id="@+id/min2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/TextView04"
-        android:layout_below="@+id/TextView04"
-        android:layout_marginTop="111dp"
-        android:text="@string/maximum"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_alignLeft="@+id/now1"
+        android:layout_below="@+id/now2"
+        android:layout_marginTop="82dp"
+        android:text="99.99" />
 
-    <TextView
-        android:id="@+id/TextView02"
+    <com.abstracttech.ichiban.views.speed.Max
+        android:id="@+id/max2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/TextView03"
-        android:layout_alignBottom="@+id/TextView03"
-        android:layout_alignLeft="@+id/TextView01"
-        android:text="@string/minimum"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_alignBaseline="@+id/min2"
+        android:layout_alignBottom="@+id/min2"
+        android:layout_alignRight="@+id/avg2"
+        android:text="99.99" />
+
+    <com.abstracttech.ichiban.views.path.Now
+        android:id="@+id/pathNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/now1"
+        android:layout_marginLeft="280dp"
+        android:layout_toRightOf="@+id/avg1"
+        android:text="123456789" />
+
+    <com.abstracttech.ichiban.views.time.Running
+        android:id="@+id/running1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/pathNow"
+        android:layout_marginTop="300dp"
+        android:text="Running" />
+
+    <com.abstracttech.ichiban.views.FPStextView
+        android:id="@+id/fPStextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FPStextView" />
 
 </RelativeLayout>
