@@ -8,7 +8,7 @@ public class PathData {
 	public void update() {
 		//calculate acceleration
 		long nt=System.currentTimeMillis();
-		path+=(Data.speedData.getSpeed()+lastSpeed)*(nt-lastUpdateTime)/2000f;
+		path+=(Data.speedData.getSpeed()+lastSpeed)*(nt-lastUpdateTime)/120000f; //2 for average, and there are 60000 miliseconds in a minute
 		lastUpdateTime=nt;
 	}
 

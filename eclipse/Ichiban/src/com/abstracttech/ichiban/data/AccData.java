@@ -10,7 +10,7 @@ public class AccData extends StatisticData {
 		//calculate acceleration
 		long nt=System.currentTimeMillis();
 		float speed=Data.speedData.getSpeed();
-		acc=(speed -lastSpeed)/(float)(nt-lastUpdateTime);
+		acc=(speed -lastSpeed)/((float)(nt-lastUpdateTime)/60f);
 		lastUpdateTime=nt;
 		lastSpeed=speed;
 		float d = getAcc();
