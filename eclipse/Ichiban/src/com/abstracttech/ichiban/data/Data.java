@@ -20,6 +20,7 @@ import android.view.View;
  *
  */
 public class Data {
+	private static final float _MAX_RPM = 40f;
 	private static ArrayList<String> data=null;
 	private static int index=0;
 	private static int rate;
@@ -213,7 +214,7 @@ public class Data {
 	}
 
 	public static float getRpmPercentage() {
-		return rpm / 100.f;
+		return rpm / _MAX_RPM;
 	}
 
 	public static float getTurnRatioPercentage() {
