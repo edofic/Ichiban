@@ -2,14 +2,25 @@ package com.abstracttech.ichiban.data;
 
 public class SpeedData extends StatisticData {
 	float d;
+	
+	public SpeedData(){
+		super();
+		cMax=Integer.MIN_VALUE;
+		cMin=Integer.MAX_VALUE;
+	}
+	
 	@Override
 	public void update() {
 		d = Data.getRpm()*4f;
 
 		if(d>cMax)
+		{
 			cMax=d;
-		if(d<cMin)
+		}
+		if(d<cMin && d>0)
+		{
 			cMin=d;
+		}
 
 		//averaging
 		n++;
