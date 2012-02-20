@@ -26,7 +26,7 @@
         android:clickable="true"
         android:onClick="powerButtonClick" />
 
-    <ImageView
+    <com.abstracttech.ichiban.views.RPMImageView
         android:id="@+id/rpmMeter"
         android:layout_width="400dp"
         android:layout_height="400dp"
