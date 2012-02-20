@@ -4,7 +4,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import com.abstracttech.ichiban.data.Data;
-import com.abstracttech.ichiban.views.Graph;
 
 public class PathGraph extends Graph 
 {
@@ -15,5 +14,11 @@ public class PathGraph extends Graph
 	protected float GetData()
 	{
 		return top = Data.pathData.getPath();
+	}
+	
+	@Override
+	protected void onPoll(float d)
+	{	
+		bottom=d;
 	}
 }

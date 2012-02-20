@@ -5,7 +5,6 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 import com.abstracttech.ichiban.data.Data;
-import com.abstracttech.ichiban.views.Graph;
 
 public class SpeedGraph extends Graph 
 {
