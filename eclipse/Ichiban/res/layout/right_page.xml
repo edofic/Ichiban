@@ -14,14 +14,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:text="fps meter" />
-    
-    <com.abstracttech.ichiban.views.DirectionWheel
-        android:id="@+id/volan"
-        android:layout_width="260dp"
-        android:layout_height="260dp"
-        android:layout_alignTop="@+id/powerButton1"
-        android:layout_marginLeft="86dp"
-        android:layout_toRightOf="@+id/grafPot" />
 
     <ImageView
         android:id="@+id/grafPospesek"
@@ -46,21 +38,26 @@
         android:id="@+id/grafPot"
         android:layout_width="500dp"
         android:layout_height="300dp"
-        android:layout_below="@+id/grafPospesek"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="50dp"
-        android:layout_toRightOf="@+id/powerButton1"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
         android:src="@drawable/graf3" />
 
     <com.abstracttech.ichiban.views.PowerButton
         android:id="@+id/powerButton1"
-        android:layout_width="260dp"
-        android:layout_height="260dp"
-        android:layout_alignLeft="@+id/grafPospesek"
-        android:layout_below="@+id/grafPospesek"
-        android:layout_marginTop="25dp"
-        android:clickable="true"
-        android:onClick="powerButtonClick"
-        android:src="@drawable/acce" />
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignTop="@+id/grafPot"
+        android:layout_toRightOf="@+id/FPStextView1"
+        android:background="@drawable/power_red" />
+
+    <com.abstracttech.ichiban.views.DirectionWheel
+        android:id="@+id/directionWheel1"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_alignTop="@+id/grafPot"
+        android:layout_marginLeft="70dp"
+        android:layout_toRightOf="@+id/grafPot"
+        android:background="@drawable/volan" />
 
 </RelativeLayout>
