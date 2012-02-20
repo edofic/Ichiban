@@ -28,7 +28,7 @@ public class AccelerationGraph extends ImageView {
 	
 	protected float GetData()
 	{
-		return Data.accData.getAcc();
+		return Data.accData.getAcc()/2+0.5f;
 	}
 
 	@Override
