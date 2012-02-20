@@ -34,7 +34,7 @@
         android:layout_toRightOf="@+id/grafPospesek"
         android:src="@drawable/graf2" />
 
-    <com.abstracttech.ichiban.views.graphs.LengthGraph
+    <com.abstracttech.ichiban.views.graphs.PathGraph
         android:id="@+id/grafPot"
         android:layout_width="500dp"
         android:layout_height="300dp"
