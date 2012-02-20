@@ -3,13 +3,16 @@ package com.abstracttech.ichiban.data;
 public class AccData extends StatisticData {
 	private float acc;
 	private float lastSpeed;
-	private float lastUpdateTime;
+	private long lastUpdateTime;
 
 	@Override
 	public void update() {
 		//calculate acceleration
-		acc=(Data.speedData.getSpeed()-lastSpeed)/(System.currentTimeMillis()-lastUpdateTime);
-
+		long nt=System.currentTimeMillis();
+		float speed=Data.speedData.getSpeed();
+		acc=(speed -lastSpeed)/(float)(nt-lastUpdateTime);
+		lastUpdateTime=nt;
+		lastSpeed=speed;
 		float d = getAcc();
 
 		if(d>cMax)
