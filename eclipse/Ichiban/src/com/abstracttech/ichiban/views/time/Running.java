@@ -23,11 +23,11 @@ public class Running extends TextView {
 			this.setText("never started");
 		else
 		{
-			long d = Data.getRunningTime(); //data from datasource
+			long d = Data.getRunningTime()/1000; //data from datasource
 			if(d!=value)
 			{
 				value=d;
-				this.setText(DateFormat.format("hh:mmm:ss", d));
+				this.setText(""+d); //DateFormat.format("hh:mmm:ss", d*));
 			}
 		}	
 		super.onDraw(canvas);
