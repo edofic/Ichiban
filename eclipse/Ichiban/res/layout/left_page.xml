@@ -10,7 +10,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="120dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="130dp"
         android:text=" 0.00" />
 
     <com.abstracttech.ichiban.views.acc.Avg
