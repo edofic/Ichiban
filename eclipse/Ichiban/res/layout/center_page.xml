@@ -20,8 +20,7 @@
         android:layout_height="231dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="12dp"
-        android:layout_marginLeft="50dp"
-        android:layout_toRightOf="@+id/FPStextView1"
+        android:layout_marginLeft="112dp"
         android:background="@drawable/power_red"
         android:clickable="true"
         android:onClick="powerButtonClick" />
@@ -55,7 +54,6 @@
         android:id="@+id/gbar1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/FPStextView1"
         android:layout_marginLeft="22dp"
         android:layout_marginTop="29dp"
         android:layout_toRightOf="@+id/gmeter1"
