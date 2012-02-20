@@ -3,8 +3,8 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/bg_middle" >
+    android:background="@drawable/bg_middle"
+    android:orientation="vertical" >
 
     <com.abstracttech.ichiban.views.FPStextView
         android:id="@+id/FPStextView1"
@@ -14,90 +14,25 @@
         android:layout_alignParentTop="true"
         android:text="fps meter" />
 
-    <ImageView
-        android:id="@+id/speedDial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/FPStextView1"
-        android:layout_marginLeft="105dp"
-        android:layout_toRightOf="@+id/FPStextView1"
-        android:src="@drawable/rpm_bg" />
-
-    <com.abstracttech.ichiban.views.Gmeter
-        android:id="@+id/gmeter1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/speedDial"
-        android:layout_marginLeft="141dp"
-        android:layout_toRightOf="@+id/speedDial"
-        android:src="@drawable/g_bg" />
-
-    <com.abstracttech.ichiban.views.Gbar
-        android:id="@+id/gbar1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/gmeter1"
-        android:layout_marginLeft="151dp"
-        android:layout_toRightOf="@+id/gmeter1"
-        android:src="@drawable/gbar_ozadje" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="22dp"
-        android:src="@drawable/bar" />
-
     <com.abstracttech.ichiban.views.PowerButton
-        android:id="@+id/powerButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
+        android:id="@+id/powerButton1"
+        android:layout_width="284dp"
+        android:layout_height="257dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignTop="@+id/imageView1"
+        android:layout_marginLeft="37dp"
+        android:layout_marginBottom="7dp"
+        android:background="@drawable/power_red"
         android:clickable="true"
         android:onClick="powerButtonClick" />
 
-    <Button
-        android:id="@+id/accButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/speedgumb"
-        android:layout_toLeftOf="@+id/gmeter1"
-        android:background="@drawable/acce" />
-
-    <Button
-        android:id="@+id/speedgumb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
-        android:layout_alignRight="@+id/speedDial"
-        android:layout_marginBottom="117dp"
-        android:background="@drawable/spee" />
-
-    <Button
-        android:id="@+id/distanceButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/imageView1"
-        android:layout_marginBottom="50dp"
-        android:layout_toLeftOf="@+id/gmeter1"
-        android:background="@drawable/dist" />
-
-    <ImageView
-        android:id="@+id/ozadjegraf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/gmeter1"
-        android:layout_alignTop="@+id/accButton"
-        android:src="@drawable/grafback" />
-
     <com.abstracttech.ichiban.views.DirectionWheel
         android:id="@+id/directionWheel1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ozadjegraf"
-        android:layout_alignParentRight="true" />
-
+        android:layout_width="280dp"
+        android:layout_height="255dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/powerButton1"
+        android:layout_marginRight="40dp"
+        android:background="@drawable/volan" />
+	
 </RelativeLayout>
