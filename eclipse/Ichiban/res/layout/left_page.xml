@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="140dp"
-        android:text="99.99" />
+        android:text=" 0.00" />
 
     <com.abstracttech.ichiban.views.acc.Avg
         android:id="@+id/avg1"
@@ -21,7 +21,7 @@
         android:layout_alignBaseline="@+id/now1"
         android:layout_marginLeft="250dp"
         android:layout_toRightOf="@+id/now1"
-        android:text="99.99" />
+          android:text=" 0.00" />
 
     <com.abstracttech.ichiban.views.acc.Min
         android:id="@+id/min1"
@@ -30,7 +30,7 @@
         android:layout_alignLeft="@+id/now1"
         android:layout_below="@+id/now1"
         android:layout_marginTop="110dp"
-        android:text="99.99" />
+          android:text=" 0.00" />
 
     <com.abstracttech.ichiban.views.acc.Max
         android:id="@+id/max1"
@@ -39,7 +39,7 @@
         android:layout_alignBaseline="@+id/min1"
         android:layout_alignBottom="@+id/min1"
         android:layout_alignRight="@+id/avg1"
-        android:text="99.99" />
+        android:text=" 0.00" />
 
     <com.abstracttech.ichiban.views.speed.Now
         android:id="@+id/now2"
@@ -48,7 +48,7 @@
         android:layout_alignLeft="@+id/min1"
         android:layout_below="@+id/min1"
         android:layout_marginTop="190dp"
-        android:text="Now" />
+   android:text=" 0.00" />
 
     <com.abstracttech.ichiban.views.speed.Avg
         android:id="@+id/avg2"
@@ -56,7 +56,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/now2"
         android:layout_alignLeft="@+id/avg1"
-        android:text="99.99" />
+      android:text=" 0.00" />
 
     <com.abstracttech.ichiban.views.speed.Min
         android:id="@+id/min2"
@@ -65,7 +65,7 @@
         android:layout_alignLeft="@+id/now1"
         android:layout_below="@+id/now2"
         android:layout_marginTop="82dp"
-        android:text="99.99" />
+   android:text=" 0.00" />
 
     <com.abstracttech.ichiban.views.speed.Max
         android:id="@+id/max2"
@@ -74,7 +74,7 @@
         android:layout_alignBaseline="@+id/min2"
         android:layout_alignBottom="@+id/min2"
         android:layout_alignRight="@+id/avg2"
-        android:text="99.99" />
+       android:text=" 0.00" />
 
     <com.abstracttech.ichiban.views.path.Now
         android:id="@+id/pathNow"
@@ -83,7 +83,7 @@
         android:layout_alignBaseline="@+id/now1"
         android:layout_marginLeft="280dp"
         android:layout_toRightOf="@+id/avg1"
-        android:text="123456789" />
+        android:text="        0" />
 
     <com.abstracttech.ichiban.views.time.Running
         android:id="@+id/running1"
@@ -91,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/pathNow"
         android:layout_marginTop="300dp"
-        android:text="Running" />
+        android:text="00:00:00" />
 
     <com.abstracttech.ichiban.views.FPStextView
         android:id="@+id/fPStextView1"
