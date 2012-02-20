@@ -28,7 +28,7 @@ public class SpeedGraph extends ImageView {
 	
 	protected float GetData()
 	{
-		return Data.getRpmPercentage();
+		return Data.speedData.getSpeed()/Data._MAX_SPEED;
 	}
 
 	@Override
