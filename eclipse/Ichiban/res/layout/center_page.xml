@@ -19,40 +19,12 @@
         android:layout_width="243dp"
         android:layout_height="231dp"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="50dp"
         android:layout_marginBottom="12dp"
+        android:layout_marginLeft="50dp"
         android:layout_toRightOf="@+id/FPStextView1"
         android:background="@drawable/power_red"
         android:clickable="true"
         android:onClick="powerButtonClick" />
-
-    <com.abstracttech.ichiban.views.DirectionWheel
-        android:id="@+id/directionWheel1"
-        android:layout_width="233dp"
-        android:layout_height="233dp"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/powerButton1"
-        android:layout_marginRight="148dp"
-        android:layout_marginBottom="12dp" />
-        
-       
-
-    <com.abstracttech.ichiban.views.Gmeter
-        android:id="@+id/gmeter1"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:layout_alignRight="@+id/directionWheel1"
-        android:layout_below="@+id/FPStextView1"
-        android:layout_marginRight="100dp"
-        android:src="@drawable/g_bg" />
-
-    <com.abstracttech.ichiban.views.Gbar
-        android:id="@+id/gbar1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/directionWheel1"
-        android:layout_alignTop="@+id/gmeter1"
-        android:src="@drawable/gbar_ozadje" />
 
     <ImageView
         android:id="@+id/rpmMeter"
@@ -60,7 +32,35 @@
         android:layout_height="400dp"
         android:layout_alignLeft="@+id/powerButton1"
         android:layout_marginLeft="100dp"
-        android:layout_alignTop="@+id/gmeter1"
         android:src="@drawable/rpm_bg" />
+
+    <com.abstracttech.ichiban.views.DirectionWheel
+        android:id="@+id/directionWheel1"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_alignBottom="@+id/powerButton1"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="0dp"
+        android:layout_marginRight="150dp" />
+
+    <com.abstracttech.ichiban.views.Gmeter
+        android:id="@+id/gmeter1"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/directionWheel1"
+        android:src="@drawable/g_bg" />
+
+    <com.abstracttech.ichiban.views.Gbar
+        android:id="@+id/gbar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/FPStextView1"
+        android:layout_marginLeft="22dp"
+        android:layout_marginTop="29dp"
+        android:layout_toRightOf="@+id/gmeter1"
+        android:src="@drawable/gbar_ozadje" />
+
+/>
 
 </RelativeLayout>
