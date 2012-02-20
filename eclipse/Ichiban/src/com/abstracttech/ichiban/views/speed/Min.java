@@ -22,7 +22,7 @@ public class Min extends TextView {
 			this.setText("53.567");
 		else
 		{
-			float d = Data.rpmData.getMin(); //data from datasource
+			float d = Data.speedData.getMin(); //data from datasource
 			if(d!=value)
 			{
 				value=d;

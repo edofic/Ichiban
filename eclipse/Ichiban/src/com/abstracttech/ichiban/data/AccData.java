@@ -8,7 +8,7 @@ public class AccData extends StatisticData {
 	@Override
 	public void update() {
 		//calculate acceleration
-		acc=(Data.getRpm()-lastRpm)/(System.currentTimeMillis()-lastUpdateTime);
+		acc=(Data.speedData.getSpeed()-lastRpm)/(System.currentTimeMillis()-lastUpdateTime);
 
 		float d = getAcc();
 

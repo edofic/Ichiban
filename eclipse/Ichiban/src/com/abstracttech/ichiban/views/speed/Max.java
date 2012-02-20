@@ -22,7 +22,7 @@ public class Max extends TextView {
 			this.setText("53.567");
 		else
 		{
-			float d = Data.rpmData.getMax(); //data from datasource
+			float d = Data.speedData.getMax(); //data from datasource
 			if(d!=value)
 			{
 				value=d;

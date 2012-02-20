@@ -1,13 +1,14 @@
 package com.abstracttech.ichiban.data;
 
-public class RpmData extends StatisticData {
+public class SpeedData extends StatisticData {
+	float d;
 	@Override
 	public void update() {
-		float d = Data.getRpm();
+		d = Data.getRpm()*4f;
 
 		if(d>cMax)
 			cMax=d;
-		if(d<cMin && d>0)
+		if(d<cMin)
 			cMin=d;
 
 		//averaging
@@ -29,5 +30,9 @@ public class RpmData extends StatisticData {
 			return 0;
 		else
 			return cMax;
+	}
+	
+	public float getSpeed(){
+		return d;
 	}
 }

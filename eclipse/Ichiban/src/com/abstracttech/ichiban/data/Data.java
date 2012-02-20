@@ -32,9 +32,9 @@ public class Data {
 	private static float x,y,z, rpm, turnRatio;
 	private static float locX, locY, locZ, locRpm, locTurn;
 	
-	public static RpmData rpmData=new RpmData();
+	public static SpeedData speedData=new SpeedData();
 	public static AccData accData=new AccData();
-	public static StatisticData statistic=rpmData;
+	public static StatisticData statistic=speedData;
 
 	private static String btLine=null;
 
@@ -120,7 +120,7 @@ public class Data {
 		rpm=locRpm;
 		turnRatio=locTurn;
 		
-		rpmData.update();
+		speedData.update();
 		accData.update();
 		
 		//notify clients
