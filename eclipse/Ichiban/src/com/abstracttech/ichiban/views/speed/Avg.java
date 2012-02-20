@@ -22,7 +22,7 @@ public class Avg extends TextView {
 			this.setText("53.567");
 		else
 		{
-			float d = Data.statistic.getAvg(); //data from datasource
+			float d = Data.speedData.getAvg(); //data from datasource
 			if(d!=value)
 			{
 				value=d;

@@ -1,4 +1,4 @@
-package com.abstracttech.ichiban.views.speed;
+package com.abstracttech.ichiban.views.path;
 
 import com.abstracttech.ichiban.data.Data;
 
@@ -23,7 +23,7 @@ public class Now extends TextView {
 			this.setText("53.567");
 		else
 		{
-			float d = Data.speedData.getSpeed(); //data from datasource
+			float d = Data.pathData.getPath(); //data from datasource
 			if(d!=value)
 			{
 				value=d;

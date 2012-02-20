@@ -10,7 +10,7 @@ public class PathData extends StatisticData {
 		//calculate acceleration
 		path+=((Data.speedData.getSpeed()+lastSpeed)/2f)*(System.currentTimeMillis()-lastUpdateTime);
 
-		float d = getAcc();
+		float d = getPath();
 
 		if(d>cMax)
 			cMax=d;
@@ -22,7 +22,7 @@ public class PathData extends StatisticData {
 		total+=d;
 	}
 
-	public float getAcc() {
+	public float getPath() {
 		return path;
 	}
 
