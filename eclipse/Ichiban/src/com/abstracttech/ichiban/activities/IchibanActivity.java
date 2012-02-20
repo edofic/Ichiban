@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.PowerManager;
+import android.os.Vibrator;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
@@ -86,6 +87,9 @@ public class IchibanActivity extends Activity {
 			Toast.makeText(this, R.string.not_connected, Toast.LENGTH_LONG).show();
 			Log.e(getPackageName(), "power button clicked and something gone wrong", e);
 		}
+		Vibrator vib1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+		vib1.vibrate(60);
+		
 	}
 
 	public void test(View v) {
@@ -157,6 +161,8 @@ public class IchibanActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		bt.handleBTmenu(item);
+		Vibrator vib1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+		vib1.vibrate(60);
 		return false;
 	}
 }
