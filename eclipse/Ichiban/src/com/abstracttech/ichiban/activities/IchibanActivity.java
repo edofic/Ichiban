@@ -7,6 +7,7 @@ import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.BluetoothEx;
 import com.abstracttech.ichiban.data.Data;
 import com.abstracttech.ichiban.data.MainPagerAdapter;
+import com.abstracttech.ichiban.data.Vibrate;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,9 +23,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+
 public class IchibanActivity extends Activity {
 	private BluetoothEx bt=new BluetoothEx();
 	private static List<View> clients = new ArrayList<View>();
+	public static Vibrate vibrate;									//call IchibanActivity.Vibrate.vibrate(long ms) to vibrate
 
 	private PowerManager.WakeLock wl;
 	
@@ -50,6 +53,8 @@ public class IchibanActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pager);
+		
+		vibrate = new Vibrate((Vibrator) getSystemService(Context.VIBRATOR_SERVICE));
 		
 		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 	    wl = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "My Tag");
@@ -81,15 +86,13 @@ public class IchibanActivity extends Activity {
 				running=false;
 			}
 			notifyClients();
+			vibrate.Update();
 		}
 		catch(Exception e)
 		{
 			Toast.makeText(this, R.string.not_connected, Toast.LENGTH_LONG).show();
 			Log.e(getPackageName(), "power button clicked and something gone wrong", e);
-		}
-		Vibrator vib1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-		vib1.vibrate(60);
-		
+		}		
 	}
 
 	public void test(View v) {
