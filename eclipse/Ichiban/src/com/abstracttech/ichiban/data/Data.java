@@ -226,6 +226,7 @@ public class Data {
 
 	/**
 	 * Invalidates subscribed view on data change.
+	 * all customs views that show data are subscribed to this
 	 * @param v view to be invalidated
 	 */
 	public static void subscribe(View v){

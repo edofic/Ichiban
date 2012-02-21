@@ -10,6 +10,11 @@ import android.widget.ImageView;
 import com.abstracttech.ichiban.data.Data;
 import com.abstracttech.ichiban.data.StatisticData;
 
+/**
+ * this renders all the graphs
+ * graph type is selected from Data.graphs
+ * real time morphing to another graph is also possible
+ */
 public class Graph extends ImageView {
 	Object[] currentData;
 	protected float top,bottom;
@@ -20,7 +25,9 @@ public class Graph extends ImageView {
 
 	public Graph(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		Data.subscribe(this);// 565 340
+		Data.subscribe(this);
+		
+		//find out who i am
 		int myid=getId();
 		if(Data.graphID[0]==myid)
 			typeID=0;
@@ -34,6 +41,7 @@ public class Graph extends ImageView {
 
 	/**
 	 * morphs the graph to selected type
+	 * via setting borders and datasource
 	 * @param type to morph into
 	 */
 	private void morph(GraphType type)
@@ -81,11 +89,14 @@ public class Graph extends ImageView {
 	@Override
 	protected void onDraw(Canvas canvas)
 	{
-		//mighty morphin
+		//morph if needed
 		if(currentType!=Data.graphs[typeID])
 			morph(Data.graphs[typeID]);
 
+		//draw bg
 		super.onDraw(canvas);
+		
+		//for path graph
 		if(updateBorders)
 		{
 			top=Data.pathData.last;
