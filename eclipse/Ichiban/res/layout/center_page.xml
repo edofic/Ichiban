@@ -100,7 +100,15 @@
         android:layout_marginBottom="15dp"
         android:text="Distance"
         android:background="@null" />
-   
+
+    <com.abstracttech.ichiban.views.graphs.Graph
+        android:id="@+id/graf0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Button01"
+        android:layout_marginRight="28dp"
+        android:layout_toLeftOf="@+id/directionWheel1"
+        android:src="@drawable/grafback" />
 
 />
 
