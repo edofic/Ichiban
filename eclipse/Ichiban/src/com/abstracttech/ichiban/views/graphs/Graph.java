@@ -106,18 +106,18 @@ public class Graph extends ImageView {
 		Paint p = new Paint();
 		p.setStrokeWidth(1);
 
-		p.setColor(Color.BLACK);								//name
-		canvas.drawText("s(t)", this.getWidth() - 20, 20, p);
-
 		p.setColor(Color.argb(255, 100, 100, 100));
+		
+		int W = this.getWidth();
+		int H = this.getHeight();
 
 
-		for(int i = 0; i < 4; i++)		//side data: lines, percentage,... 
+		for(int i = 0; i < 4; i++)		//side data: lines, percentage,...   300   400
 		{
-			canvas.drawText("" + (i + 1) * 20 + "%", 2, this.getHeight() - (i + 1) * this.getHeight() / 4 - 2, p);
-			canvas.drawText("" + (i + 1) * 0.5f + "s", (i + 1) * this.getWidth() / 4, this.getHeight() - 6, p);
-			canvas.drawLine(0, (i + 1) * this.getHeight() / 4, this.getWidth(), (i + 1) * this.getHeight() / 4, p);
-			canvas.drawLine((i + 1) * this.getWidth() / 4, 0, (i + 1) * this.getWidth() / 4, this.getHeight(), p);
+			canvas.drawText("" + (i + 1) * 20 + "%", W * 0.06f , H - (i + 1) * H / 4 - 2, p);
+			canvas.drawText("" + (2 - (i + 1) * 0.5f) + "s", (i + 1) * W / 4, H * (1 - 0.15f), p);
+			canvas.drawLine(0.03f * W, (i + 1) * H / 4, W * (1 - 0.03f), (i + 1) * H / 4, p);
+			canvas.drawLine((i + 1) * W / 4, 0.0225f * H, (i + 1) * W / 4, H * (1 - 0.12f), p);
 		}
 
 
@@ -130,15 +130,15 @@ public class Graph extends ImageView {
 
 			for (int i = 0; i < currentData.length - 1; i++)		//Set points to draw lines
 			{
-				points[i * 4] = this.getWidth() * i / (float)currentData.length;
-				points[i * 4 + 1] = this.getHeight() * getPoint(i) - 2;
-				points[i * 4 + 2] = this.getWidth() * (i + 1) / (float)currentData.length;
-				points[i * 4 + 3] = this.getHeight() * getPoint(i+1) - 2;
+				points[i * 4] = W * i / (float)currentData.length + 0.03f * W;
+				points[i * 4 + 1] = H * getPoint(i) * 0.88f + 0.0225f * H;
+				points[i * 4 + 2] = W * (i + 1) / (float)currentData.length + 0.03f * W;
+				points[i * 4 + 3] = H * getPoint(i+1) * 0.88f + 0.0225f * H;
 
-				pointsShadow[i * 4] = this.getWidth() * i / (float)currentData.length + 5;
-				pointsShadow[i * 4 + 1] = this.getHeight() * getPoint(i) + 5;
-				pointsShadow[i * 4 + 2] = this.getWidth() * (i + 1) / (float)currentData.length + 5;
-				pointsShadow[i * 4 + 3] = this.getHeight() * getPoint(i+1) + 5;
+				pointsShadow[i * 4] = W * i / (float)currentData.length + 5 + 0.03f * W;
+				pointsShadow[i * 4 + 1] = H * getPoint(i) * 0.88f + 0.04f * H;
+				pointsShadow[i * 4 + 2] = W * (i + 1) / (float)currentData.length + 5 + 0.03f * W;
+				pointsShadow[i * 4 + 3] = H * getPoint(i+1) * 0.88f + 0.04f * H;
 			}
 
 			canvas.drawLines(pointsShadow, p);
