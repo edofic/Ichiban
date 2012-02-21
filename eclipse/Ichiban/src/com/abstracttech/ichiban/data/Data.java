@@ -12,6 +12,7 @@ import java.util.TimerTask;
 import com.abstracttech.ichiban.R;
 
 import android.content.res.Resources;
+import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
 
@@ -39,6 +40,8 @@ public class Data {
 	public static AccData accData=new AccData();
 	public static PathData pathData=new PathData();
 	public static StatisticData statistic=speedData;
+	
+	public static Vibrate vibrator;
 
 	private static String btLine=null;
 
@@ -131,6 +134,9 @@ public class Data {
 		//notify clients
 		for(View v : clients)
 			v.postInvalidate();
+				
+		//update vibrations
+				vibrator.update();
 	}
 
 	public static void btUpdate(String line)
