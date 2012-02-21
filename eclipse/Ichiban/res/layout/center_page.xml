@@ -78,8 +78,10 @@
         android:layout_alignTop="@+id/directionWheel1"
         android:layout_marginTop="22dp"
         android:layout_toRightOf="@+id/powerButton1"
-        android:text="Acceleration"
-        android:background="@null"  />
+        android:background="@null"
+        android:clickable="true"
+        android:onClick="morphingClick"
+        android:text="Acceleration" />
 
     <Button
         android:id="@+id/morphToSpeed"
@@ -88,8 +90,10 @@
         android:layout_alignLeft="@+id/now1"
         android:layout_below="@id/morphToAcc"
         android:layout_marginTop="27dp"
-        android:text="Speed"
-        android:background="@null"  />
+        android:background="@null"
+        android:clickable="true"
+        android:onClick="morphingClick"
+        android:text="Speed" />
 
     <Button
         android:id="@+id/morphToPath"
@@ -98,8 +102,10 @@
         android:layout_alignBottom="@+id/powerButton1"
         android:layout_alignRight="@id/morphToSpeed"
         android:layout_marginBottom="15dp"
-        android:text="Distance"
-        android:background="@null" />
+        android:background="@null"
+        android:clickable="true"
+        android:onClick="morphingClick"
+        android:text="Distance" />
 
     <com.abstracttech.ichiban.views.graphs.Graph
         android:id="@+id/graf0"
@@ -110,6 +116,8 @@
         android:layout_toLeftOf="@+id/directionWheel1"
         android:src="@drawable/grafback" />
 
+
 />
+
 
 </RelativeLayout>
