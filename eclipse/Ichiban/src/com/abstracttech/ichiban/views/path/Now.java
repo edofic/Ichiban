@@ -1,14 +1,18 @@
 package com.abstracttech.ichiban.views.path;
 
-import com.abstracttech.ichiban.data.Data;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.abstracttech.ichiban.data.Data;
+
+/**
+ * text view for displaying path
+ */
 public class Now extends TextView {
 
+	//local buffer
 	private double value;
 
 	public Now(Context context, AttributeSet attrs) {
@@ -23,6 +27,7 @@ public class Now extends TextView {
 			this.setText("53.56");
 		else
 		{
+			//on change of data set text
 			double d = Data.pathData.get(); //data from datasource
 			if(d!=value)
 			{
