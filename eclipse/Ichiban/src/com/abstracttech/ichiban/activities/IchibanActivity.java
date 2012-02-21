@@ -54,7 +54,7 @@ public class IchibanActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pager);
 		
-		vibrate = new Vibrate((Vibrator) getSystemService(Context.VIBRATOR_SERVICE));
+		Data.vibrator = new Vibrate((Vibrator) getSystemService(Context.VIBRATOR_SERVICE));
 		
 		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 	    wl = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "My Tag");
@@ -86,7 +86,7 @@ public class IchibanActivity extends Activity {
 				running=false;
 			}
 			notifyClients();
-			vibrate.Update();
+			Data.vibrator.vibrate(60);
 		}
 		catch(Exception e)
 		{
@@ -164,8 +164,6 @@ public class IchibanActivity extends Activity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		bt.handleBTmenu(item);
-		Vibrator vib1 = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-		vib1.vibrate(60);
 		return false;
 	}
 }
