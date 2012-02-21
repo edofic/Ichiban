@@ -109,15 +109,11 @@
 
     <com.abstracttech.ichiban.views.graphs.Graph
         android:id="@+id/graf0"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/morphToPath"
-        android:layout_marginRight="24dp"
-        android:layout_toLeftOf="@+id/directionWheel1"
-        android:src="@drawable/grafback" />
-
-
-/>
-
+        android:layout_width="355dp"
+        android:layout_height="205dp"
+        android:layout_alignBottom="@+id/powerButton1"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toLeftOf="@+id/directionWheel1" />
 
 </RelativeLayout>
