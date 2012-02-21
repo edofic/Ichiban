@@ -29,8 +29,10 @@
         android:id="@+id/rpmMeter"
         android:layout_width="400dp"
         android:layout_height="400dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
         android:layout_alignLeft="@+id/powerButton1"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="40dp"
         android:src="@drawable/rpm_bg" />
 
     <com.abstracttech.ichiban.views.DirectionWheel
@@ -47,15 +49,17 @@
         android:layout_width="400dp"
         android:layout_height="400dp"
         android:layout_alignParentTop="true"
+         android:layout_marginTop="20dp"
         android:layout_alignRight="@+id/directionWheel1"
+        android:layout_marginRight="100dp"
         android:src="@drawable/g_bg" />
 
     <com.abstracttech.ichiban.views.Gbar
         android:id="@+id/gbar1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="22dp"
-        android:layout_marginTop="29dp"
+        android:layout_marginLeft="-50dp"
+        android:layout_marginTop="55dp"
         android:layout_toRightOf="@+id/gmeter1"
         android:src="@drawable/gbar_ozadje" />
 
@@ -64,8 +68,8 @@
         android:layout_width="60dp"
         android:layout_height="50dp"
         android:layout_alignBottom="@+id/gbar1"
-        android:layout_marginBottom="45dp"
-        android:layout_marginLeft="30dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="-35dp"
         android:layout_toRightOf="@+id/powerButton1"
         android:gravity="right"
         android:text="0"
@@ -90,6 +94,7 @@
         android:layout_alignLeft="@+id/now1"
         android:layout_below="@id/morphToAcc"
         android:layout_marginTop="27dp"
+        android:layout_marginLeft="50dp"
         android:background="@null"
         android:clickable="true"
         android:onClick="morphingClick"
@@ -102,6 +107,7 @@
         android:layout_alignBottom="@+id/powerButton1"
         android:layout_alignRight="@id/morphToSpeed"
         android:layout_marginBottom="15dp"
+        android:layout_marginLeft="-50dp"
         android:background="@null"
         android:clickable="true"
         android:onClick="morphingClick"
