@@ -47,6 +47,7 @@ public class Data {
 	//current data line from bluetooth
 	private static String btLine=null;
 
+
 	/**graph indexes are as follows
 	 * center screen: 0
 	 *right screen
