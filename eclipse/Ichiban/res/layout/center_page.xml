@@ -6,14 +6,6 @@
     android:background="@drawable/bg_middle"
     android:orientation="vertical" >
 
-    <com.abstracttech.ichiban.views.FPStextView
-        android:id="@+id/FPStextView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="fps meter" />
-
     <com.abstracttech.ichiban.views.PowerButton
         android:id="@+id/powerButton1"
         android:layout_width="243dp"
@@ -112,8 +104,8 @@
         android:layout_width="355dp"
         android:layout_height="205dp"
         android:layout_alignBottom="@+id/powerButton1"
-        android:layout_marginRight="30dp"
         android:layout_marginBottom="10dp"
+        android:layout_marginRight="30dp"
         android:layout_toLeftOf="@+id/directionWheel1" />
 
 </RelativeLayout>

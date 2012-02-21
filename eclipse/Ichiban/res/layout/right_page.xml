@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ib= "http://schemas.android.com/apk/res/com.abstracttech.ichiban"
+    xmlns:ib="http://schemas.android.com/apk/res/com.abstracttech.ichiban"
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_right"
     android:baselineAligned="false"
     android:orientation="horizontal" >
-
-    <com.abstracttech.ichiban.views.FPStextView
-        android:id="@+id/FPStextView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="fps meter" />
 
     <com.abstracttech.ichiban.views.graphs.Graph
         android:id="@+id/grafPospesek"
@@ -48,11 +40,11 @@
         android:id="@+id/powerButton1"
         android:layout_width="300dp"
         android:layout_height="300dp"
-        android:layout_alignTop="@+id/grafPot"
         android:layout_alignLeft="@+id/grafPospesek"
+        android:layout_alignTop="@+id/grafPot"
         android:clickable="true"
         android:onClick="powerButtonClick" />
-
+
     <com.abstracttech.ichiban.views.DirectionWheel
         android:id="@+id/directionWheel1"
         android:layout_width="300dp"
