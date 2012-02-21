@@ -1,5 +1,8 @@
 package com.abstracttech.ichiban.data;
 
+/**
+ * calculates acceleration data
+ */
 public class AccData extends StatisticData {
 	public static final float _MAX_ACC=100;
 	private float acc;

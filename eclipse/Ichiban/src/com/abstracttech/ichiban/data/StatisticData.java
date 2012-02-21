@@ -5,6 +5,10 @@ import java.util.Queue;
 
 import com.abstracttech.ichiban.activities.IchibanActivity;
 
+/**
+ * template for all statistic data
+ * source for graphs' datapoints
+ */
 public abstract class StatisticData {
 	protected final int _MAX_DATA_POINTS = 2000 / IchibanActivity._UPDATE_INTERVAL;
 

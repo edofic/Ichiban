@@ -1,5 +1,7 @@
 package com.abstracttech.ichiban.data;
-
+/**
+ * calculates speed data
+ */
 public class SpeedData extends StatisticData {
 	float d;
 	

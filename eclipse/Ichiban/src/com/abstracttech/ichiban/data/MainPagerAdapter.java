@@ -1,8 +1,5 @@
 package com.abstracttech.ichiban.data;
 
-import com.abstracttech.ichiban.R;
-import com.abstracttech.ichiban.views.PowerButton;
-
 import android.content.Context;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
@@ -10,6 +7,12 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.abstracttech.ichiban.R;
+
+/**
+ * adapter for view pager
+ * this handles page layout
+ */
 public class MainPagerAdapter extends PagerAdapter {
 
 	@Override

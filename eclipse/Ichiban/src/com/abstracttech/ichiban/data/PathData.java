@@ -1,5 +1,7 @@
 package com.abstracttech.ichiban.data;
-
+/**
+ * calculates path data
+ */
 public class PathData extends StatisticData{
 	private long path;
 	private float lastSpeed;

@@ -18,8 +18,7 @@ import android.util.Log;
 import android.view.View;
 
 /**
- * @author andraz
- *
+ * holds all the data
  */
 public class Data {
 	public static final float _MAX_RPM = 40f;
