@@ -72,7 +72,7 @@
         android:textSize="36sp" />
 
     <Button
-        android:id="@+id/Button01"
+        android:id="@+id/morphToAcc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/directionWheel1"
@@ -82,7 +82,7 @@
         android:background="@null"  />
 
     <Button
-        android:id="@+id/Button02"
+        android:id="@+id/morphToSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/now1"
@@ -92,7 +92,7 @@
         android:background="@null"  />
 
     <Button
-        android:id="@+id/button1"
+        android:id="@+id/morphToPath"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/powerButton1"
