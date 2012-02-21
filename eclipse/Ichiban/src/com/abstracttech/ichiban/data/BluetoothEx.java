@@ -258,6 +258,7 @@ public class BluetoothEx {
 			Intent serverIntent = new Intent(parrent, DeviceListActivity.class);
 			parrent.startActivityForResult(serverIntent, REQUEST_CONNECT_DEVICE);
 			Data.destroyData();
+			break;
 		case R.id.loadCSV:
 			//load data from local csv file
 			try {
@@ -266,6 +267,7 @@ public class BluetoothEx {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			break;
 		case R.id.loadDenseCSV:
 			//load data from local csv file
 			try {
@@ -273,11 +275,13 @@ public class BluetoothEx {
 				bt_enabled=false;
 			} catch (IOException e) {
 				e.printStackTrace();
-			}		
+			}
+			break;
 		case R.id.preferences:
 			//run preferences
 			Intent serverIntent1 = new Intent(parrent, Preferences.class);
 			parrent.startActivity(serverIntent1);
+			break;
 		}
 	}
 }

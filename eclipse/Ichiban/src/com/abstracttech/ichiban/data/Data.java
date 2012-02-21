@@ -240,4 +240,7 @@ public class Data {
 	public static boolean isAutoupdating(){
 		return isAutoupdating;
 	}
+	public static int getRate(){
+		return rate;
+	}
 }

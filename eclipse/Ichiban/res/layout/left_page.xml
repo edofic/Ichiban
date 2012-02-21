@@ -98,10 +98,19 @@
         android:id="@+id/powerButton1"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:layout_alignLeft="@+id/pathNow"
         android:layout_alignParentBottom="true"
-        android:layout_marginLeft="64dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="34dp"
         android:clickable="true"
         android:onClick="powerButtonClick" />
+
+    <com.abstracttech.ichiban.views.time.UpdateInterval
+        android:id="@+id/updateInterval1"
+        style="@style/right"
+        android:layout_above="@+id/min2"
+        android:layout_alignRight="@+id/running1"
+        android:layout_marginRight="45dp"
+        android:layout_marginBottom="-40dp"
+        android:text="0ms" />
 
 </RelativeLayout>
