@@ -1,12 +1,15 @@
 package com.abstracttech.ichiban.views.speed;
 
-import com.abstracttech.ichiban.data.Data;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.abstracttech.ichiban.data.Data;
+
+/**
+ * text view for displaying current speed on central screen
+ */
 public class NowMain extends TextView {
 
 	private float value;
