@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ib= "http://schemas.android.com/apk/res/com.abstracttech.ichiban"
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,7 +16,7 @@
         android:layout_alignParentTop="true"
         android:text="fps meter" />
 
-    <com.abstracttech.ichiban.views.graphs.AccelerationGraph
+    <com.abstracttech.ichiban.views.graphs.Graph
         android:id="@+id/grafPospesek"
         android:layout_width="500dp"
         android:layout_height="300dp"
@@ -25,7 +26,7 @@
         android:layout_marginTop="25dp"
         android:src="@drawable/graf1" />
 
-    <com.abstracttech.ichiban.views.graphs.SpeedGraph
+    <com.abstracttech.ichiban.views.graphs.Graph
         android:id="@+id/grafHitrost"
         android:layout_width="500dp"
         android:layout_height="300dp"
@@ -34,7 +35,7 @@
         android:layout_toRightOf="@+id/grafPospesek"
         android:src="@drawable/graf2" />
 
-    <com.abstracttech.ichiban.views.graphs.PathGraph
+    <com.abstracttech.ichiban.views.graphs.Graph
         android:id="@+id/grafPot"
         android:layout_width="500dp"
         android:layout_height="300dp"
