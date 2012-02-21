@@ -50,11 +50,13 @@ public class Graph extends ImageView {
 			bottom=-20;
 			top=160;
 			datasource=Data.speedData;
+			this.updateBorders=false;
 			break;
 		case ACCELERATION:
 			bottom=-80;
 			top=80;
 			datasource=Data.accData;
+			this.updateBorders=false;
 			break;
 		}
 		currentType=type;
