@@ -2,6 +2,9 @@ package com.abstracttech.ichiban.data;
 
 import android.os.Vibrator;
 
+/**
+ * vibration wrapper
+ */
 public class Vibrate{
 
 	private Vibrator vibrator;
@@ -25,6 +28,10 @@ public class Vibrate{
 			vibrator.vibrate(milliseconds);
 	}
 
+	/**
+	 * update function
+	 * handles big changes and vibrates automaticaly
+	 */
 	public void update()
 	{
 		if(toVibrate)
