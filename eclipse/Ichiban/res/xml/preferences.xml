@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="First Category" >
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="vibration"
+            android:summary="Vibration on/off"
+            android:title="Vibration" />
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="sound"
+            android:summary="Sound on/off"
+            android:title="Sound" />
+
+        <ListPreference
+            android:entries="@array/resetArray"
+            android:entryValues="@array/resetArrayData"
+            android:key="reset"
+            android:defaultValue="notRestart"
+            android:summary="adsfdsgsgfdfsggsgs"
+            android:title="Reset data" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

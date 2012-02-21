@@ -52,5 +52,14 @@
     <string name="avarage">Avarage</string>
     <string name="maximum">Maximum</string>
     <string name="minimum">Minimum</string>
+    <string name="preferences">Preferences</string>
+    <string-array name="resetArray">
+        <item >Reset on start</item>
+        <item >Continue on start</item>
+    </string-array>
+    <string-array name="resetArrayData">
+        <item >restart</item>
+        <item >notRestart</item>
+    </string-array>
 
 </resources>

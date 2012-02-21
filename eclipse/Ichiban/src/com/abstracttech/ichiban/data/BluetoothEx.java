@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.activities.DeviceListActivity;
 import com.abstracttech.ichiban.activities.IchibanActivity;
+import com.abstracttech.ichiban.activities.Preferences;
 
 public class BluetoothEx {
 	public static final int _UPDATE_INTERVAL = IchibanActivity._UPDATE_INTERVAL;
@@ -31,7 +32,7 @@ public class BluetoothEx {
 		// Get local Bluetooth adapter
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 
-		
+
 		/* we dont necceserily need bt
 
 		// If the adapter is null, then Bluetooth is not supported
@@ -39,7 +40,7 @@ public class BluetoothEx {
 			Toast.makeText(parrent, "Bluetooth is not available", Toast.LENGTH_LONG).show();
 			return;
 		}
-		*/
+		 */
 	}
 
 
@@ -242,7 +243,7 @@ public class BluetoothEx {
 		if (mChatService != null) mChatService.stop();
 		if(D) Log.e(TAG, "--- ON DESTROY ---");
 	}
-	
+
 	public void handleBTmenu(MenuItem item)
 	{
 		switch (item.getItemId()) {
@@ -272,8 +273,11 @@ public class BluetoothEx {
 				bt_enabled=false;
 			} catch (IOException e) {
 				e.printStackTrace();
-			}
+			}		
+		case R.id.preferences:
+			//run preferences
+			Intent serverIntent1 = new Intent(parrent, Preferences.class);
+			parrent.startActivity(serverIntent1);
 		}
 	}
-
 }
