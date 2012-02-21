@@ -50,7 +50,7 @@ public class Data {
 	 *right screen
 	 * up left: 1, up right 2, botom 3
 	 */
-	public static GraphType[] graphs= { GraphType.SPEED, GraphType.PATH, GraphType.SPEED, GraphType.PATH };
+	public static GraphType[] graphs= { GraphType.SPEED, GraphType.ACCELERATION, GraphType.SPEED, GraphType.PATH };
 	public static int[] graphID = {0, R.id.grafPospesek,R.id.grafHitrost, R.id.grafPot};
 
 	public static void loadCSV(Resources res) throws IOException {
