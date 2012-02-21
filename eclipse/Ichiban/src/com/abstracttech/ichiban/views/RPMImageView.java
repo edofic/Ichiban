@@ -4,18 +4,19 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Color;
 import android.graphics.Matrix;
-import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
 import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.Data;
 
+/**
+ * image view for displaying current speed with dashboard-style speedometer
+ */
 public class RPMImageView extends ImageView {
 
-	private Bitmap pointer;									//pointer image
+	private Bitmap pointer;									//pointer image, dial
 	private Bitmap rpm_top;
 	private Matrix matrix;									//rotation matrix
 
