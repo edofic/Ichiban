@@ -25,6 +25,8 @@ public class SpeedData extends StatisticData {
 		//averaging
 		n++;
 		total+=d;
+		
+		updateData(d);
 	}
 
 	@Override

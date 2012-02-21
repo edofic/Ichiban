@@ -15,8 +15,8 @@ public class Vibrate{
 	}
 	
 	/**
-	 * 
-	 * @param ms = milliseconds
+	 * start vibrator
+	 * @param ms time in milliseconds
 	 */
 	public void vibrate(long ms)
 	{
