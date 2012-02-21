@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.ImageView;
@@ -13,6 +12,9 @@ import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.activities.IchibanActivity;
 import com.abstracttech.ichiban.data.Data;
 
+/**
+ *  vertical g-meter for displaying z-axis g-force
+ */
 public class Gbar extends ImageView {
 
 	private Bitmap gSquare;

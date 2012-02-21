@@ -1,16 +1,19 @@
 package com.abstracttech.ichiban.views;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.util.AttributeSet;
+import android.widget.ImageView;
+
 import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.activities.IchibanActivity;
 import com.abstracttech.ichiban.data.Data;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.util.AttributeSet;
-import android.widget.ImageView;
-import android.graphics.BitmapFactory;
-
+/**
+ * formula-1 style g-meter
+ */
 public class Gmeter extends ImageView {
 	private Bitmap dot;
 	private float dotHeight, dotWidth;
@@ -46,10 +49,12 @@ public class Gmeter extends ImageView {
 		float cy = newY();
 		long nt=System.currentTimeMillis(); //current time
 
+		//interpolate data
 		canvas.drawBitmap(dot, 
 				lastX + (cx - lastX)*(float)(nt-lastUpdate)/inter, 
 				lastY + (cy - lastY)*(float)(nt-lastUpdate)/inter, null);
 
+		//update data on select time interval
 		if((nt-lastUpdate)>=inter)
 		{
 			lastX=cx;
@@ -57,6 +62,7 @@ public class Gmeter extends ImageView {
 			lastUpdate=nt;
 		}
 
+		//redraw next frame
 		this.invalidate();
 	}
 
