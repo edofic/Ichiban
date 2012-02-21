@@ -10,6 +10,7 @@ public class AccelerationGraph extends Graph
 		super(context, attrs);
 		bottom=-80;
 		top=80;
+		datasource=Data.accData;
 	}
 
 	

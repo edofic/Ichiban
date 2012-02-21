@@ -12,5 +12,6 @@ public class SpeedGraph extends Graph
 		super(context, attrs);
 		bottom=-20;
 		top=160;
+		datasource=Data.speedData;
 	}
 }

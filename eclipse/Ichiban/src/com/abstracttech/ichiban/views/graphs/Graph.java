@@ -27,7 +27,7 @@ public abstract class Graph extends ImageView {
 	}
 
 	protected boolean isThereData() {
-		return (datasource.data!=null && Data.accData.data.size()>0);
+		return (datasource!=null && datasource.data!=null && Data.accData.data.size()>0);
 	}
 
 	protected Object[] getArray() {

@@ -10,6 +10,7 @@ public class PathGraph extends Graph
 {
 	public PathGraph(Context context, AttributeSet attrs) {
 		super(context, attrs);
+		datasource=Data.pathData;
 	}
 
 	@Override
