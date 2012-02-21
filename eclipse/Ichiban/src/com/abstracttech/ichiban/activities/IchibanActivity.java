@@ -3,17 +3,9 @@ package com.abstracttech.ichiban.activities;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.abstracttech.ichiban.R;
-import com.abstracttech.ichiban.data.BluetoothEx;
-import com.abstracttech.ichiban.data.Data;
-import com.abstracttech.ichiban.data.MainPagerAdapter;
-import com.abstracttech.ichiban.data.Vibrate;
-import com.abstracttech.ichiban.views.graphs.GraphType;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.Vibrator;
@@ -23,11 +15,19 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.abstracttech.ichiban.R;
+import com.abstracttech.ichiban.data.BluetoothEx;
+import com.abstracttech.ichiban.data.Data;
+import com.abstracttech.ichiban.data.MainPagerAdapter;
+import com.abstracttech.ichiban.data.Vibrate;
+import com.abstracttech.ichiban.views.graphs.GraphType;
 
+/**
+ * main activity
+ * manages layout and events
+ */
 public class IchibanActivity extends Activity {
 	private BluetoothEx bt=new BluetoothEx();
 	private static List<View> clients = new ArrayList<View>();
@@ -41,6 +41,10 @@ public class IchibanActivity extends Activity {
 		return running;
 	}
 
+	/**
+	 * subscribe to running change
+	 * @param v view to notify
+	 */
 	public static void subscribe(View v){
 		clients.add(v);
 	}
@@ -59,6 +63,7 @@ public class IchibanActivity extends Activity {
 		
 		Data.vibrator = new Vibrate((Vibrator) getSystemService(Context.VIBRATOR_SERVICE));
 		
+		//make sure screen stays on
 		PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
 	    wl = pm.newWakeLock(PowerManager.FULL_WAKE_LOCK, "My Tag");
 
@@ -74,8 +79,11 @@ public class IchibanActivity extends Activity {
 		running=false;
 	}
 
+	/**
+	 * toglle running
+	 * @param v sender
+	 */
 	public void powerButtonClick(View v){
-
 		try
 		{
 			if(running==false)
@@ -98,6 +106,10 @@ public class IchibanActivity extends Activity {
 		}		
 	}
 
+	/**
+	 * listener for testing button
+	 * @param v sender
+	 */
 	public void test(View v) {
 		Toast.makeText(this, "use IchibanActivity's test() to quickly test something ;)", Toast.LENGTH_LONG).show();
 	}
@@ -130,7 +142,9 @@ public class IchibanActivity extends Activity {
 	@Override
 	protected void onStart() {
 		super.onStart();
-		 wl.acquire();
+		//wake lock
+		wl.acquire();
+		//start bluetooth activity
 		bt.onStart();
 	}
 
@@ -169,7 +183,10 @@ public class IchibanActivity extends Activity {
 		bt.handleBTmenu(item);
 		return false;
 	}
-	
+	/**
+	 * handles morphing buttons on central screen
+	 * @param sender sender button
+	 */
 	public void morphingClick(View sender)
 	{
 		switch(sender.getId())
