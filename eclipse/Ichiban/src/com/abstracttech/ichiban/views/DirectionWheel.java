@@ -2,6 +2,7 @@ package com.abstracttech.ichiban.views;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Matrix;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
@@ -19,9 +20,15 @@ public class DirectionWheel extends ImageView {
 	@Override
 	protected void onDraw(Canvas canvas)
 	{
-		canvas.save();
+		/*canvas.save();
 	     canvas.rotate(Data.getTurnRatioPercentage() * 50,this.getWidth()/2f,this.getHeight()/2f);
 	     super.onDraw(canvas);
-	     canvas.restore();
+	     canvas.restore();*/
+		Matrix m = new Matrix();
+		m.setRotate(Data.getTurnRatioPercentage() * 50,this.getWidth()/2f,this.getHeight()/2f);
+		
+		canvas.setMatrix(m);
+		
+		super.onDraw(canvas);
 	}
 }

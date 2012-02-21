@@ -75,7 +75,7 @@
         android:layout_alignBaseline="@+id/now1"
         android:layout_marginLeft="200dp"
         android:layout_toRightOf="@+id/avg1"
-        android:text="00:00:00"
+        android:text="00:00"
         android:textSize="50sp" />
 
     <com.abstracttech.ichiban.views.FPStextView

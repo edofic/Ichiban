@@ -58,7 +58,7 @@
         android:layout_marginTop="29dp"
         android:layout_toRightOf="@+id/gmeter1"
         android:src="@drawable/gbar_ozadje" />
-
+
     <com.abstracttech.ichiban.views.speed.NowMain
         android:id="@+id/now1"
         android:layout_width="60dp"
@@ -67,41 +67,10 @@
         android:layout_marginBottom="45dp"
         android:layout_marginLeft="30dp"
         android:layout_toRightOf="@+id/powerButton1"
+        android:textSize="36sp"
         android:gravity="right"
-        android:text="0"
-        android:textSize="36sp" />
+        android:text="Now" />
 
-    <Button
-        android:id="@+id/Button01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/directionWheel1"
-        android:layout_marginTop="22dp"
-        android:layout_toRightOf="@+id/powerButton1"
-        android:text="Acceleration"
-        android:background="@null"  />
-
-    <Button
-        android:id="@+id/Button02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/now1"
-        android:layout_below="@+id/Button01"
-        android:layout_marginTop="27dp"
-        android:text="Speed"
-        android:background="@null"  />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/powerButton1"
-        android:layout_alignRight="@+id/Button02"
-        android:layout_marginBottom="15dp"
-        android:text="Distance"
-        android:background="@null" />
-   
-
-/>
+/>
 
 </RelativeLayout>

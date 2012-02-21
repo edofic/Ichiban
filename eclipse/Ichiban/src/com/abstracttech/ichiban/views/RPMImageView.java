@@ -39,12 +39,12 @@ public class RPMImageView extends ImageView {
 
 		if(isInEditMode()) //dummy data for editor
 		{
-			matrix.setRotate(0.2f * 219.f -150, pointer.getWidth() / 2 , pointer.getHeight() - 10);		
+			matrix.setRotate(0.2f * 220.f -110, pointer.getWidth() / 2 , pointer.getHeight() - 10);		
 			matrix.postTranslate(this.getWidth() / 2 - pointer.getWidth() / 2 , this.getHeight() / 2 - pointer.getHeight() + 10);		// Rotates pointer
 		}
 		else
 		{
-			matrix.setRotate((float) (Data.getRpmPercentage() * 219.f -140),pointer.getWidth() / 2 , pointer.getHeight() - 10);			//0 -> up, + -> clockwise, - -> anticlockwise
+			matrix.setRotate((float) (Data.getRpmPercentage() * 220.f -110),pointer.getWidth() / 2 , pointer.getHeight() - 10);			//0 -> up, + -> clockwise, - -> anticlockwise
 			matrix.postTranslate(this.getWidth() / 2 - pointer.getWidth() / 2 , this.getHeight() / 2 - pointer.getHeight() + 10);
 		}
 

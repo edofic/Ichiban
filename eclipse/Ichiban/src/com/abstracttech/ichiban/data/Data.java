@@ -136,7 +136,7 @@ public class Data {
 			v.postInvalidate();
 				
 		//update vibrations
-				vibrator.update();
+			vibrator.update();
 	}
 
 	public static void btUpdate(String line)
