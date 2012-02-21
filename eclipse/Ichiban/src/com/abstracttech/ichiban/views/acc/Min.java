@@ -1,12 +1,15 @@
 package com.abstracttech.ichiban.views.acc;
 
-import com.abstracttech.ichiban.data.Data;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.abstracttech.ichiban.data.Data;
+
+/**
+ * text view for displaying acceleration minimum
+ */
 public class Min extends TextView {
 	private float value;
 
@@ -29,7 +32,7 @@ public class Min extends TextView {
 				this.setText(String.format("%.2f", d));
 			}
 		}
-		
+
 		super.onDraw(canvas);
 	}
 

@@ -7,6 +7,9 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+/**
+ * text view for displaying acceleration maximum
+ */
 public class Max extends TextView {
 	private float value;
 

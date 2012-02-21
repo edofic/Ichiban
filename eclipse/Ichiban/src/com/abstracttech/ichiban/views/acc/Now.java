@@ -1,13 +1,15 @@
 package com.abstracttech.ichiban.views.acc;
 
-import com.abstracttech.ichiban.data.Data;
-
-import android.os.SystemClock;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.abstracttech.ichiban.data.Data;
+
+/**
+ * text view for displaying current acceleration
+ */
 public class Now extends TextView {
 	private float value;
 	

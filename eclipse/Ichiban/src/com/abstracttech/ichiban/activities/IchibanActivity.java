@@ -8,10 +8,12 @@ import com.abstracttech.ichiban.data.BluetoothEx;
 import com.abstracttech.ichiban.data.Data;
 import com.abstracttech.ichiban.data.MainPagerAdapter;
 import com.abstracttech.ichiban.data.Vibrate;
+import com.abstracttech.ichiban.views.graphs.GraphType;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.Vibrator;
@@ -21,6 +23,8 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -164,5 +168,21 @@ public class IchibanActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		bt.handleBTmenu(item);
 		return false;
+	}
+	
+	public void morphingClick(View sender)
+	{
+		switch(sender.getId())
+		{
+		case R.id.morphToAcc:
+			Data.graphs[0]=GraphType.ACCELERATION;
+			break;
+		case R.id.morphToSpeed:
+			Data.graphs[0]=GraphType.SPEED;
+			break;
+		case R.id.morphToPath:
+			Data.graphs[0]=GraphType.PATH;
+			break;
+		}
 	}
 }
