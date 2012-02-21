@@ -45,7 +45,8 @@ public class SpeedData extends StatisticData {
 			return cMax;
 	}
 	
-	public float getSpeed(){
+	@Override
+	public float get(){
 		return d;
 	}
 }

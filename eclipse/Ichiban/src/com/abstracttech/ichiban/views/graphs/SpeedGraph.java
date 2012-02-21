@@ -13,20 +13,4 @@ public class SpeedGraph extends Graph
 		bottom=-20;
 		top=160;
 	}
-
-	@Override
-	protected float GetData()
-	{
-		return Data.speedData.getSpeed()/Data._MAX_SPEED;
-	}
-
-	@Override
-	protected boolean isThereData() {
-		return (Data.speedData.data!=null && Data.accData.data.size()>0);
-	}
-
-	@Override
-	protected Object[] getArray() {
-		return Data.speedData.array;
-	}
 }

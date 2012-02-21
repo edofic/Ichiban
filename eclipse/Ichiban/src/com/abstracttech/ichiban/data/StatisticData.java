@@ -7,7 +7,7 @@ import com.abstracttech.ichiban.activities.IchibanActivity;
 
 public abstract class StatisticData {
 	protected final int _MAX_DATA_POINTS = 2000 / IchibanActivity._UPDATE_INTERVAL;
-	
+
 	protected float cMin; //current minimum
 	protected float cMax; //current minimum
 	protected double total; //for averaging
@@ -26,6 +26,11 @@ public abstract class StatisticData {
 		data = new LinkedList<Float>();
 	}
 
+	public float get()
+	{
+		return 0;
+	}
+
 	public float getMin(){
 		return cMin;
 	}
@@ -39,14 +44,14 @@ public abstract class StatisticData {
 		//this gives 10^14 data points before error. 
 		//this equals to approx. 100000 years of 35ms sampling.
 	}
-	
+
 	protected void updateData(float nextPoint){
 		if (data.size()>=_MAX_DATA_POINTS) {
 			first = data.poll();
 		}
 		data.add(nextPoint);
 		last=nextPoint;
-		
+
 		array=data.toArray();
 	}
 

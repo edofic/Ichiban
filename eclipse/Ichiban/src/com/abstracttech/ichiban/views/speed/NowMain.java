@@ -23,7 +23,7 @@ public class NowMain extends TextView {
 			this.setText("0");
 		else
 		{
-			float d = Data.speedData.getSpeed(); //data from datasource
+			float d = Data.speedData.get(); //data from datasource
 			if(d!=value)
 			{
 				value=d;

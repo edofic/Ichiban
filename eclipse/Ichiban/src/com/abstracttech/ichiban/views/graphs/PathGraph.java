@@ -12,21 +12,6 @@ public class PathGraph extends Graph
 		super(context, attrs);
 	}
 
-	protected float GetData()
-	{
-		return Data.pathData.getPath();
-	}
-	
-	@Override
-	protected boolean isThereData() {
-		return (Data.pathData.data!=null && Data.accData.data.size()>0);
-	}
-
-	@Override
-	protected Object[] getArray() {
-		return Data.pathData.array;
-	}
-	
 	@Override
 	protected void onDraw(Canvas canvas)
 	{

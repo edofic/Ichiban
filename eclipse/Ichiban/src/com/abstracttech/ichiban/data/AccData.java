@@ -10,11 +10,11 @@ public class AccData extends StatisticData {
 	public void update() {
 		//calculate acceleration
 		long nt=System.currentTimeMillis();
-		float speed=Data.speedData.getSpeed();
+		float speed=Data.speedData.get();
 		acc=(speed -lastSpeed)/((float)(nt-lastUpdateTime)/60f);
 		lastUpdateTime=nt;
 		lastSpeed=speed;
-		float d = getAcc();
+		float d = get();
 
 		if(d>cMax)
 			cMax=d;
@@ -27,7 +27,8 @@ public class AccData extends StatisticData {
 		updateData(d);
 	}
 
-	public float getAcc() {
+	@Override
+	public float get() {
 		return acc;
 	}
 

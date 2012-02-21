@@ -8,12 +8,13 @@ public class PathData extends StatisticData{
 	public void update() {
 		//calculate acceleration
 		long nt=System.currentTimeMillis();
-		path+=(Data.speedData.getSpeed()+lastSpeed)*(nt-lastUpdateTime)/(2*60*10); //2 for averaging, 60 for minutes to seconds, 10 for centimeters to milimeters
+		path+=(Data.speedData.get()+lastSpeed)*(nt-lastUpdateTime)/(2*60*10); //2 for averaging, 60 for minutes to seconds, 10 for centimeters to milimeters
 		lastUpdateTime=nt;
 		updateData(path);
 	}
 
-	public float getPath(){
+	@Override
+	public float get(){
 		return path/1000f;
 	}
 }

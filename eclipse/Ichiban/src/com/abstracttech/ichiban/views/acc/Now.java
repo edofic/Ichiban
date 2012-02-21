@@ -23,7 +23,7 @@ public class Now extends TextView {
 			this.setText("53.56");
 		else
 		{
-			float d = Data.accData.getAcc(); //data from datasource
+			float d = Data.accData.get(); //data from datasource
 			if(d!=value)
 			{
 				value=d;

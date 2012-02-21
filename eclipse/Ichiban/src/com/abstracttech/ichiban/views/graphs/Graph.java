@@ -8,10 +8,12 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 import com.abstracttech.ichiban.data.Data;
+import com.abstracttech.ichiban.data.StatisticData;
 
 public abstract class Graph extends ImageView {
 	Object[] currentData;
 	protected float top,bottom;
+	protected StatisticData datasource;
 	
 	public Graph(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -19,8 +21,18 @@ public abstract class Graph extends ImageView {
 		Data.subscribe(this);// 565 340
 	}
 	
-	protected abstract boolean isThereData();
-	protected abstract Object[] getArray();
+	protected float GetData()
+	{
+		return datasource.get();
+	}
+
+	protected boolean isThereData() {
+		return (datasource.data!=null && Data.accData.data.size()>0);
+	}
+
+	protected Object[] getArray() {
+		return datasource.array;
+	}
 		
 	private float getPoint(int i){
 		return 1 - ((Float)currentData[i] - bottom)/ (top-bottom);
@@ -75,10 +87,5 @@ public abstract class Graph extends ImageView {
 			p.setStrokeWidth(4);
 			canvas.drawLines(points, p);
 		}	
-	}
-
-	protected float GetData() {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 }
