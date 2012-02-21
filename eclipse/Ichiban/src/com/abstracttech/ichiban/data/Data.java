@@ -10,6 +10,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import com.abstracttech.ichiban.R;
+import com.abstracttech.ichiban.views.graphs.GraphType;
 
 import android.content.res.Resources;
 import android.os.Vibrator;
@@ -46,8 +47,7 @@ public class Data {
 	//current data line from bluetooth
 	private static String btLine=null;
 
-<<<<<<< HEAD
-=======
+
 	/**graph indexes are as follows
 	 * center screen: 0
 	 *right screen
@@ -55,7 +55,6 @@ public class Data {
 	 */
 	public static GraphType[] graphs= { GraphType.SPEED, GraphType.ACCELERATION, GraphType.SPEED, GraphType.PATH };
 	public static int[] graphID = {R.id.graf0, R.id.grafPospesek,R.id.grafHitrost, R.id.grafPot};
->>>>>>> origin/master
 
 	/**
 	 * load local data
