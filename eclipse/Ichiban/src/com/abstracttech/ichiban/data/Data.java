@@ -41,7 +41,7 @@ public class Data {
 	public static PathData pathData=new PathData();
 	public static StatisticData statistic=speedData;
 	
-	//public static Vibrate vibrator;
+	public static Vibrate vibrator;
 
 	private static String btLine=null;
 
@@ -136,7 +136,7 @@ public class Data {
 			v.postInvalidate();
 				
 		//update vibrations
-				vibrator.update();
+			vibrator.update();
 	}
 
 	public static void btUpdate(String line)
