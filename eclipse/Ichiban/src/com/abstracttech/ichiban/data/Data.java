@@ -10,7 +10,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import com.abstracttech.ichiban.R;
-import com.abstracttech.ichiban.views.graphs.GraphType;
 
 import android.content.res.Resources;
 import android.os.Vibrator;
@@ -46,12 +45,6 @@ public class Data {
 
 	private static String btLine=null;
 
-	/**center screen: 0
-	 *right screen
-	 * up left: 1, up right 2, botom 3
-	 */
-	public static GraphType[] graphs= { GraphType.SPEED, GraphType.ACCELERATION, GraphType.SPEED, GraphType.PATH };
-	public static int[] graphID = {0, R.id.grafPospesek,R.id.grafHitrost, R.id.grafPot};
 
 	public static void loadCSV(Resources res) throws IOException {
 		InputStream inputStream = res.openRawResource(R.raw.data);
