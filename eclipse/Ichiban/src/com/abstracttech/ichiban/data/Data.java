@@ -29,18 +29,18 @@ public class Data {
 	private static int rate;
 
 	private static Timer timer;
-	private static long started;
+	private static long started,stopped;
 	private static boolean isAutoupdating=false;
 	private static List<View> clients = new ArrayList<View>();
 
 	private static float x,y,z, rpm, turnRatio;
 	private static float locX, locY, locZ, locRpm, locTurn;
-	
+
 	public static SpeedData speedData=new SpeedData();
 	public static AccData accData=new AccData();
 	public static PathData pathData=new PathData();
 	public static StatisticData statistic=speedData;
-	
+
 	public static Vibrate vibrator;
 
 	private static String btLine=null;
@@ -57,7 +57,7 @@ public class Data {
 			data.add(line);
 		}
 	}
-	
+
 	public static void loadDenseCSV(Resources res) throws IOException {
 		InputStream inputStream = res.openRawResource(R.raw.data35);
 		rate=35;
@@ -69,12 +69,12 @@ public class Data {
 			data.add(line);
 		}
 	}
-	
+
 	public static void destroyData()
 	{
 		data=null;
 	}
-	
+
 	public static boolean hasLocalData()
 	{
 		return data!=null;
@@ -118,7 +118,7 @@ public class Data {
 			Log.e("ICHIBAN", "something wrong with data");
 		}
 	}
-	
+
 	public static void update()
 	{
 		x=locX;
@@ -126,17 +126,17 @@ public class Data {
 		z=locZ;
 		rpm=locRpm;
 		turnRatio=locTurn;
-		
+
 		speedData.update();
 		accData.update();
 		pathData.update();
-		
+
 		//notify clients
 		for(View v : clients)
 			v.postInvalidate();
-				
-		//update vibrations
-			vibrator.update();
+
+				//update vibrations
+				vibrator.update();
 	}
 
 	public static void btUpdate(String line)
@@ -156,7 +156,7 @@ public class Data {
 			return;
 
 		timer = new Timer();
-		
+
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
@@ -171,8 +171,11 @@ public class Data {
 			}
 		}, 0, period);
 		isAutoupdating=true;
-		
-		started=System.currentTimeMillis();
+
+		if(started==0)
+			started=System.currentTimeMillis();
+		else
+			started+=System.currentTimeMillis()-stopped;
 	}
 
 	/** stops automatic self-updates
@@ -183,8 +186,9 @@ public class Data {
 		if(timer!=null)
 			timer.cancel();
 		isAutoupdating=false;
+		stopped=System.currentTimeMillis();
 	}
-	
+
 	public static void subscribe(View v){
 		clients.add(v);
 	}
@@ -208,7 +212,7 @@ public class Data {
 	public static float getTurnRatio() {
 		return turnRatio;
 	}
-	
+
 	public static float getXPercentage() {
 		return x;
 	}
@@ -232,11 +236,11 @@ public class Data {
 	public static long getStarted() {
 		return started;
 	}
-	
+
 	public static long getRunningTime() {
 		return System.currentTimeMillis()-started;
 	}
-	
+
 	public static boolean isAutoupdating(){
 		return isAutoupdating;
 	}
