@@ -1,5 +1,6 @@
 package com.abstracttech.ichiban.views.time;
 
+import com.abstracttech.ichiban.activities.IchibanActivity;
 import com.abstracttech.ichiban.data.Data;
 
 import android.content.Context;
@@ -21,13 +22,13 @@ public class Running extends TextView {
 	{
 		if(isInEditMode()) //dummy data for editor
 			this.setText("never started");
-		else
+		else if(IchibanActivity.isRunning())
 		{
-			long d = Data.getRunningTime()/1000; //data from datasource
+			long d = Data.getRunningTime(); //data from datasource
 			if(d!=value)
 			{
 				value=d;
-				this.setText(""+d); //DateFormat.format("hh:mmm:ss", d*));
+				this.setText(""+DateFormat.format("mm:ss", d)); //DateFormat.format("hh:mmm:ss", d*));
 			}
 		}	
 		super.onDraw(canvas);

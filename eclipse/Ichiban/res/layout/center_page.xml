@@ -68,7 +68,7 @@
         android:layout_marginLeft="30dp"
         android:layout_toRightOf="@+id/powerButton1"
         android:gravity="right"
-        android:text="Now"
+        android:text="0"
         android:textSize="36sp" />
 
     <Button

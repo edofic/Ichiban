@@ -27,8 +27,7 @@ import android.widget.Toast;
 public class IchibanActivity extends Activity {
 	private BluetoothEx bt=new BluetoothEx();
 	private static List<View> clients = new ArrayList<View>();
-	public static Vibrate vibrate;									//call IchibanActivity.Vibrate.vibrate(long ms) to vibrate
-
+	
 	private PowerManager.WakeLock wl;
 	
 	public static final int _UPDATE_INTERVAL = 100;

@@ -41,7 +41,7 @@ public class Gbar extends ImageView {
 		else
 		{
 			//5 bar + and 5 -
-			currentData =  Data.getYPercentage();
+			currentData =  Data.getZPercentage();
 			nt=System.currentTimeMillis(); //current time
 			
 			data=lastData + (currentData - lastData)*(float)(nt-lastUpdate)/inter;
@@ -53,9 +53,9 @@ public class Gbar extends ImageView {
 				if (i >= Math.abs(data * 6) - 1)
 					p.setAlpha((int)((Math.abs(data) *6 -i)*255));
 				if(data > 0)
-					canvas.drawBitmap(gSquare, this.getWidth() / 2 - gSquare.getWidth() / 2, (gSquare.getHeight() + 1) * 5  -  i * (gSquare.getHeight() + 1) + 10, p);
+					canvas.drawBitmap(gSquare, this.getWidth() / 2 - gSquare.getWidth() / 2, (gSquare.getHeight() + 5) * 5  -  i * (gSquare.getHeight() + 5) + 20, p);
 				else
-					canvas.drawBitmap(gSquare, this.getWidth() / 2 - gSquare.getWidth() / 2, this.getHeight() - (gSquare.getHeight() + 1) * 6  +  i * (gSquare.getHeight() + 1) - 8, p);
+					canvas.drawBitmap(gSquare, this.getWidth() / 2 - gSquare.getWidth() / 2, this.getHeight() - (gSquare.getHeight() + 5) * 6  +  i * (gSquare.getHeight() + 5) - 15, p);
 			}
 		}	
 		
