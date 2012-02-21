@@ -1,12 +1,15 @@
 package com.abstracttech.ichiban.views.acc;
 
-import com.abstracttech.ichiban.data.Data;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.abstracttech.ichiban.data.Data;
+
+/**
+ * text view for displaying acceleration average
+ */
 public class Avg extends TextView {
 	private float value;
 
