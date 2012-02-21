@@ -5,9 +5,11 @@ import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
-import com.abstracttech.ichiban.activities.IchibanActivity;
 import com.abstracttech.ichiban.data.Data;
 
+/**
+ * text view for displaying gui update interval
+ */
 public class UpdateInterval extends TextView {
 	private int rate;
 

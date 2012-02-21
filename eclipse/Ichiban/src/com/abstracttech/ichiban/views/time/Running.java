@@ -1,14 +1,17 @@
 package com.abstracttech.ichiban.views.time;
 
-import com.abstracttech.ichiban.activities.IchibanActivity;
-import com.abstracttech.ichiban.data.Data;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.text.format.DateFormat;
 import android.util.AttributeSet;
 import android.widget.TextView;
 
+import com.abstracttech.ichiban.activities.IchibanActivity;
+import com.abstracttech.ichiban.data.Data;
+
+/**
+ * text view for displaying running time
+ */
 public class Running extends TextView {
 	private long value;
 
