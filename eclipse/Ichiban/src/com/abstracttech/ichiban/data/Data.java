@@ -26,33 +26,40 @@ public class Data {
 	public static final float _SPEED_TO_RPM_RATIO=4f;
 	public static final float _MAX_SPEED = _MAX_RPM * _SPEED_TO_RPM_RATIO;
 	private static ArrayList<String> data=null;
-	private static int index=0;
-	private static int rate;
+	private static int index=0; //current data line
+	private static int rate; //internal update rate
 
-	private static Timer timer;
-	private static long started,stopped;
+	private static Timer timer; //timer for running updates
+	private static long started,stopped; //time, for calculating elapsed time
 	private static boolean isAutoupdating=false;
-	private static List<View> clients = new ArrayList<View>();
+	private static List<View> clients = new ArrayList<View>(); //subscribers
 
-	private static float x,y,z, rpm, turnRatio;
-	private static float locX, locY, locZ, locRpm, locTurn;
+	private static float x,y,z, rpm, turnRatio; //current data line, updates on specified interval
+	private static float locX, locY, locZ, locRpm, locTurn; //real time data line
 
+	//statistic data
 	public static SpeedData speedData=new SpeedData();
 	public static AccData accData=new AccData();
 	public static PathData pathData=new PathData();
-	public static StatisticData statistic=speedData;
 
 	public static Vibrate vibrator;
 
+	//current data line from bluetooth
 	private static String btLine=null;
 
-	/**center screen: 0
+	/**graph indexes are as follows
+	 * center screen: 0
 	 *right screen
 	 * up left: 1, up right 2, botom 3
 	 */
 	public static GraphType[] graphs= { GraphType.SPEED, GraphType.ACCELERATION, GraphType.SPEED, GraphType.PATH };
 	public static int[] graphID = {R.id.graf0, R.id.grafPospesek,R.id.grafHitrost, R.id.grafPot};
 
+	/**
+	 * load local data
+	 * @param res system resources, use getResources()
+	 * @throws IOException
+	 */
 	public static void loadCSV(Resources res) throws IOException {
 		InputStream inputStream = res.openRawResource(R.raw.data);
 		rate=300;
@@ -65,6 +72,11 @@ public class Data {
 		}
 	}
 
+	/**
+	 * load local data
+	 * @param res system resources, use getResources()
+	 * @throws IOException
+	 */
 	public static void loadDenseCSV(Resources res) throws IOException {
 		InputStream inputStream = res.openRawResource(R.raw.data35);
 		rate=35;
@@ -87,6 +99,10 @@ public class Data {
 		return data!=null;
 	}
 
+	/**
+	 * fetches new line of data
+	 * @return new line of data
+	 */
 	private static String getNextLine()
 	{
 		int size=data.size();
@@ -126,6 +142,11 @@ public class Data {
 		}
 	}
 
+	/**
+	 * update cycle
+	 * updates internal data
+	 * and calls update functions for some elements
+	 */
 	public static void update()
 	{
 		x=locX;
@@ -146,6 +167,10 @@ public class Data {
 				vibrator.update();
 	}
 
+	/**
+	 * update via bluetooth
+	 * @param line data line retrieved
+	 */
 	public static void btUpdate(String line)
 	{
 		btLine=line;
@@ -164,6 +189,7 @@ public class Data {
 
 		timer = new Timer();
 
+		//realtime internal updates
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
@@ -171,6 +197,7 @@ public class Data {
 			}
 		}, 0, rate);
 
+		//public updates
 		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
@@ -179,6 +206,7 @@ public class Data {
 		}, 0, period);
 		isAutoupdating=true;
 
+		//for calculating running time
 		if(started==0)
 			started=System.currentTimeMillis();
 		else
@@ -196,6 +224,10 @@ public class Data {
 		stopped=System.currentTimeMillis();
 	}
 
+	/**
+	 * Invalidates subscribed view on data change.
+	 * @param v view to be invalidated
+	 */
 	public static void subscribe(View v){
 		clients.add(v);
 	}
@@ -240,10 +272,16 @@ public class Data {
 		return (turnRatio - 5) / 10.f;
 	}
 
+	/**
+	 * @return started time in milicseconds
+	 */
 	public static long getStarted() {
 		return started;
 	}
 
+	/**
+	 * @return running time in milicseconds
+	 */
 	public static long getRunningTime() {
 		return System.currentTimeMillis()-started;
 	}
@@ -251,6 +289,10 @@ public class Data {
 	public static boolean isAutoupdating(){
 		return isAutoupdating;
 	}
+	
+	/**
+	 * @return internal update rate in miliseconds
+	 */
 	public static int getRate(){
 		return rate;
 	}
