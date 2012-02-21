@@ -1,13 +1,17 @@
 package com.abstracttech.ichiban.views;
 
-import com.abstracttech.ichiban.R;
-import com.abstracttech.ichiban.activities.IchibanActivity;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+import com.abstracttech.ichiban.R;
+import com.abstracttech.ichiban.activities.IchibanActivity;
+/**
+ * main power button, changes color dependng on state of aplication
+ * green=running
+ * red=stopped
+ */
 public class PowerButton extends ImageView {
 
 	private int bg_r=R.drawable.power_red;
