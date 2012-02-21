@@ -1,8 +1,5 @@
 package com.abstracttech.ichiban.views.graphs;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -10,30 +7,21 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-import com.abstracttech.ichiban.activities.IchibanActivity;
 import com.abstracttech.ichiban.data.Data;
 
 public abstract class Graph extends ImageView {
-	
-	private Queue<Float> data;					// Stack of data to be drawn
 	Object[] currentData;
 	protected float top,bottom;
 	
 	public Graph(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		
-		data = new LinkedList<Float>();
 		Data.subscribe(this);// 565 340
 	}
 	
-	protected abstract float GetData();
-	
-	/**
-	 * override this if needed
-	 * @param d data polled
-	 */
-	protected void onPoll(float d){	}
-	
+	protected abstract boolean isThereData();
+	protected abstract Object[] getArray();
+		
 	private float getPoint(int i){
 		return 1 - ((Float)currentData[i] - bottom)/ (top-bottom);
 	}
@@ -60,30 +48,24 @@ public abstract class Graph extends ImageView {
 			canvas.drawLine((i + 1) * this.getWidth() / 4, 0, (i + 1) * this.getWidth() / 4, this.getHeight(), p);
 		}
 		
-		if(!data.isEmpty() || GetData() != 0)
-		{
-			data.add(GetData());												//updating data from predefined source
-			if (data.size() > 2000 / (float)IchibanActivity._UPDATE_INTERVAL)		//to store only 20 seconds of data
-				onPoll(data.poll());
-		}
 		
-		if(!data.isEmpty())
+		if(isThereData())
 		{					
-			currentData= data.toArray();			
-			float[] points = new float[data.size() * 4];			//array of points of graph
-			float[] pointsShadow = new float[data.size() * 4];		//shadow array
+			currentData= getArray();			
+			float[] points = new float[currentData.length * 4];			//array of points of graph
+			float[] pointsShadow = new float[currentData.length * 4];		//shadow array
 			
 			
-			for (int i = 0; i < data.size() - 1; i++)		//Set points to draw lines
+			for (int i = 0; i < currentData.length - 1; i++)		//Set points to draw lines
 			{
-				points[i * 4] = this.getWidth() * i / (float)data.size();
+				points[i * 4] = this.getWidth() * i / (float)currentData.length;
 				points[i * 4 + 1] = this.getHeight() * getPoint(i) - 2;
-				points[i * 4 + 2] = this.getWidth() * (i + 1) / (float)data.size();
+				points[i * 4 + 2] = this.getWidth() * (i + 1) / (float)currentData.length;
 				points[i * 4 + 3] = this.getHeight() * getPoint(i+1) - 2;
 				
-				pointsShadow[i * 4] = this.getWidth() * i / (float)data.size() + 5;
+				pointsShadow[i * 4] = this.getWidth() * i / (float)currentData.length + 5;
 				pointsShadow[i * 4 + 1] = this.getHeight() * getPoint(i) + 5;
-				pointsShadow[i * 4 + 2] = this.getWidth() * (i + 1) / (float)data.size() + 5;
+				pointsShadow[i * 4 + 2] = this.getWidth() * (i + 1) / (float)currentData.length + 5;
 				pointsShadow[i * 4 + 3] = this.getHeight() * getPoint(i+1) + 5;
 			}
 			
@@ -93,5 +75,10 @@ public abstract class Graph extends ImageView {
 			p.setStrokeWidth(4);
 			canvas.drawLines(points, p);
 		}	
+	}
+
+	protected float GetData() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

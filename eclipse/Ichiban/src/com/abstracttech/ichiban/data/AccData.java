@@ -24,6 +24,7 @@ public class AccData extends StatisticData {
 		//averaging
 		n++;
 		total+=d;
+		updateData(d);
 	}
 
 	public float getAcc() {
