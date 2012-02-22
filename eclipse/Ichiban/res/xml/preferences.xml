@@ -18,7 +18,7 @@
             android:entryValues="@array/resetArrayData"
             android:key="reset"
             android:defaultValue="notRestart"
-            android:summary="adsfdsgsgfdfsggsgs"
+            android:summary="If you want to restart data of to pause data after you pres the power button"
             android:title="Reset data" />
     </PreferenceCategory>
 
