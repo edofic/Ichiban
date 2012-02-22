@@ -95,12 +95,12 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/now1"
         android:layout_below="@id/morphToAcc"
-        android:layout_marginLeft="77dp"
+        android:layout_marginLeft="65dp"
         android:layout_marginTop="27dp"
         android:background="@null"
         android:clickable="true"
         android:onClick="morphingClick"
-        android:text="Speed"
+        android:text="Velocity"
         android:textSize="22sp"
         android:textStyle="bold" />
 
@@ -111,7 +111,7 @@
         android:layout_alignBottom="@+id/powerButton1"
         android:layout_alignRight="@id/morphToSpeed"
         android:layout_marginBottom="15dp"
-        android:layout_marginRight="-10dp"
+        android:layout_marginRight="0dp"
         android:background="@null"
         android:clickable="true"
         android:onClick="morphingClick"
