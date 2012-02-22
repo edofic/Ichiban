@@ -21,7 +21,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="12dp"
         android:layout_marginLeft="112dp"
-        android:background="@drawable/power_red"
         android:clickable="true"
         android:onClick="powerButtonClick" />
 

@@ -9,13 +9,12 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.abstracttech.ichiban.R;
-import com.abstracttech.ichiban.views.graphs.GraphType;
-
 import android.content.res.Resources;
-import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
+
+import com.abstracttech.ichiban.R;
+import com.abstracttech.ichiban.views.graphs.GraphType;
 
 /**
  * holds all the data
