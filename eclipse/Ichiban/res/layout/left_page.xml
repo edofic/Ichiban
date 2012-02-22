@@ -76,7 +76,7 @@
         android:layout_marginLeft="200dp"
         android:layout_toRightOf="@+id/avg1"
         android:text="00:00"
-        android:textSize="50sp" />
+        android:textSize="120sp" />
 
     <com.abstracttech.ichiban.views.FPStextView
         android:id="@+id/fPStextView1"
@@ -86,13 +86,15 @@
 
     <com.abstracttech.ichiban.views.path.Now
         android:id="@+id/pathNow"
-        android:layout_width="250dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/running1"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="130dp"
         android:layout_below="@+id/max1"
-        android:layout_marginTop="22dp"
-        android:text="        0"
-        android:textSize="50sp" />
+        android:layout_marginTop="-43dp"
+        android:text="0"
+        android:gravity="right"
+        android:textSize="100sp" />
 
     <com.abstracttech.ichiban.views.PowerButton
         android:id="@+id/powerButton1"
@@ -109,7 +111,7 @@
         style="@style/right"
         android:layout_above="@+id/min2"
         android:layout_alignRight="@+id/running1"
-        android:layout_marginRight="45dp"
+        android:layout_marginRight="200dp"
         android:layout_marginBottom="-40dp"
         android:text="0ms" />
 
