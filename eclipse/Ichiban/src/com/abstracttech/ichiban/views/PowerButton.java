@@ -24,7 +24,7 @@ public class PowerButton extends ImageView {
 		this.setImageResource(preRunning?bg_g:bg_r);
 		IchibanActivity.subscribe(this);
 
-		Data.subscribe(this);
+		//Data.subscribe(this); //this doesn't need to be subscribed to data updates
 	}
 
 	@Override
