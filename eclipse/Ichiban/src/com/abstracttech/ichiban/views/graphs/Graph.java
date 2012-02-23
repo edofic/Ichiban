@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+import com.abstracttech.ichiban.views.graphs.GraphType;
 
 import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.Data;
@@ -134,12 +135,11 @@ public class Graph extends ImageView {
 
 		for(int i = 0; i < 4; i++)		//side data: lines, percentage,...   300   400
 		{
-			canvas.drawText("" + (int)((i + 1) * (top - bottom) / 5), W * 0.06f , H - (i + 1) * H / 4 - 2, p);
+			canvas.drawText("" + String.format("%.1f", ((i + 1) * (top - bottom) / 5)), W * 0.06f , H - (i + 1) * H / 4 - 2, p);
 			canvas.drawText("" + (2 - (i + 1) * 0.5f) + "s", (i + 1) * W / 4, H * (1 - 0.15f), p);
 			canvas.drawLine(0.03f * W, (i + 1) * H / 4, W * (1 - 0.03f), (i + 1) * H / 4, p);
 			canvas.drawLine((i + 1) * W / 4, 0.0225f * H, (i + 1) * W / 4, H * (1 - 0.12f), p);
-		}
-
+		}		
 
 		if(isThereData())
 		{					

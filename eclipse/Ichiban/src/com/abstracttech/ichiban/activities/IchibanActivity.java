@@ -165,6 +165,8 @@ public class IchibanActivity extends Activity {
 
 	@Override
 	protected void onStop() {
+		if(running)
+			powerButtonClick(null);
 		super.onStop();
 		stopCar(null);
 		wl.release();
