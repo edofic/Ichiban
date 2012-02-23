@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
+import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.Data;
 import com.abstracttech.ichiban.data.StatisticData;
 
@@ -53,24 +54,28 @@ public class Graph extends ImageView {
 			bottom=0;
 			datasource=Data.pathData;
 			this.updateBorders=true;
+			this.setBackgroundResource(R.drawable.graf3);
 			break;
 		case SPEED:
 			bottom=-20;
 			top=160;
 			datasource=Data.speedData;
 			this.updateBorders=false;
+			this.setBackgroundResource(R.drawable.graf2);
 			break;
 		case ACCELERATION:
 			bottom=-80;
 			top=80;
 			datasource=Data.accData;
 			this.updateBorders=false;
+			this.setBackgroundResource(R.drawable.graf1);
 			break;
 		case TOTAL_ACC:
 			bottom=0;
 			top=0.5f;
 			datasource=Data.totalAccData;
 			this.updateBorders=false;
+			this.setBackgroundResource(R.drawable.graf4);
 			break;
 		}
 		currentType=type;
