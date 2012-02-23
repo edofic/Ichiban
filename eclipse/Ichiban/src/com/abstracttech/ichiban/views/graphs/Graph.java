@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+import com.abstracttech.ichiban.views.graphs.GraphType;
 
 import com.abstracttech.ichiban.data.Data;
 import com.abstracttech.ichiban.data.StatisticData;
@@ -26,7 +27,7 @@ public class Graph extends ImageView {
 	public Graph(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		Data.subscribe(this);
-		
+
 		//find out who i am
 		int myid=getId();
 		if(Data.graphID[0]==myid)
@@ -95,7 +96,7 @@ public class Graph extends ImageView {
 
 		//draw bg
 		super.onDraw(canvas);
-		
+
 		//for path graph
 		if(updateBorders)
 		{
@@ -107,7 +108,7 @@ public class Graph extends ImageView {
 		p.setStrokeWidth(1);
 
 		p.setColor(Color.argb(255, 100, 100, 100));
-		
+
 		int W = this.getWidth();
 		int H = this.getHeight();
 
@@ -119,6 +120,34 @@ public class Graph extends ImageView {
 			canvas.drawLine((i + 1) * W / 4, 0.0225f * H, (i + 1) * W / 4, H * (1 - 0.12f), p);
 		}
 
+		//Graph's name
+		
+		String name = "";
+		
+		switch(currentType)
+		{
+			case ACCELERATION:
+				name = "Graph of acceleration";
+				break;
+			case SPEED:
+				name = "Graph of speed";
+				break;
+			case PATH:
+				name = "Graph of path traveled";
+				break;
+			case TOTAL_ACC:
+				name = "Total acceleration graph";
+				break;
+		}
+	
+		p.setStrokeWidth(6);
+		p.setColor(Color.rgb(180,180,180));
+		p.setTextScaleX(1.5f);
+			
+		canvas.drawText(name, W / 2 - p.measureText(name) / 2, H * (1 - 0.06f), p);
+		
+		p.reset();
+		
 
 		if(isThereData())
 		{					
