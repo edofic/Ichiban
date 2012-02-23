@@ -32,7 +32,13 @@ public class Now extends TextView {
 			if(d!=value)
 			{
 				value=d;
+				if(d<10000)
 				this.setText(String.format("%.3f", d));
+				else if(d<100000)
+				this.setText(String.format("%.2f", d));
+				else
+				this.setText(String.format("%.1f", d));
+				
 			}
 		}
 		
