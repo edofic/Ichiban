@@ -31,7 +31,7 @@
             android:summary="Choose what data is shown in second graph"
             android:title="Second graph data" />
         <ListPreference
-            android:defaultValue="PATH"
+            android:defaultValue="GFORCE"
             android:entries="@array/graphType"
             android:entryValues="@array/graphTypeData"
             android:key="graph3"

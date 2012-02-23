@@ -156,7 +156,12 @@ public class IchibanActivity extends Activity {
 	public synchronized void onResume() {
 		super.onResume();
 		bt.onResume();
-	}
+		
+		//load graph type preferences
+		Data.graphs[1]=com.abstracttech.ichiban.data.Preferences.getGraph1Type();
+		Data.graphs[2]=com.abstracttech.ichiban.data.Preferences.getGraph2Type();
+		Data.graphs[3]=com.abstracttech.ichiban.data.Preferences.getGraph3Type();
+		}
 
 	@Override
 	protected void onStop() {
