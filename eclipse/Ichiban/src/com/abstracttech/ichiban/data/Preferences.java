@@ -43,5 +43,32 @@ public class Preferences {
 	public static boolean getRestartData()
 	{
 		return !pref.getString("reset", "notRestart").equals("notRestart");
+	}	
+	
+	/**
+	 * 
+	 * @return Graph type for the first graph
+	 */
+	public static String getGraph1Type()
+	{
+		return pref.getString("graph1", "ACCELERATION");
+	}
+	
+	/**
+	 * 
+	 * @return Graph type for the second graph
+	 */
+	public static String getGraph2Type()
+	{
+		return pref.getString("graph2", "SPEED");
+	}
+	
+	/**
+	 * 
+	 * @return Graph type for the third graph
+	 */
+	public static String getGraph3Type()
+	{
+		return pref.getString("graph3", "PATH");
 	}
 }
