@@ -139,36 +139,7 @@ public class Graph extends ImageView {
 			canvas.drawText("" + (2 - (i + 1) * 0.5f) + "s", (i + 1) * W / 4, H * (1 - 0.15f), p);
 			canvas.drawLine(0.03f * W, (i + 1) * H / 4, W * (1 - 0.03f), (i + 1) * H / 4, p);
 			canvas.drawLine((i + 1) * W / 4, 0.0225f * H, (i + 1) * W / 4, H * (1 - 0.12f), p);
-		}
-
-		//Graph's name
-		
-		String name = "";
-		
-		switch(currentType)
-		{
-			case ACCELERATION:
-				name = "Graph of acceleration";
-				break;
-			case SPEED:
-				name = "Graph of speed";
-				break;
-			case PATH:
-				name = "Graph of path traveled";
-				break;
-			case TOTAL_ACC:
-				name = "Total acceleration graph";
-				break;
-		}
-	
-		p.setStrokeWidth(6);
-		p.setColor(Color.rgb(180,180,180));
-		p.setTextScaleX(1.5f);
-			
-		canvas.drawText(name, W / 2 - p.measureText(name) / 2, H * (1 - 0.06f), p);
-		
-		p.reset();
-		
+		}		
 
 		if(isThereData())
 		{					
