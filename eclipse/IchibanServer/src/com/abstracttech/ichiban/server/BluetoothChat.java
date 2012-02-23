@@ -135,7 +135,7 @@ public class BluetoothChat extends Activity {
 			if (mChatService == null) setupChat();
 		}
 		
-		Data.startAutoupdate(300);
+		Data.startAutoupdate();
 	}
 
 	@Override
@@ -308,9 +308,11 @@ public class BluetoothChat extends Activity {
 				if(readMessage.equals("?"))
 					sendMessage(Data.getCurrentLine());
 				if(readMessage.equals("start"))
-					sendMessage("started");
+					Data.startAutoupdate();
 				if(readMessage.equals("stop"))
-					sendMessage("stopped");
+					Data.stopAutoupdate();
+				if(readMessage.equals("reset"))
+					Data.reset();
 				break;
 			case MESSAGE_DEVICE_NAME:
 				// save the connected device's name

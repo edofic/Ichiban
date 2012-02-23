@@ -112,7 +112,7 @@ public class Graph extends ImageView {
 	protected void onDraw(Canvas canvas)
 	{
 		//morph if needed
-		if(currentType!=Data.graphs[typeID])
+ 		if(currentType!=Data.graphs[typeID])
 			morph(Data.graphs[typeID]);
 
 		//draw bg

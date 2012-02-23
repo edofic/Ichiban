@@ -236,11 +236,16 @@ public class Data {
 		}, 0, period);
 		isAutoupdating=true;
 
+		initTime();
+	}
+	
+	public static void initTime()
+	{
 		//for calculating running time
-		if(started==0)
-			started=System.currentTimeMillis();
-		else
-			started+=System.currentTimeMillis()-stopped;
+				if(started==0)
+					started=System.currentTimeMillis();
+				else
+					started+=System.currentTimeMillis()-stopped;
 	}
 
 	/** stops automatic self-updates

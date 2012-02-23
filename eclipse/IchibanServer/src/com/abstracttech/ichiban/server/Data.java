@@ -16,15 +16,15 @@ public class Data {
 	private static Timer timer;
 	private static boolean isAutoupdating;
 	private static String current=null;
-
+	
 	public static void loadCSV(Resources res) throws IOException {
-	     InputStream inputStream = res.openRawResource(R.raw.data);
-	     BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-	    
-	    String line;
-	    while ((line = reader.readLine()) != null) {
-	      	data.add(line);
-	    }
+		InputStream inputStream = res.openRawResource(R.raw.data);
+		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+
+		String line;
+		while ((line = reader.readLine()) != null) {
+			data.add(line);
+		}
 	}
 
 	public static String getNextLine()
@@ -39,32 +39,38 @@ public class Data {
 			index=0;
 		return data.get(retIndex);
 	}
-	
+
 	public static String getCurrentLine()
 	{
 		return current;
 	}
-	
+
+	public static void reset(){
+		if(timer!=null)
+			timer.cancel();
+		
+		index=0;
+	}
 	/**
 	 * automaticaly update data in specified period
 	 * @param interval in miliseconds
 	 */
-	public static void startAutoupdate(int period)
+	public static void startAutoupdate()
 	{
 		if(isAutoupdating)
 			return;
-		
+
 		timer = new Timer();
-    	
-    	timer.scheduleAtFixedRate(new TimerTask() {
+
+		timer.scheduleAtFixedRate(new TimerTask() {
 			@Override
 			public void run() {
 				current=getNextLine();
 			}
-		}, 0, period);
-    	isAutoupdating=true;
+		}, 0, 35);
+		isAutoupdating=true;
 	}
-	
+
 	/** stops automatic self-updates
 	 * 
 	 */

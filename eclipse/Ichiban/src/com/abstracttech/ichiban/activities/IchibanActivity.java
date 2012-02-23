@@ -131,7 +131,10 @@ public class IchibanActivity extends Activity {
 		if(Data.hasLocalData())
 			Data.startAutoupdate(_UPDATE_INTERVAL);
 		else
+		{
 			bt.start(v);
+			Data.initTime();
+		}
 	}
 
 	/**
