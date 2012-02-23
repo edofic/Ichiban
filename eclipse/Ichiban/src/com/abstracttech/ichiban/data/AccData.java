@@ -50,4 +50,11 @@ public class AccData extends StatisticData {
 		else
 			return cMax;
 	}
+	
+	@Override
+	public void clear()
+	{
+		super.clear();
+		acc=0;
+	}
 }

@@ -23,11 +23,7 @@ public abstract class StatisticData {
 
 	public StatisticData()
 	{
-		cMin=Integer.MAX_VALUE;
-		cMax=Integer.MIN_VALUE;
-		total=0;
-		n=0;
-		data = new LinkedList<Float>();
+		clear();
 	}
 
 	public float get()
@@ -59,5 +55,13 @@ public abstract class StatisticData {
 		array=data.toArray();
 	}
 
+	public void clear()
+	{
+		cMin=Integer.MAX_VALUE;
+		cMax=Integer.MIN_VALUE;
+		total=0;
+		n=0;
+		data = new LinkedList<Float>();
+	}
 	public abstract void update();
 }

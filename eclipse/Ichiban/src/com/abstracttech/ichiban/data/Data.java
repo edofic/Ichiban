@@ -28,7 +28,7 @@ public class Data {
 	private static int rate; //internal update rate
 
 	private static Timer timer; //timer for running updates
-	private static long started,stopped; //time, for calculating elapsed time
+	private static long started,stopped,lastUpdate; //time, for calculating elapsed time
 	private static boolean isAutoupdating=false;
 	private static List<View> clients = new ArrayList<View>(); //subscribers
 
@@ -61,6 +61,7 @@ public class Data {
 	 * @throws IOException
 	 */
 	public static void loadCSV(Resources res) throws IOException {
+		destroyData();
 		InputStream inputStream = res.openRawResource(R.raw.data);
 		rate=300;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
@@ -78,6 +79,7 @@ public class Data {
 	 * @throws IOException
 	 */
 	public static void loadDenseCSV(Resources res) throws IOException {
+		destroyData();
 		InputStream inputStream = res.openRawResource(R.raw.data35);
 		rate=35;
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
@@ -92,6 +94,31 @@ public class Data {
 	public static void destroyData()
 	{
 		data=null;
+		index=0;
+		rate=0;
+		if(timer!=null)
+		{
+			timer.cancel();
+			timer=null;
+		}
+		x=y=z=rpm=turnRatio=0;
+		locX=locY=locZ=locRpm=locTurn=0;
+
+
+		speedData.clear();
+		accData.clear();
+		pathData.clear();
+		totalAccData.clear();;
+
+		btLine=null;
+		
+		stopped=0;
+		started=0;
+		lastUpdate=0;
+
+		//notify clients
+		for(View v : clients)
+			v.postInvalidate();
 	}
 
 	public static boolean hasLocalData()
@@ -159,6 +186,8 @@ public class Data {
 		accData.update();
 		pathData.update();
 		totalAccData.update();
+		
+		lastUpdate=System.currentTimeMillis();
 
 		//notify clients
 		for(View v : clients)
@@ -285,13 +314,13 @@ public class Data {
 	 * @return running time in milicseconds
 	 */
 	public static long getRunningTime() {
-		return System.currentTimeMillis()-started;
+		return lastUpdate-started;
 	}
 
 	public static boolean isAutoupdating(){
 		return isAutoupdating;
 	}
-	
+
 	/**
 	 * @return internal update rate in miliseconds
 	 */

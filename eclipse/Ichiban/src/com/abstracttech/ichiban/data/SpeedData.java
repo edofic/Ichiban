@@ -3,7 +3,7 @@ package com.abstracttech.ichiban.data;
  * calculates speed data
  */
 public class SpeedData extends StatisticData {
-	float d;
+	private float d;
 	
 	public SpeedData(){
 		super();
@@ -50,5 +50,12 @@ public class SpeedData extends StatisticData {
 	@Override
 	public float get(){
 		return d;
+	}
+	
+	@Override
+	public void clear()
+	{
+		super.clear();
+		d=0;
 	}
 }

@@ -22,6 +22,7 @@ import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.BluetoothEx;
 import com.abstracttech.ichiban.data.Data;
 import com.abstracttech.ichiban.data.MainPagerAdapter;
+import com.abstracttech.ichiban.data.Preferences;
 import com.abstracttech.ichiban.data.Vibrate;
 import com.abstracttech.ichiban.views.graphs.GraphType;
 
@@ -99,6 +100,8 @@ public class IchibanActivity extends Activity {
 			{
 				stopCar(v);
 				running=false;
+				if(Preferences.getRestartData())
+					Data.destroyData();
 			}
 			notifyClients();
 			Data.vibrator.vibrate(60);
