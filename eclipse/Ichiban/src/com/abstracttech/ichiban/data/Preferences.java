@@ -1,5 +1,7 @@
 package com.abstracttech.ichiban.data;
 
+import com.abstracttech.ichiban.views.graphs.GraphType;
+
 import android.content.SharedPreferences;
 
 /**
@@ -17,7 +19,7 @@ public class Preferences {
 	{
 		pref = Pref;
 	}
-	
+
 	/**
 	 * 
 	 * @return vibrations settings. true if enabled false if disabled
@@ -26,7 +28,7 @@ public class Preferences {
 	{
 		return pref.getBoolean("vibration", true);
 	}
-	
+
 	/**
 	 * 
 	 * @return sound settings. true if enabled false if disabled
@@ -35,7 +37,7 @@ public class Preferences {
 	{
 		return pref.getBoolean("sound", true);
 	}
-	
+
 	/**
 	 * 
 	 * @return restart settings. true if data reset after button start is pressed, false if data is paused
@@ -44,31 +46,53 @@ public class Preferences {
 	{
 		return !pref.getString("reset", "notRestart").equals("notRestart");
 	}	
-	
+
 	/**
 	 * 
 	 * @return Graph type for the first graph
 	 */
-	public static String getGraph1Type()
+	public static GraphType getGraph1Type()
 	{
-		return pref.getString("graph1", "ACCELERATION");
+		String type = pref.getString("graph1", "ACCELERATION");
+
+		if(type.equalsIgnoreCase("SPEED"))
+			return GraphType.SPEED;
+		if(type.equalsIgnoreCase("PATH"))
+			return GraphType.PATH;
+		if(type.equalsIgnoreCase("GFORCE"))
+			return GraphType.TOTAL_ACC;
+		return GraphType.ACCELERATION;
 	}
-	
+
 	/**
 	 * 
 	 * @return Graph type for the second graph
 	 */
-	public static String getGraph2Type()
+	public static GraphType getGraph2Type()
 	{
-		return pref.getString("graph2", "SPEED");
+		String type = pref.getString("graph2", "SPEED");
+		if(type.equalsIgnoreCase("ACCELERATION"))
+			return GraphType.ACCELERATION;
+		if(type.equalsIgnoreCase("PATH"))
+			return GraphType.PATH;
+		if(type.equalsIgnoreCase("GFORCE"))
+			return GraphType.TOTAL_ACC;
+		return GraphType.SPEED;
 	}
-	
+
 	/**
 	 * 
 	 * @return Graph type for the third graph
 	 */
-	public static String getGraph3Type()
+	public static GraphType getGraph3Type()
 	{
-		return pref.getString("graph3", "PATH");
+		String type = pref.getString("graph3", "GFORCE");
+		if(type.equalsIgnoreCase("ACCELERATION"))
+			return GraphType.ACCELERATION;
+		if(type.equalsIgnoreCase("SPEED"))
+			return GraphType.SPEED;
+		if(type.equalsIgnoreCase("PATH"))
+			return GraphType.PATH;
+		return GraphType.TOTAL_ACC;
 	}
 }

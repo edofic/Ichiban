@@ -156,7 +156,12 @@ public class IchibanActivity extends Activity {
 	public synchronized void onResume() {
 		super.onResume();
 		bt.onResume();
-	}
+		
+		//load graph type preferences
+		Data.graphs[1]=com.abstracttech.ichiban.data.Preferences.getGraph1Type();
+		Data.graphs[2]=com.abstracttech.ichiban.data.Preferences.getGraph2Type();
+		Data.graphs[3]=com.abstracttech.ichiban.data.Preferences.getGraph3Type();
+		}
 
 	@Override
 	protected void onStop() {
@@ -201,8 +206,8 @@ public class IchibanActivity extends Activity {
 		case R.id.morphToSpeed:
 			Data.graphs[0]=GraphType.SPEED;
 			break;
-		case R.id.morphToPath:
-			Data.graphs[0]=GraphType.PATH;
+		case R.id.morphToG:
+			Data.graphs[0]=GraphType.TOTAL_ACC;
 			break;
 		}
 	}

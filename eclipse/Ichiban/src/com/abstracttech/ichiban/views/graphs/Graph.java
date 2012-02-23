@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 import com.abstracttech.ichiban.views.graphs.GraphType;
 
+import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.Data;
 import com.abstracttech.ichiban.data.StatisticData;
 
@@ -23,6 +24,7 @@ public class Graph extends ImageView {
 	protected boolean updateBorders=false;
 	private int typeID;
 	private GraphType currentType;
+	private int barvaGrafa;
 
 	public Graph(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -38,6 +40,11 @@ public class Graph extends ImageView {
 			typeID=2;
 		if(Data.graphID[3]==myid)
 			typeID=3;
+
+		if(typeID==0)
+			barvaGrafa=Color.RED;
+		else
+			barvaGrafa=Color.GREEN;
 	}
 
 	/**
@@ -54,18 +61,32 @@ public class Graph extends ImageView {
 			bottom=0;
 			datasource=Data.pathData;
 			this.updateBorders=true;
+			if(typeID>0)
+				this.setBackgroundResource(R.drawable.graf3);
 			break;
 		case SPEED:
 			bottom=-20;
 			top=160;
 			datasource=Data.speedData;
 			this.updateBorders=false;
+			if(typeID>0)
+			this.setBackgroundResource(R.drawable.graf2);
 			break;
 		case ACCELERATION:
 			bottom=-80;
 			top=80;
 			datasource=Data.accData;
 			this.updateBorders=false;
+			if(typeID>0)
+			this.setBackgroundResource(R.drawable.graf1);
+			break;
+		case TOTAL_ACC:
+			bottom=0;
+			top=0.5f;
+			datasource=Data.totalAccData;
+			this.updateBorders=false;
+			if(typeID>0)
+			this.setBackgroundResource(R.drawable.graf4);
 			break;
 		}
 		currentType=type;
@@ -170,8 +191,7 @@ public class Graph extends ImageView {
 			}
 
 			canvas.drawLines(pointsShadow, p);
-
-			p.setColor(Color.RED);							//setting paint (Color, stroke...) and drawing the lines
+			p.setColor(barvaGrafa);							//setting paint (Color, stroke...) and drawing the lines
 			p.setStrokeWidth(4);
 			canvas.drawLines(points, p);
 		}	

@@ -103,9 +103,9 @@
         android:text="Velocity"
         android:textSize="22sp"
         android:textStyle="bold" />
-
+
     <Button
-        android:id="@+id/morphToPath"
+        android:id="@+id/morphToG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/powerButton1"
@@ -115,7 +115,7 @@
         android:background="@null"
         android:clickable="true"
         android:onClick="morphingClick"
-        android:text="Distance"
+        android:text="G-force"
         android:textSize="22sp"
         android:textStyle="bold" />
 
