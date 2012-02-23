@@ -206,8 +206,8 @@ public class IchibanActivity extends Activity {
 		case R.id.morphToSpeed:
 			Data.graphs[0]=GraphType.SPEED;
 			break;
-		case R.id.morphToPath:
-			Data.graphs[0]=GraphType.PATH;
+		case R.id.morphToG:
+			Data.graphs[0]=GraphType.TOTAL_ACC;
 			break;
 		}
 	}
