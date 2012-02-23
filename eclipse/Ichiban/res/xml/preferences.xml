@@ -1,25 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <PreferenceCategory android:title="First Category" >
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="vibration"
-            android:summary="Vibration on/off"
-            android:title="Vibration" />
-        <CheckBoxPreference
-            android:defaultValue="true"
-            android:key="sound"
-            android:summary="Sound on/off"
-            android:title="Sound" />
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="vibration"
+        android:summary="Vibration on/off"
+        android:title="Vibration" />
 
+    <ListPreference
+        android:defaultValue="notRestart"
+        android:entries="@array/resetArray"
+        android:entryValues="@array/resetArrayData"
+        android:key="reset"
+        android:summary="If you want to restart data of to pause data after you pres the power button"
+        android:title="Reset data" />
+
+    <PreferenceCategory android:title="Graph data" >
         <ListPreference
-            android:entries="@array/resetArray"
-            android:entryValues="@array/resetArrayData"
-            android:key="reset"
-            android:defaultValue="notRestart"
-            android:summary="If you want to restart data of to pause data after you pres the power button"
-            android:title="Reset data" />
+            android:defaultValue="ACCELERATION"
+            android:entries="@array/graphType"
+            android:entryValues="@array/graphTypeData"
+            android:key="graph1"
+            android:summary="Choose what data is shown in first graph"
+            android:title="First graph data" />
+        <ListPreference
+            android:defaultValue="SPEED"
+            android:entries="@array/graphType"
+            android:entryValues="@array/graphTypeData"
+            android:key="graph2"
+            android:summary="Choose what data is shown in second graph"
+            android:title="Second graph data" />
+        <ListPreference
+            android:defaultValue="PATH"
+            android:entries="@array/graphType"
+            android:entryValues="@array/graphTypeData"
+            android:key="graph3"
+            android:summary="Choose what data is shown in third graph"
+            android:title="Third graph data" />
     </PreferenceCategory>
 
 </PreferenceScreen>
