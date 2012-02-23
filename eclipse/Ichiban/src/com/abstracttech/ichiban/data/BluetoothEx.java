@@ -282,6 +282,10 @@ public class BluetoothEx {
 			Intent serverIntent1 = new Intent(parrent, Preferences.class);
 			parrent.startActivity(serverIntent1);
 			break;
+		case R.id.reset:
+			//reset data
+			Data.destroyData();
+			break;		
 		}
 	}
 }
