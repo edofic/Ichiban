@@ -9,13 +9,12 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import com.abstracttech.ichiban.R;
-import com.abstracttech.ichiban.views.graphs.GraphType;
-
 import android.content.res.Resources;
-import android.os.Vibrator;
 import android.util.Log;
 import android.view.View;
+
+import com.abstracttech.ichiban.R;
+import com.abstracttech.ichiban.views.graphs.GraphType;
 
 /**
  * holds all the data
@@ -40,6 +39,7 @@ public class Data {
 	public static SpeedData speedData=new SpeedData();
 	public static AccData accData=new AccData();
 	public static PathData pathData=new PathData();
+	public static TotalAccData totalAccData = new TotalAccData();
 
 	public static Vibrate vibrator;
 
@@ -52,7 +52,7 @@ public class Data {
 	 *right screen
 	 * up left: 1, up right 2, botom 3
 	 */
-	public static GraphType[] graphs= { GraphType.SPEED, GraphType.ACCELERATION, GraphType.SPEED, GraphType.PATH };
+	public static GraphType[] graphs= { GraphType.SPEED, GraphType.ACCELERATION, GraphType.SPEED, GraphType.TOTAL_ACC };
 	public static int[] graphID = {R.id.graf0, R.id.grafPospesek,R.id.grafHitrost, R.id.grafPot};
 
 	/**
@@ -158,6 +158,7 @@ public class Data {
 		speedData.update();
 		accData.update();
 		pathData.update();
+		totalAccData.update();
 
 		//notify clients
 		for(View v : clients)

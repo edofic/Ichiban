@@ -24,7 +24,7 @@ public class DirectionWheel extends ImageView {
 	{
 		//draw rotated image set in xml
 		canvas.save();
-	     canvas.rotate(Data.getTurnRatioPercentage() * 50,this.getWidth()/2f,this.getHeight()/2f);
+	     canvas.rotate(-Data.getTurnRatioPercentage() * 30,this.getWidth()/2f,this.getHeight()/2f);
 	     super.onDraw(canvas);
 	     canvas.restore();
 

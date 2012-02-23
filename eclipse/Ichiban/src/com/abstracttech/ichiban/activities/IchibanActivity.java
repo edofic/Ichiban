@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.os.Vibrator;
+import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.Menu;
@@ -73,6 +74,9 @@ public class IchibanActivity extends Activity {
 		ViewPager myPager = (ViewPager) findViewById(R.id.mypager);
 		myPager.setAdapter(adapter);
 		myPager.setCurrentItem(1);
+		
+		//Initialize Preference -> get preference data class
+		com.abstracttech.ichiban.data.Preferences.Initalize(PreferenceManager.getDefaultSharedPreferences(this));
 
 		bt.onCreate(this);
 
@@ -152,10 +156,17 @@ public class IchibanActivity extends Activity {
 	public synchronized void onResume() {
 		super.onResume();
 		bt.onResume();
-	}
+		
+		//load graph type preferences
+		Data.graphs[1]=com.abstracttech.ichiban.data.Preferences.getGraph1Type();
+		Data.graphs[2]=com.abstracttech.ichiban.data.Preferences.getGraph2Type();
+		Data.graphs[3]=com.abstracttech.ichiban.data.Preferences.getGraph3Type();
+		}
 
 	@Override
 	protected void onStop() {
+		if(running)
+			powerButtonClick(null);
 		super.onStop();
 		stopCar(null);
 		wl.release();
@@ -197,8 +208,8 @@ public class IchibanActivity extends Activity {
 		case R.id.morphToSpeed:
 			Data.graphs[0]=GraphType.SPEED;
 			break;
-		case R.id.morphToPath:
-			Data.graphs[0]=GraphType.PATH;
+		case R.id.morphToG:
+			Data.graphs[0]=GraphType.TOTAL_ACC;
 			break;
 		}
 	}

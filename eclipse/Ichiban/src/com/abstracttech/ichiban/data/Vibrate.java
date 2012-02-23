@@ -11,7 +11,6 @@ public class Vibrate{
 	private float preX, preY, preZ;
 	private final int milliseconds = 60;
 	private final float pogoj = 0.4f;
-	private boolean toVibrate = true;
 
 	public Vibrate(Vibrator v)
 	{
@@ -24,7 +23,7 @@ public class Vibrate{
 	 */
 	public void vibrate(long ms)
 	{
-		if(toVibrate)
+		if(Preferences.getVibrate())
 			vibrator.vibrate(milliseconds);
 	}
 
@@ -34,7 +33,7 @@ public class Vibrate{
 	 */
 	public void update()
 	{
-		if(toVibrate)
+		if(Preferences.getVibrate())
 		{
 			if(Math.abs(preX - Data.getX()) + Math.abs(preY - Data.getY()) + Math.abs(preZ - Data.getZ()) > pogoj)
 				vibrator.vibrate(milliseconds);
@@ -43,14 +42,5 @@ public class Vibrate{
 			preY = Data.getY();
 			preZ = Data.getZ();
 		}
-	}
-
-	/**
-	 * set this to false to disable vibration or to true to enable them
-	 * @param vibrate
-	 */
-	public void setVibrate(boolean vibrate)
-	{
-		toVibrate = vibrate;
 	}
 }

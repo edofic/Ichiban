@@ -16,7 +16,8 @@
      
      
      NOTICE
-     THIS FILE WAS MODIFIED-->
+     THIS FILE WAS MODIFIED
+-->
 
 <resources>
 
@@ -53,13 +54,26 @@
     <string name="maximum">Maximum</string>
     <string name="minimum">Minimum</string>
     <string name="preferences">Preferences</string>
+
     <string-array name="resetArray">
-        <item >Reset on start</item>
-        <item >Continue on start</item>
+        <item>Reset data</item>
+        <item>Pause data</item>
     </string-array>
     <string-array name="resetArrayData">
-        <item >restart</item>
-        <item >notRestart</item>
+        <item>restart</item>
+        <item>notRestart</item>
+    </string-array>
+    <string-array name="graphTypeData">
+        <item>PATH</item>
+        <item>SPEED</item>
+        <item>ACCELERATION</item>
+        <item>GFORCE</item>
+    </string-array>
+    <string-array name="graphType">
+        <item>Path</item>
+        <item>Speed</item>
+        <item>Acceleration</item>
+        <item>G Force vector</item>
     </string-array>
 
 </resources>

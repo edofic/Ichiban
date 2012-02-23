@@ -6,7 +6,9 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+import com.abstracttech.ichiban.views.graphs.GraphType;
 
+import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.Data;
 import com.abstracttech.ichiban.data.StatisticData;
 
@@ -22,11 +24,12 @@ public class Graph extends ImageView {
 	protected boolean updateBorders=false;
 	private int typeID;
 	private GraphType currentType;
+	private int barvaGrafa;
 
 	public Graph(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		Data.subscribe(this);
-		
+
 		//find out who i am
 		int myid=getId();
 		if(Data.graphID[0]==myid)
@@ -37,6 +40,11 @@ public class Graph extends ImageView {
 			typeID=2;
 		if(Data.graphID[3]==myid)
 			typeID=3;
+
+		if(typeID==0)
+			barvaGrafa=Color.RED;
+		else
+			barvaGrafa=Color.GREEN;
 	}
 
 	/**
@@ -53,18 +61,32 @@ public class Graph extends ImageView {
 			bottom=0;
 			datasource=Data.pathData;
 			this.updateBorders=true;
+			if(typeID>0)
+				this.setBackgroundResource(R.drawable.graf3);
 			break;
 		case SPEED:
 			bottom=-20;
 			top=160;
 			datasource=Data.speedData;
 			this.updateBorders=false;
+			if(typeID>0)
+			this.setBackgroundResource(R.drawable.graf2);
 			break;
 		case ACCELERATION:
 			bottom=-80;
 			top=80;
 			datasource=Data.accData;
 			this.updateBorders=false;
+			if(typeID>0)
+			this.setBackgroundResource(R.drawable.graf1);
+			break;
+		case TOTAL_ACC:
+			bottom=0;
+			top=0.5f;
+			datasource=Data.totalAccData;
+			this.updateBorders=false;
+			if(typeID>0)
+			this.setBackgroundResource(R.drawable.graf4);
 			break;
 		}
 		currentType=type;
@@ -95,7 +117,7 @@ public class Graph extends ImageView {
 
 		//draw bg
 		super.onDraw(canvas);
-		
+
 		//for path graph
 		if(updateBorders)
 		{
@@ -107,19 +129,17 @@ public class Graph extends ImageView {
 		p.setStrokeWidth(1);
 
 		p.setColor(Color.argb(255, 100, 100, 100));
-		
+
 		int W = this.getWidth();
 		int H = this.getHeight();
 
-
 		for(int i = 0; i < 4; i++)		//side data: lines, percentage,...   300   400
 		{
-			//canvas.drawText("" + (i + 1) * 20 + "%", W * 0.06f , H - (i + 1) * H / 4 - 2, p);
+			canvas.drawText("" + String.format("%.1f", ((i + 1) * (top - bottom) / 5)), W * 0.06f , H - (i + 1) * H / 4 - 2, p);
 			canvas.drawText("" + (2 - (i + 1) * 0.5f) + "s", (i + 1) * W / 4, H * (1 - 0.15f), p);
 			canvas.drawLine(0.03f * W, (i + 1) * H / 4, W * (1 - 0.03f), (i + 1) * H / 4, p);
 			canvas.drawLine((i + 1) * W / 4, 0.0225f * H, (i + 1) * W / 4, H * (1 - 0.12f), p);
-		}
-
+		}		
 
 		if(isThereData())
 		{					
@@ -142,8 +162,7 @@ public class Graph extends ImageView {
 			}
 
 			canvas.drawLines(pointsShadow, p);
-
-			p.setColor(Color.RED);							//setting paint (Color, stroke...) and drawing the lines
+			p.setColor(barvaGrafa);							//setting paint (Color, stroke...) and drawing the lines
 			p.setStrokeWidth(4);
 			canvas.drawLines(points, p);
 		}	

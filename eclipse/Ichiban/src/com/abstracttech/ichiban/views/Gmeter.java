@@ -8,19 +8,16 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 import com.abstracttech.ichiban.R;
-import com.abstracttech.ichiban.activities.IchibanActivity;
 import com.abstracttech.ichiban.data.Data;
 
 /**
  * formula-1 style g-meter
  */
 public class Gmeter extends ImageView {
+
 	private Bitmap dot;
 	private float dotHeight, dotWidth;
 	private float lastX,lastY;
-	private long lastUpdate;
-
-	private final float inter = IchibanActivity._UPDATE_INTERVAL;
 
 	public Gmeter(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -35,35 +32,27 @@ public class Gmeter extends ImageView {
 		lastX=newX();
 		lastY=newY();
 
+		Data.subscribe(this);
 	}
 
 	@Override
 	protected void onDraw(Canvas canvas){
-		
+
 		super.onDraw(canvas);
-		
+
 		if(isInEditMode())
 			return;
 
-		float cx = newX();
-		float cy = newY();
-		long nt=System.currentTimeMillis(); //current time
-
-		//interpolate data
-		canvas.drawBitmap(dot, 
-				lastX + (cx - lastX)*(float)(nt-lastUpdate)/inter, 
-				lastY + (cy - lastY)*(float)(nt-lastUpdate)/inter, null);
-
-		//update data on select time interval
-		if((nt-lastUpdate)>=inter)
+		if(lastX != Data.getX() || lastY != Data.getY())
 		{
-			lastX=cx;
-			lastY=cy;
-			lastUpdate=nt;
-		}
+			lastX = newX();
+			lastY = newY();
 
+			//interpolate data
+			canvas.drawBitmap(dot , lastX , lastY , null);
+		}
 		//redraw next frame
-		this.invalidate();
+		//this.invalidate();
 	}
 
 	private float newX()

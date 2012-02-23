@@ -2,8 +2,8 @@
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
     <style name="right">
         <item name="android:gravity">right</item>
-         <item name="android:textSize">50sp</item>
+         <item name="android:textSize">70sp</item>
          <item name="android:layout_width">200dp</item>
-         <item name="android:layout_height">60dp</item>     
+         <item name="android:layout_height">80dp</item>   
     </style>
 </resources>
