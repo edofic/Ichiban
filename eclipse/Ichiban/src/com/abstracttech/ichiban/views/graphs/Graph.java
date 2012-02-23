@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.widget.ImageView;
+import com.abstracttech.ichiban.views.graphs.GraphType;
 
 import com.abstracttech.ichiban.R;
 import com.abstracttech.ichiban.data.Data;
@@ -28,7 +29,7 @@ public class Graph extends ImageView {
 	public Graph(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		Data.subscribe(this);
-		
+
 		//find out who i am
 		int myid=getId();
 		if(Data.graphID[0]==myid)
@@ -39,7 +40,7 @@ public class Graph extends ImageView {
 			typeID=2;
 		if(Data.graphID[3]==myid)
 			typeID=3;
-		
+
 		if(typeID==0)
 			barvaGrafa=Color.RED;
 		else
@@ -60,13 +61,15 @@ public class Graph extends ImageView {
 			bottom=0;
 			datasource=Data.pathData;
 			this.updateBorders=true;
-			this.setBackgroundResource(R.drawable.graf3);
+			if(typeID>0)
+				this.setBackgroundResource(R.drawable.graf3);
 			break;
 		case SPEED:
 			bottom=-20;
 			top=160;
 			datasource=Data.speedData;
 			this.updateBorders=false;
+			if(typeID>0)
 			this.setBackgroundResource(R.drawable.graf2);
 			break;
 		case ACCELERATION:
@@ -74,6 +77,7 @@ public class Graph extends ImageView {
 			top=80;
 			datasource=Data.accData;
 			this.updateBorders=false;
+			if(typeID>0)
 			this.setBackgroundResource(R.drawable.graf1);
 			break;
 		case TOTAL_ACC:
@@ -81,6 +85,7 @@ public class Graph extends ImageView {
 			top=0.5f;
 			datasource=Data.totalAccData;
 			this.updateBorders=false;
+			if(typeID>0)
 			this.setBackgroundResource(R.drawable.graf4);
 			break;
 		}
@@ -112,7 +117,7 @@ public class Graph extends ImageView {
 
 		//draw bg
 		super.onDraw(canvas);
-		
+
 		//for path graph
 		if(updateBorders)
 		{
@@ -124,7 +129,7 @@ public class Graph extends ImageView {
 		p.setStrokeWidth(1);
 
 		p.setColor(Color.argb(255, 100, 100, 100));
-		
+
 		int W = this.getWidth();
 		int H = this.getHeight();
 
@@ -134,8 +139,7 @@ public class Graph extends ImageView {
 			canvas.drawText("" + (2 - (i + 1) * 0.5f) + "s", (i + 1) * W / 4, H * (1 - 0.15f), p);
 			canvas.drawLine(0.03f * W, (i + 1) * H / 4, W * (1 - 0.03f), (i + 1) * H / 4, p);
 			canvas.drawLine((i + 1) * W / 4, 0.0225f * H, (i + 1) * W / 4, H * (1 - 0.12f), p);
-		}
-
+		}		
 
 		if(isThereData())
 		{					
