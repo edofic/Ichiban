@@ -33,10 +33,12 @@
         android:id="@+id/loadDenseCSV"
         android:icon="@android:drawable/ic_input_add"
         android:title="@string/loadDenseCSV"></item>
-    
+ <item android:id="@+id/reset" android:title="Reset data" android:visible="true"></item>
     <item
         android:id="@+id/preferences"
         android:icon="@android:drawable/ic_input_add"
         android:title="@string/preferences"></item>
+    
+    
 
 </menu>
