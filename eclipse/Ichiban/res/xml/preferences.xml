@@ -12,8 +12,8 @@
         android:entries="@array/resetArray"
         android:entryValues="@array/resetArrayData"
         android:key="reset"
-        android:summary="If you want to restart data of to pause data after you pres the power button"
-        android:title="Reset data" />
+        android:summary="Clear data on stop"
+        android:title="On stop" />
 
     <PreferenceCategory android:title="Graph data" >
         <ListPreference
