@@ -72,6 +72,12 @@ public class Graph extends ImageView {
 			datasource=Data.accData;
 			this.updateBorders=false;
 			break;
+		case TOTAL_ACC:
+			bottom=0;
+			top=0.5f;
+			datasource=Data.totalAccData;
+			this.updateBorders=false;
+			break;
 		}
 		currentType=type;
 	}

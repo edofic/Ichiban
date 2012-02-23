@@ -4,7 +4,5 @@ public enum GraphType {
 	PATH,
 	SPEED,
 	ACCELERATION,
-	X,
-	Y,
-	Z
+	TOTAL_ACC
 }
