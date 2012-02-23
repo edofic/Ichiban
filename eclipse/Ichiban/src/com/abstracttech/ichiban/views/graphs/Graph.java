@@ -23,6 +23,7 @@ public class Graph extends ImageView {
 	protected boolean updateBorders=false;
 	private int typeID;
 	private GraphType currentType;
+	private int barvaGrafa;
 
 	public Graph(Context context, AttributeSet attrs) {
 		super(context, attrs);
@@ -38,6 +39,11 @@ public class Graph extends ImageView {
 			typeID=2;
 		if(Data.graphID[3]==myid)
 			typeID=3;
+		
+		if(typeID==0)
+			barvaGrafa=Color.RED;
+		else
+			barvaGrafa=Color.GREEN;
 	}
 
 	/**
@@ -152,8 +158,7 @@ public class Graph extends ImageView {
 			}
 
 			canvas.drawLines(pointsShadow, p);
-
-			p.setColor(Color.RED);							//setting paint (Color, stroke...) and drawing the lines
+			p.setColor(barvaGrafa);							//setting paint (Color, stroke...) and drawing the lines
 			p.setStrokeWidth(4);
 			canvas.drawLines(points, p);
 		}	

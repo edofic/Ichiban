@@ -24,7 +24,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="25dp"
-        android:src="@drawable/graf1" />
+        android:src="@drawable/graf1"/>
 
     <com.abstracttech.ichiban.views.graphs.Graph
         android:id="@+id/grafHitrost"
@@ -58,6 +58,8 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_alignRight="@+id/grafHitrost"
-        android:layout_alignTop="@+id/grafPot" />
+        android:layout_alignTop="@+id/grafPot"
+        android:layout_marginRight="-20dp"
+  />
 
 </RelativeLayout>
